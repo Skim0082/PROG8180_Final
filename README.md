@@ -1,7 +1,7 @@
 # PROG8180_Final
 PROG8180 - Web Technologies
   
-  **User List Example**
+  **User List Example Source Codes**
   
     - I uploaded example files of User list.
     - It contains from AngularJS to access to the mySQL 'users' table.
