@@ -28,30 +28,30 @@ PROG8180 - Web Technologies
 	  -server			
 		  -relevate db access files		
 	  -mvc			
-		-controllers		
-		-views		
-			-user	
-				-signup.ejs
-				-signin
-				-index
-				-view
-				-edit
-			-post	
-				-add
-				-index
-				-view
-				-edit
-			-partials	
-				-header
-				-footer
-				-head
-			-pages	
-				-index
-				-about
-				-contact
-	-public			
-		-css		
-		-js		
-	-node_modules
-	-server.js (or app.js)			
-	-package.json
+		  -controllers		
+		  -views		
+			  -user	
+				  -signup.ejs
+				  -signin
+				  -index
+				  -view
+				  -edit
+			  -post	
+				  -add
+				  -index
+				  -view
+				  -edit
+			  -partials	
+				  -header
+				  -footer
+				  -head
+			  -pages	
+				  -index
+				  -about
+				  -contact
+	  -public			
+		  -css		
+		  -js		
+	  -node_modules
+	  -server.js (or app.js)			
+	  -package.json
