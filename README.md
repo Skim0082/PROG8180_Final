@@ -51,7 +51,6 @@ PROG8180 - Web Technologies
 	-public			
 		-css		
 		-js		
-	-node_modules			
-				
+	-node_modules
 	-server.js (or app.js)			
 	-package.json
