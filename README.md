@@ -21,13 +21,13 @@ PROG8180 - Web Technologies
     - Then as soon as possible, we should discuss further steps together.
 
     - root
-    -- Root
-	-config			
-		-schema		
-			-database.sql	
-	-server			
-		-relevate db access files		
-	-mvc			
+    - Root
+	  -config			
+		  -schema		
+			  -database.sql	
+	  -server			
+		  -relevate db access files		
+	  -mvc			
 		-controllers		
 		-views		
 			-user	
