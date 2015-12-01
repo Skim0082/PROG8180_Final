@@ -20,7 +20,7 @@ PROG8180 - Web Technologies
     - I'm willing to help you how these work.
     - Then as soon as possible, we should discuss further steps together.
 
-    - root
+    Template Folder Structure (1st version)
     - Root
 	  -config			
 		  -schema		
