@@ -4,6 +4,7 @@ PROG8180 - Web Technologies
   **User List Example Source Codes**
   
     - I uploaded the example files of User list.
+    
     - It contains from AngularJS to access to the mySQL 'users' table.
     - **DB schema file** is located in the 'config' folder, so you can create db and table including some test data
     - It contains the source codes for CRUD functions
