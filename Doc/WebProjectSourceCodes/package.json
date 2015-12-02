@@ -1,0 +1,16 @@
+{
+  "name": "rideshare",
+  "version": "0.0.0",
+  "description": "PRO8180 Web Technologies - Final Project (Group 1)",
+  "main": "app.js",
+  "author": {
+    "name": "ChangHo Choi, Nicholas Collins, Nahhal Hassan, SungJoe KIM",
+    "email": ""
+  },
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "ejs": "^2.3.4",
+    "express": "^4.13.3",
+    "mysql": "^2.9.0"
+  }
+}

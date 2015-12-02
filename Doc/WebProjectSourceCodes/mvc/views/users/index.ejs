@@ -1,0 +1,49 @@
+<!-- views/users/index.ejs -->
+
+<!DOCTYPE html>
+<html ng-app="prog8010App">
+<head>
+	<title>User Lists</title>
+	<% include ../partials/header %>	
+</head>
+<body>
+	<div class="container" ng-controller="UserCtrl">
+		<% include ../partials/navbar %>
+		<h1>User List</h1>
+		<table class="table">
+				<thead>
+					<tr>
+						<th>User Name</th>
+						<th>Email</th>
+						<th>Phone Number</th>
+						<th>Action</th>
+						<th>&nbsp;</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><input type="text" class="form-control" ng-model="user.nickname"></td>
+						<td><input type="text" class="form-control" ng-model="user.email"></td>
+						<td><input type="text" class="form-control" ng-model="user.contactDetail"></td>
+						<td><button type="button" class="btn btn-primary" ng-click="addUser()">Add User</button></td>
+						<td>
+							<button type="button" class="btn btn-info" ng-click="update(user.user_id)">Update</button>&nbsp; &nbsp;<button type="button" class="btn btn-info" ng-click="deselect()">Clear</butto>
+						</td>
+					</tr>
+					<tr ng-repeat="user in userlist">
+						<td>{{user.nickname}}</td>
+						<td>{{user.email}}</td>
+						<td>{{user.contactDetail}}</td>
+						<td><button type="button" class="btn btn-danger" ng-click="remove(user.user_id)">Remove</button></td>
+						<td><button type="button" class="btn btn-warning" ng-click="edit(user.user_id)">Edit</button></td>
+					</tr>
+				</tbody>
+		</table>
+	</div>
+    <footer>
+        <% include ../partials/footer %>
+    </footer>	
+<% include ../partials/foot_angularjs148 %>
+<script src="./controllers/usercontroller.js"></script>
+</body>
+</html>
