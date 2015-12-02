@@ -1,0 +1,51 @@
+<!-- views/comments/index.ejs -->
+
+<!DOCTYPE html>
+<html ng-app="prog8010App">
+<head>
+	<title>Comments Lists</title>
+	<% include ../partials/header %>		
+</head>
+<body>
+	<div class="container" ng-controller="CommentCtrl">
+		<% include ../partials/navbar %>
+		<h1>Comment List</h1>
+		<table class="table">
+				<thead>
+					<tr>
+						<th>Post ID</th>
+						<th>User ID</th>
+						<th>Body</th>
+						<th>Approved</th>
+						<th>Action</th>
+						<th>&nbsp;</th>
+						
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><input type="text" class="form-control" ng-model="comment.post_id" disabled></td>
+						<td><input type="text" class="form-control" ng-model="comment.user_id" disabled></td>
+						<td><input type="text" class="form-control" ng-model="comment.body"></td>
+						<td><input type="text" class="form-control" ng-model="comment.isApproved"></td>						
+						<td><button type="button" class="btn btn-info" ng-click="update(comment.post_id, comment.user_id)">Update</button></td>
+						<td><button type="button" class="btn btn-info" ng-click="deselect()">Clear</butto></td>
+					</tr>
+					<tr ng-repeat="comment in commentlist">
+						<td>{{comment.post_id}}</td>
+						<td>{{comment.user_id}}</td>
+						<td>{{comment.body}}</td>
+						<td>{{comment.isApproved}}</td>
+						<td><button type="button" class="btn btn-danger" ng-click="remove(comment.post_id, comment.user_id)">Remove</button></td>
+						<td><button type="button" class="btn btn-warning" ng-click="edit(comment.post_id, comment.user_id)">Edit</button></td>
+					</tr>
+				</tbody>
+		</table>
+	</div>
+    <footer>
+        <% include ../partials/footer %>
+    </footer>	
+<% include ../partials/foot_angularjs148 %>
+<script src="./controllers/commentcontroller.js"></script>
+</body>
+</html>

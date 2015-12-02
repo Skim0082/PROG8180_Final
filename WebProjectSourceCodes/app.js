@@ -41,6 +41,10 @@ app.get('/user', function(req, res){
 app.get('/post', function(req, res){
 	res.render('posts/index');
 });
+// comment page
+app.get('/comment', function(req, res){
+	res.render('comments/index');
+});
 
 // Select all data from users table
 app.get('/userlist', function(req, res){
@@ -282,6 +286,109 @@ app.put('/postlist/:id', function(req, res){
 
 });
 
+// Select all data from comments table
+app.get('/commentlist', function(req, res){
+
+	console.log("I received a GET request");
+
+	var mysqlConProvider = require('./server/mysqlConnectionStringProvider.js');
+	var con = mysqlConProvider.mysqlConnectionStringProvider.connectDatabase();
+
+
+	// Select data from comments table
+	con.query('SELECT * FROM comments', function(err, rows){
+		if(err) throw err;
+
+		console.log('Data received from comments table:\n');
+		console.log(rows);
+		res.json(rows);
+	});	
+
+	mysqlConProvider.mysqlConnectionStringProvider.closeConnectionDatabase(con);
+
+});
+
+
+//Select comments with post id & user id
+app.get('/commentlist/:pid/:uid', function(req, res){
+	console.log("comment edit");
+
+    var pid = req.params.pid;
+    var uid = req.params.uid;
+    console.log("Selected post_id = " + pid + ", user_id= " + uid);
+
+	var mysqlConProvider = require('./server/mysqlConnectionStringProvider.js');
+	var con = mysqlConProvider.mysqlConnectionStringProvider.connectDatabase();
+
+	// Select data from comments table
+	con.query('SELECT * FROM comments WHERE post_id = ? AND user_id = ?', 
+		[pid, uid], 
+		function(err, rows){
+			if(err) throw err;
+
+			console.log("Data received from posts table with post_id = " + pid + ", user_id= " + uid);
+			console.log(rows[0]);
+			res.json(rows[0]);
+		}
+	);
+
+	mysqlConProvider.mysqlConnectionStringProvider.closeConnectionDatabase(con);
+
+});
+
+// Update comments
+app.put('/commentlist/:pid/:uid', function(req, res){
+    var pid = req.params.pid;
+    var uid = req.params.uid;
+
+	var mysqlConProvider = require('./server/mysqlConnectionStringProvider.js');
+	var con = mysqlConProvider.mysqlConnectionStringProvider.connectDatabase();
+
+    var comment = req.body;
+
+    console.log("post_id : " + comment.post_id);
+
+	// Update data
+	con.query(
+		'UPDATE comments SET body = ?, isApproved = ? WHERE post_id = ? AND user_id = ?',
+		[comment.body, comment.isApproved, comment.post_id, comment.user_id],
+		function(err, doc){
+			if(err) throw err
+
+			console.log('Updated ' + doc.changedRows + ' rows');
+			res.json(doc);
+		}
+	);
+
+	mysqlConProvider.mysqlConnectionStringProvider.closeConnectionDatabase(con);
+
+});
+
+// Delete Comments
+app.delete('/commentlist/:pid/:uid', function(req, res){
+
+    var pid = req.params.pid;
+    var uid = req.params.uid;
+    console.log("Selected post_id = " + pid + ", user_id= " + uid);
+
+	var mysqlConProvider = require('./server/mysqlConnectionStringProvider.js');
+	var con = mysqlConProvider.mysqlConnectionStringProvider.connectDatabase();
+
+	// Delete data from table
+	con.query(
+		'DELETE FROM comments WHERE post_id = ? AND user_id = ?',
+		[pid, uid],
+		function(err, doc){
+			if(err) throw err;
+
+			console.log('Delete ' + doc.affectedRows + ' rows');
+			res.json(doc);
+		}
+	);      
+
+	mysqlConProvider.mysqlConnectionStringProvider.closeConnectionDatabase(con);
+
+});
 
 app.listen(3000);
 console.log("Server running on port 3000");

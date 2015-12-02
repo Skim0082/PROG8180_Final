@@ -33,6 +33,7 @@ myApp.controller('PostCtrl', ['$scope','$http', function($scope, $http) {
     	console.log(id + " will be edited");
     	$http.get('/postlist/' + id).success(function(response){
     		$scope.post = response;
+            console.log(response);
     	});
     };  
 
