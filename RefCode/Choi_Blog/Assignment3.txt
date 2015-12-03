@@ -1,0 +1,9 @@
+GitHub Link:
+https://github.com/infomat/blog
+
+Accounts :
+admin, francis, mike
+
+default password: 
+11111
+
