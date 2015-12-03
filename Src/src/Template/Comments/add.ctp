@@ -4,7 +4,7 @@
 	<?= $this->Form->create($comment) ?>
 		<fieldset>
 			<legend><?= __('Add Comment') ?></legend>
-			<?= $this->Form->input('comment') ?>
+			<?= $this->Form->input('body') ?>
 	   </fieldset>
 	<?= $this->Form->button(__('Save Comment')); ?>
 	<?= $this->Form->end() ?>

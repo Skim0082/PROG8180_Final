@@ -9,26 +9,26 @@
 	?>
 </div>
 <div id="main">
-	<h1><?= h($article->title) ?> by <?= $user->username?></h1>
+	<h1><?= h($post->title) ?> by <?= $user->username?></h1>
 
-	<p><?= h($article->body) ?></p>
+	<p><?= h($post->body) ?></p>
 
-	<p>Created : <?= $article->created->format(DATE_RFC850) ?></p>
+	<p>Created : <?= $post->created->format(DATE_RFC850) ?></p>
 
 	<div class="view-comment">
 		<?php
-			if(count($article -> tags)>0){
+			if(count($post -> tags)>0){
 				echo "<strong>Tag:</strong><ul>";
-				foreach ($article -> tags as $tag){
+				foreach ($post -> tags as $tag){
 					echo "<li>" . $tag -> tag . "</li>";
 				}
 				echo "</ul>";
 			}
 			
 			if($loginuser['id'] != null){
-				if(count($article -> comments)>0){
+				if(count($post -> comments)>0){
 					echo "<strong>Comments:</strong><ul>";
-					foreach ($article -> comments as $comment){
+					foreach ($post -> comments as $comment){
 						echo "<li>" . $comment -> comment . "</li>";
 					}
 					echo "</ul>";
@@ -36,9 +36,9 @@
 			}
 			
 			if($loginuser['role'] == 'admin'){
-				if(count($article -> unapproved_comments)>0){
+				if(count($post -> unapproved_comments)>0){
 					echo "<ul class='unapprovedcomment'>";
-					foreach ($article -> unapproved_comments as $comment){
+					foreach ($post -> unapproved_comments as $comment){
 						echo "<li>" . $comment -> comment . "</li>";
 						
 					}
@@ -51,16 +51,16 @@
 	<p>
 		<?php
 			if($loginuser['id'] != null){
-				echo $this->Html->link('Add Comment', ['controller'=>'Comments', 'action' => 'add', $article->id]);	
+				echo $this->Html->link('Add Comment', ['controller'=>'Comments', 'action' => 'add', $post->id]);	
 			}
 			
 			if($user->id == $loginuser['id'] || $loginuser['role'] == 'admin'){
 				echo "<div id='logout'>";
-				echo $this->Html->link('Edit', ['action' => 'edit', $article->id]);
+				echo $this->Html->link('Edit', ['action' => 'edit', $post->id]);
 				echo " | ";
 				echo $this->Form->postLink(
 					'Delete',
-					['action' => 'delete', $article->id],
+					['action' => 'delete', $post->id],
 					['confirm' => 'Are you sure?']
 				);	
 				echo "</div>";

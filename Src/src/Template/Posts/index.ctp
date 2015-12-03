@@ -24,6 +24,7 @@
             <th>Departure Time</th>
             <th>Origin PostalCode</th>
             <th>Destination PostalCode</th>
+            <th>Actions</th>
 			<?php
 				if($loginuser['id'] != null){
 					echo "<th>Comments</th>";			
@@ -67,9 +68,11 @@
 			</td>
             <td>
 				<?= $post->srcPostal ?>
+           
 			</td>
             <td>
 				<?= $post->dstPostal ?>
+          
 			</td>
 				<?php
 					if($loginuser['id'] != null){
@@ -79,7 +82,7 @@
 						if(count($post -> comments)>0){
 							echo "<ul>";
 							foreach ($post -> comments as $comment){
-								echo "<li>" . $comments -> comment . "</li>"; 
+								echo "<li>" . $comment -> body . "</li>"; 
 							}
 							echo "</ul>";
 						}
@@ -98,6 +101,10 @@
 			<?php
 				if($post->user_id == $loginuser['id'] || $loginuser['role'] == 'admin'){
 					echo "<td>";
+                    echo $this->Html->link('Add Comment', ['controller'=>'comments','action' => 'add', $post->id]);
+                    echo " | ";
+                    echo $this->Html->link('View', ['action' => 'view', $post->id]);
+                    echo " | ";
 					echo $this->Html->link('Edit', ['action' => 'edit', $post->id]);
 					echo " | ";
 					echo $this->Form->postLink(
@@ -106,7 +113,13 @@
 						['confirm' => 'Are you sure?']
 					);					
 					echo "</td>";
-				}
+				} else {
+					echo "<td>";
+                    echo $this->Html->link('Add Comment', ['controller'=>'comments','action' => 'add', $post->id]);
+                    echo " | ";
+                    echo $this->Html->link('View', ['action' => 'view', $post->id]);
+                    echo "</td>";
+                }
 			?>					
 		</tr>
 		<?php endforeach; ?>

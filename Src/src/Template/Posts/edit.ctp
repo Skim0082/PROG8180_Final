@@ -9,34 +9,18 @@
 	?>
 </div>
 <div id="main">
-	<h1>Edit Article</h1>
+	<h1>Edit Posts</h1>
 	<?php
-		echo $this->Form->create($article);
+		echo $this->Form->create($post);
 		echo $this->Form->input('title');
-		echo $this->Form->input('body', ['rows' => '3']);	
-
-		$options = [
-			'1' => 'Food',
-			'2' => 'Fun',
-			'3' => 'Family',
-			'4' => 'Fiction',
-			'5' => 'Documentary',
-			'6' => 'Action',
-		];
-		
-
-		echo $this->Form->input('tags._ids',[
-			'type' => 'select',
-			'multiple' => 'checkbox',
-			'options' => $options
-		]);	
+		echo $this->Form->input('body', ['rows' => '3']);			
 
 		if($loginuser['role'] == 'admin'){
 		
-			if(count($article -> comments)>0){				
+			if(count($post -> comments)>0){				
 				$i = 0;
 				echo "<strong>Approved Comments :</strong>";
-				foreach ($article -> comments as $comment){
+				foreach ($post -> comments as $comment){
 					echo "<div class='edit-comment'>";
 					echo $this->Form->input('comments.' . $i . '.id'); 
 					echo $this->Form->input('comments.' . $i . '.comment', ['label'=>false]); 
@@ -46,10 +30,10 @@
 				}
 			}
 
-			if(count($article -> unapproved_comments)>0){				
+			if(count($post -> unapproved_comments)>0){				
 				$i = 0;
 				echo "<strong>UnApproved Comments :</strong>";
-				foreach ($article -> unapproved_comments as $comment){	
+				foreach ($post -> unapproved_comments as $comment){	
 					echo "<div class='edit-comment'>";
 					echo $this->Form->input('unapproved_comments.' . $i . '.id'); 
 					echo $this->Form->input('unapproved_comments.' . $i . '.comment', ['label'=>false]); 

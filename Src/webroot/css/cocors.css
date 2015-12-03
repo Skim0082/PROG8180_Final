@@ -6,3 +6,34 @@ header h1 small {
     margin-left: 0.3em;
     color:#E0FFFF;
 }
+
+nav a {
+  color: #5a5a5a;
+  font-size: 0.8em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.navmenu a {
+  color: #eeeeee;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 14px 10px;
+  text-transform: uppercase;
+}
+
+.navmenu li{
+    display: inline;
+}
+
+
+#pull-left {
+    float:left;
+    width: 50%
+}
+
+
+#pull-right {
+    float:right;
+    width: 20%
+}

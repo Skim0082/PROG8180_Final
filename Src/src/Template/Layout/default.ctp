@@ -36,7 +36,7 @@ $cakeDescription = 'Cocors:Conestoga College Ride Sharing System';
     <?= $this->Html->script('http://code.jquery.com/ui/1.11.4/jquery-ui.js') ?>
     <?= $this->Html->script('http://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.8.8/jquery.timepicker.min.js') ?>
     <?= $this->Html->script('getinput.js');  ?>
-
+    
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
@@ -46,17 +46,28 @@ $cakeDescription = 'Cocors:Conestoga College Ride Sharing System';
     <h1>COCORS<small>Conestoga College Ride Sharing System</small><a href="http://cocors.heroku.com"></h1>
     
     </header>
-    <nav class="top-bar expanded" data-topbar role="navigation">
-        <ul class="title-area large-3 medium-4 columns">
-            <li class="name">
-                <h1><?= $this->Html->link('Posts', ['controller' => 'Posts', 'action' => 'index']) ?></h1>				
-            </li>
-        </ul>
-        <section class="top-bar-section">
-            <ul class="right">
-                <li><?= $this->Html->link('New Post', ['controller' => 'Posts', 'action' => 'add']) ?></li>
+    <nav class="top-bar expanded navmenu" data-topbar role="navigation">
+        <div class="container">
+            <ul class="title-area navmenu pull-right" id="pull-right">
+                <li>
+                    <?= $this->Html->link('My profile', ['controller' => 'Users', 'action' => 'view']) ?>				
+                </li>
+                <li>
+                    <?= $this->Html->link('User Management', ['controller' => 'Users', 'action' => 'index', ]) ?>		
+                </li>
             </ul>
-        </section>
+            <ul class="title-area navmenu" id="pull-left">
+                <li>
+                    <?= $this->Html->link('Home', ['controller' => 'pages', 'action' => 'display']) ?>				
+                </li>
+                <li>
+                    <?= $this->Html->link('Add Post', ['controller' => 'Posts', 'action' => 'add']) ?>				
+                </li>
+                <li>
+                    <?= $this->Html->link('Search', ['controller' => 'Posts', 'action' => 'index']) ?>				
+                </li>
+            </ul>
+        </div>
     </nav>
     <?= $this->Flash->render() ?>
     <section class="container clearfix">

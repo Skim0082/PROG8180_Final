@@ -4,7 +4,7 @@
 namespace App\Controller;
 
 class PostsController extends AppController{
-
+    
     public function index()
     {
         $Posts = $this->Posts->find('all')->contain(['Users', 'Comments', 'UnapprovedComments']);
