@@ -12450,3 +12450,719 @@ Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
 
 
 
+2015-12-10 05:39:05 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Fblogin could not be found.
+Exception Attributes: array (
+  'class' => 'Fblogin',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fblogin/users/facebook
+Stack Trace:
+#0 C:\wamp\www\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-12-10 05:43:08 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Fblogin could not be found.
+Exception Attributes: array (
+  'class' => 'Fblogin',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fblogin/users/facebook
+Stack Trace:
+#0 C:\wamp\www\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-12-10 05:43:12 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Fblogin could not be found.
+Exception Attributes: array (
+  'class' => 'Fblogin',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fblogin/users/login
+Stack Trace:
+#0 C:\wamp\www\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-12-10 05:43:28 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Fblogin could not be found.
+Exception Attributes: array (
+  'class' => 'Fblogin',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fblogin/users/facebook
+Stack Trace:
+#0 C:\wamp\www\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-12-10 05:46:00 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Fblogin could not be found.
+Exception Attributes: array (
+  'class' => 'Fblogin',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fblogin/img/fb_login.png
+Stack Trace:
+#0 C:\wamp\www\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-12-10 05:56:44 Warning: Warning (2): session_destroy(): Trying to destroy uninitialized session in [C:\wamp\www\src\Controller\UsersController.php, line 91]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 140
+session_destroy - [internal], line ??
+App\Controller\UsersController::logout() - APP/Controller\UsersController.php, line 91
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 429
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2015-12-10 06:01:13 Warning: Warning (2): session_destroy(): Trying to destroy uninitialized session in [C:\wamp\www\src\Controller\UsersController.php, line 96]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 140
+session_destroy - [internal], line ??
+App\Controller\UsersController::logout() - APP/Controller\UsersController.php, line 96
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 429
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2015-12-10 06:05:44 Warning: Warning (2): session_destroy(): Trying to destroy uninitialized session in [C:\wamp\www\src\Controller\UsersController.php, line 96]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 140
+session_destroy - [internal], line ??
+App\Controller\UsersController::logout() - APP/Controller\UsersController.php, line 96
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 429
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2015-12-10 06:12:32 Warning: Warning (2): session_destroy(): Trying to destroy uninitialized session in [C:\wamp\www\src\Controller\UsersController.php, line 96]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 140
+session_destroy - [internal], line ??
+App\Controller\UsersController::logout() - APP/Controller\UsersController.php, line 96
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 429
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2015-12-10 06:24:08 Warning: Warning (2): session_destroy(): Trying to destroy uninitialized session in [C:\wamp\www\src\Controller\UsersController.php, line 100]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 140
+session_destroy - [internal], line ??
+App\Controller\UsersController::logout() - APP/Controller\UsersController.php, line 100
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 429
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2015-12-10 15:34:23 Warning: Warning (2): session_destroy(): Trying to destroy uninitialized session in [C:\wamp\www\src\Controller\UsersController.php, line 123]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 140
+session_destroy - [internal], line ??
+App\Controller\UsersController::logout() - APP/Controller\UsersController.php, line 123
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 429
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2015-12-10 15:36:52 Warning: Warning (2): session_destroy(): Trying to destroy uninitialized session in [C:\wamp\www\src\Controller\UsersController.php, line 123]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 140
+session_destroy - [internal], line ??
+App\Controller\UsersController::logout() - APP/Controller\UsersController.php, line 123
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 429
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2015-12-10 15:38:23 Warning: Warning (2): session_destroy(): Trying to destroy uninitialized session in [C:\wamp\www\src\Controller\UsersController.php, line 128]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 140
+session_destroy - [internal], line ??
+App\Controller\UsersController::logout() - APP/Controller\UsersController.php, line 128
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 429
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2015-12-10 15:44:10 Error: [Cake\View\Exception\MissingTemplateException] Template file "Users\useredit.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Users\\useredit.ctp',
+)
+Request URL: /users/useredit/15
+Stack Trace:
+#0 C:\wamp\www\vendor\cakephp\cakephp\src\View\View.php(576): Cake\View\View->_getViewFileName(NULL)
+#1 C:\wamp\www\vendor\cakephp\cakephp\src\Controller\Controller.php(611): Cake\View\View->render(NULL, NULL)
+#2 C:\wamp\www\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(120): Cake\Controller\Controller->render()
+#3 C:\wamp\www\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\UsersController))
+#4 C:\wamp\www\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 {main}
+
+
+2015-12-10 15:48:30 Warning: Warning (2): session_destroy(): Trying to destroy uninitialized session in [C:\wamp\www\src\Controller\UsersController.php, line 129]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 140
+session_destroy - [internal], line ??
+App\Controller\UsersController::logout() - APP/Controller\UsersController.php, line 129
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 429
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2015-12-10 15:49:34 Warning: Warning (2): session_destroy(): Trying to destroy uninitialized session in [C:\wamp\www\src\Controller\UsersController.php, line 129]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 140
+session_destroy - [internal], line ??
+App\Controller\UsersController::logout() - APP/Controller\UsersController.php, line 129
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 429
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2015-12-10 15:50:06 Warning: Warning (2): session_destroy(): Trying to destroy uninitialized session in [C:\wamp\www\src\Controller\UsersController.php, line 129]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 140
+session_destroy - [internal], line ??
+App\Controller\UsersController::logout() - APP/Controller\UsersController.php, line 129
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 429
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2015-12-10 15:50:52 Warning: Warning (2): session_destroy(): Trying to destroy uninitialized session in [C:\wamp\www\src\Controller\UsersController.php, line 126]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 140
+session_destroy - [internal], line ??
+App\Controller\UsersController::logout() - APP/Controller\UsersController.php, line 126
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 429
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2015-12-10 15:58:59 Error: Fatal Error (1): Call to a member function delete() on a non-object in [C:\wamp\www\src\Controller\UsersController.php, line 98]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 209
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 92
+[main] - [internal], line ??
+
+
+
+2015-12-10 15:58:59 Error: [Cake\Error\FatalErrorException] Call to a member function delete() on a non-object
+Request URL: /users/delete/75
+Stack Trace:
+#0 C:\wamp\www\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(92): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'C:\\wamp\\www\\src...', 98)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-12-10 16:01:57 Warning: Warning (2): session_destroy(): Trying to destroy uninitialized session in [C:\wamp\www\src\Controller\UsersController.php, line 126]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 140
+session_destroy - [internal], line ??
+App\Controller\UsersController::logout() - APP/Controller\UsersController.php, line 126
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 429
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2015-12-10 16:02:45 Warning: Warning (2): session_destroy(): Trying to destroy uninitialized session in [C:\wamp\www\src\Controller\UsersController.php, line 126]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 140
+session_destroy - [internal], line ??
+App\Controller\UsersController::logout() - APP/Controller\UsersController.php, line 126
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 429
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2015-12-10 16:04:31 Warning: Warning (2): session_destroy(): Trying to destroy uninitialized session in [C:\wamp\www\src\Controller\UsersController.php, line 126]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 140
+session_destroy - [internal], line ??
+App\Controller\UsersController::logout() - APP/Controller\UsersController.php, line 126
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 429
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2015-12-10 16:13:54 Error: Fatal Error (4): syntax error, unexpected ''Key'' (T_CONSTANT_ENCAPSED_STRING), expecting ']' in [C:\wamp\www\src\Controller\ArticlesController.php, line 48]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 209
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 92
+[main] - [internal], line ??
+
+
+
+2015-12-10 16:13:54 Error: [Cake\Error\FatalErrorException] syntax error, unexpected ''Key'' (T_CONSTANT_ENCAPSED_STRING), expecting ']'
+Request URL: /articles/map
+Stack Trace:
+#0 C:\wamp\www\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(92): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', 'C:\\wamp\\www\\src...', 48)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-12-10 16:27:22 Error: Fatal Error (4): syntax error, unexpected end of file, expecting variable (T_VARIABLE) or ${ (T_DOLLAR_OPEN_CURLY_BRACES) or {$ (T_CURLY_OPEN) in [C:\wamp\www\src\Template\Articles\map.ctp, line 148]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 209
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 92
+[main] - [internal], line ??
+
+
+
+2015-12-10 16:27:22 Error: [Cake\Error\FatalErrorException] syntax error, unexpected end of file, expecting variable (T_VARIABLE) or ${ (T_DOLLAR_OPEN_CURLY_BRACES) or {$ (T_CURLY_OPEN)
+Request URL: /articles/map
+Stack Trace:
+#0 C:\wamp\www\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(92): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', 'C:\\wamp\\www\\src...', 148)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-12-10 16:28:58 Warning: Warning (2): session_destroy(): Trying to destroy uninitialized session in [C:\wamp\www\src\Controller\UsersController.php, line 126]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 140
+session_destroy - [internal], line ??
+App\Controller\UsersController::logout() - APP/Controller\UsersController.php, line 126
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 429
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2015-12-10 16:37:27 Warning: Warning (2): session_destroy(): Trying to destroy uninitialized session in [C:\wamp\www\src\Controller\UsersController.php, line 126]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 140
+session_destroy - [internal], line ??
+App\Controller\UsersController::logout() - APP/Controller\UsersController.php, line 126
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 429
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2015-12-10 17:31:54 Warning: Warning (2): session_destroy(): Trying to destroy uninitialized session in [C:\wamp\www\src\Controller\UsersController.php, line 126]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 140
+session_destroy - [internal], line ??
+App\Controller\UsersController::logout() - APP/Controller\UsersController.php, line 126
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 429
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2015-12-10 17:35:56 Warning: Warning (2): session_destroy(): Trying to destroy uninitialized session in [C:\wamp\www\src\Controller\UsersController.php, line 126]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 140
+session_destroy - [internal], line ??
+App\Controller\UsersController::logout() - APP/Controller\UsersController.php, line 126
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 429
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2015-12-10 17:36:10 Warning: Warning (2): session_destroy(): Trying to destroy uninitialized session in [C:\wamp\www\src\Controller\UsersController.php, line 126]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 140
+session_destroy - [internal], line ??
+App\Controller\UsersController::logout() - APP/Controller\UsersController.php, line 126
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 429
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2015-12-10 17:42:18 Warning: Warning (2): session_destroy(): Trying to destroy uninitialized session in [C:\wamp\www\src\Controller\UsersController.php, line 140]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 140
+session_destroy - [internal], line ??
+App\Controller\UsersController::logout() - APP/Controller\UsersController.php, line 140
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 429
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2015-12-10 17:42:51 Warning: Warning (2): session_destroy(): Trying to destroy uninitialized session in [C:\wamp\www\src\Controller\UsersController.php, line 140]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 140
+session_destroy - [internal], line ??
+App\Controller\UsersController::logout() - APP/Controller\UsersController.php, line 140
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 429
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2015-12-10 17:47:00 Warning: Warning (2): session_destroy(): Trying to destroy uninitialized session in [C:\wamp\www\src\Controller\UsersController.php, line 129]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 140
+session_destroy - [internal], line ??
+App\Controller\UsersController::logout() - APP/Controller\UsersController.php, line 129
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 429
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2015-12-10 17:48:30 Error: [Cake\Datasource\Exception\InvalidPrimaryKeyException] Record not found in table "users" with primary key [NULL]
+Request URL: /users/useredit
+Stack Trace:
+#0 C:\wamp\www\src\Controller\UsersController.php(79): Cake\ORM\Table->get(NULL)
+#1 [internal function]: App\Controller\UsersController->useredit()
+#2 C:\wamp\www\vendor\cakephp\cakephp\src\Controller\Controller.php(429): call_user_func_array(Array, Array)
+#3 C:\wamp\www\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#4 C:\wamp\www\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\UsersController))
+#5 C:\wamp\www\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#6 {main}
+
+
+2015-12-10 17:50:37 Warning: Warning (2): session_destroy(): Trying to destroy uninitialized session in [C:\wamp\www\src\Controller\UsersController.php, line 129]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 140
+session_destroy - [internal], line ??
+App\Controller\UsersController::logout() - APP/Controller\UsersController.php, line 129
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 429
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2015-12-10 18:39:24 Warning: Warning (2): session_destroy(): Trying to destroy uninitialized session in [C:\wamp\www\src\Controller\UsersController.php, line 129]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 140
+session_destroy - [internal], line ??
+App\Controller\UsersController::logout() - APP/Controller\UsersController.php, line 129
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 429
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2015-12-10 18:39:30 Warning: Warning (2): session_destroy(): Trying to destroy uninitialized session in [C:\wamp\www\src\Controller\UsersController.php, line 129]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 140
+session_destroy - [internal], line ??
+App\Controller\UsersController::logout() - APP/Controller\UsersController.php, line 129
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 429
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2015-12-10 18:43:02 Error: Fatal Error (4): syntax error, unexpected '<' in [C:\wamp\www\src\Template\Users\userlist.ctp, line 19]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 209
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 92
+[main] - [internal], line ??
+
+
+
+2015-12-10 18:43:02 Error: [Cake\Error\FatalErrorException] syntax error, unexpected '<'
+Request URL: /users/userlist
+Stack Trace:
+#0 C:\wamp\www\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(92): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', 'C:\\wamp\\www\\src...', 19)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-12-10 18:45:46 Warning: Warning (2): session_destroy(): Trying to destroy uninitialized session in [C:\wamp\www\src\Controller\UsersController.php, line 129]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 140
+session_destroy - [internal], line ??
+App\Controller\UsersController::logout() - APP/Controller\UsersController.php, line 129
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 429
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2015-12-10 18:51:26 Warning: Warning (2): session_destroy(): Trying to destroy uninitialized session in [C:\wamp\www\src\Controller\UsersController.php, line 129]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 140
+session_destroy - [internal], line ??
+App\Controller\UsersController::logout() - APP/Controller\UsersController.php, line 129
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 429
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2015-12-10 18:56:05 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "requests"
+Request URL: /debug_kit/toolbar/dfadf7a8-2e5b-404f-a26f-0ffb044565e0
+Stack Trace:
+#0 C:\wamp\www\vendor\cakephp\cakephp\src\ORM\Table.php(1187): Cake\ORM\Query->firstOrFail()
+#1 C:\wamp\www\vendor\cakephp\debug_kit\src\Controller\RequestsController.php(62): Cake\ORM\Table->get('dfadf7a8-2e5b-4...', Array)
+#2 [internal function]: DebugKit\Controller\RequestsController->view('dfadf7a8-2e5b-4...')
+#3 C:\wamp\www\vendor\cakephp\cakephp\src\Controller\Controller.php(429): call_user_func_array(Array, Array)
+#4 C:\wamp\www\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#5 C:\wamp\www\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(DebugKit\Controller\RequestsController))
+#6 C:\wamp\www\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#7 {main}
+
+
+2015-12-10 19:12:59 Warning: Warning (2): session_destroy(): Trying to destroy uninitialized session in [C:\wamp\www\rideshare\src\Controller\UsersController.php, line 129]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 140
+session_destroy - [internal], line ??
+App\Controller\UsersController::logout() - APP/Controller\UsersController.php, line 129
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 429
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2015-12-10 19:17:08 Warning: Warning (2): session_destroy(): Trying to destroy uninitialized session in [C:\wamp\www\rideshare\src\Controller\UsersController.php, line 129]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 140
+session_destroy - [internal], line ??
+App\Controller\UsersController::logout() - APP/Controller\UsersController.php, line 129
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 429
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2015-12-10 19:17:35 Warning: Warning (2): session_destroy(): Trying to destroy uninitialized session in [C:\wamp\www\rideshare\src\Controller\UsersController.php, line 129]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 140
+session_destroy - [internal], line ??
+App\Controller\UsersController::logout() - APP/Controller\UsersController.php, line 129
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 429
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2015-12-10 19:18:02 Warning: Warning (2): session_destroy(): Trying to destroy uninitialized session in [C:\wamp\www\rideshare\src\Controller\UsersController.php, line 129]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 140
+session_destroy - [internal], line ??
+App\Controller\UsersController::logout() - APP/Controller\UsersController.php, line 129
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 429
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2015-12-10 19:18:10 Warning: Warning (2): session_destroy(): Trying to destroy uninitialized session in [C:\wamp\www\rideshare\src\Controller\UsersController.php, line 129]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 140
+session_destroy - [internal], line ??
+App\Controller\UsersController::logout() - APP/Controller\UsersController.php, line 129
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 429
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2015-12-10 19:24:18 Warning: Warning (2): session_destroy(): Trying to destroy uninitialized session in [C:\wamp\www\rideshare\src\Controller\UsersController.php, line 129]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 140
+session_destroy - [internal], line ??
+App\Controller\UsersController::logout() - APP/Controller\UsersController.php, line 129
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 429
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2015-12-10 19:51:12 Error: Fatal Error (4): syntax error, unexpected ';' in [C:\wamp\www\rideshare\src\Template\Users\map.ctp, line 104]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 209
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 92
+[main] - [internal], line ??
+
+
+
+2015-12-10 19:51:12 Error: [Cake\Error\FatalErrorException] syntax error, unexpected ';'
+Request URL: /users/map
+Stack Trace:
+#0 C:\wamp\www\rideshare\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(92): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', 'C:\\wamp\\www\\rid...', 104)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-12-10 20:17:56 Error: Fatal Error (4): syntax error, unexpected '=', expecting ']' in [C:\wamp\www\rideshare\src\Template\Users\map.ctp, line 99]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 209
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 92
+[main] - [internal], line ??
+
+
+
+2015-12-10 20:17:56 Error: [Cake\Error\FatalErrorException] syntax error, unexpected '=', expecting ']'
+Request URL: /users/map
+Stack Trace:
+#0 C:\wamp\www\rideshare\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(92): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', 'C:\\wamp\\www\\rid...', 99)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-12-10 20:36:33 Warning: Warning (2): session_destroy(): Trying to destroy uninitialized session in [C:\wamp\www\rideshare\src\Controller\UsersController.php, line 129]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 140
+session_destroy - [internal], line ??
+App\Controller\UsersController::logout() - APP/Controller\UsersController.php, line 129
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 429
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2015-12-10 20:38:00 Warning: Warning (2): session_destroy(): Trying to destroy uninitialized session in [C:\wamp\www\rideshare\src\Controller\UsersController.php, line 129]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 140
+session_destroy - [internal], line ??
+App\Controller\UsersController::logout() - APP/Controller\UsersController.php, line 129
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 429
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2015-12-10 20:38:19 Warning: Warning (2): session_destroy(): Trying to destroy uninitialized session in [C:\wamp\www\rideshare\src\Controller\UsersController.php, line 129]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 140
+session_destroy - [internal], line ??
+App\Controller\UsersController::logout() - APP/Controller\UsersController.php, line 129
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 429
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2015-12-10 20:45:55 Warning: Warning (2): session_destroy(): Trying to destroy uninitialized session in [C:\wamp\www\rideshare\src\Controller\UsersController.php, line 129]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 140
+session_destroy - [internal], line ??
+App\Controller\UsersController::logout() - APP/Controller\UsersController.php, line 129
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 429
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2015-12-10 20:48:10 Warning: Warning (2): session_destroy(): Trying to destroy uninitialized session in [C:\wamp\www\rideshare\src\Controller\UsersController.php, line 129]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 140
+session_destroy - [internal], line ??
+App\Controller\UsersController::logout() - APP/Controller\UsersController.php, line 129
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 429
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2015-12-10 20:48:21 Warning: Warning (2): session_destroy(): Trying to destroy uninitialized session in [C:\wamp\www\rideshare\src\Controller\UsersController.php, line 129]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 140
+session_destroy - [internal], line ??
+App\Controller\UsersController::logout() - APP/Controller\UsersController.php, line 129
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 429
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2015-12-10 21:21:20 Warning: Warning (2): session_destroy(): Trying to destroy uninitialized session in [C:\wamp\www\rideshare\src\Controller\UsersController.php, line 129]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 140
+session_destroy - [internal], line ??
+App\Controller\UsersController::logout() - APP/Controller\UsersController.php, line 129
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 429
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2015-12-10 21:25:21 Warning: Warning (2): session_destroy(): Trying to destroy uninitialized session in [C:\wamp\www\rideshare\src\Controller\UsersController.php, line 129]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 140
+session_destroy - [internal], line ??
+App\Controller\UsersController::logout() - APP/Controller\UsersController.php, line 129
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 429
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2015-12-10 21:25:49 Warning: Warning (2): session_destroy(): Trying to destroy uninitialized session in [C:\wamp\www\rideshare\src\Controller\UsersController.php, line 129]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 140
+session_destroy - [internal], line ??
+App\Controller\UsersController::logout() - APP/Controller\UsersController.php, line 129
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 429
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+

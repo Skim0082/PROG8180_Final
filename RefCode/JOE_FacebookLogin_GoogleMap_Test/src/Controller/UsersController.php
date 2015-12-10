@@ -34,6 +34,14 @@ class UsersController extends AppController
         parent::beforeFilter($event);
     }
 
+    public function userlist()
+    {
+        $this->set('users', $this->Users->find('all'));
+
+        $loginuser = $this->Auth->user();
+        $this->set(compact('loginuser'));
+    } 
+
     public function profile($id = null)
     {
         if($id == null){
@@ -58,12 +66,43 @@ class UsersController extends AppController
                 $this->Auth->setUser($user->toArray());
 
                 $this->Flash->success(__('Your profile has been updated.'));
-                return $this->redirect(['controller' => 'Users', 'action' => 'profile', $user->id]);
+
+                return $this->redirect(['controller' => 'Users', 'action' => 'profile', $user->id]);                   
             }
             $this->Flash->error(__('Unable to update your profile.'));
         }
         $this->set('user', $user);      
-    }    
+    } 
+
+    public function useredit($id = null)
+    {
+        $user = $this->Users->get($id);
+        
+        if ($this->request->is(['put'])) {
+            
+            $this->Users->patchEntity($user, $this->request->data);
+            
+            if ($this->Users->save($user)) {
+
+                $this->Flash->success(__('Your profile has been updated by Admin.'));
+
+                return $this->redirect(['action' => 'userlist']);               
+            }
+            $this->Flash->error(__('Unable to update your profile.'));
+        }
+        $this->set('user', $user);  
+    }  
+
+    public function delete($id)
+    {
+        $this->request->allowMethod(['post', 'delete']);
+
+        $user = $this->Users->get($id);
+        if ($this->Users->delete($user)) {
+            $this->Flash->success(__('The user with id: {0} has been deleted.', h($id)));
+        }
+        return $this->redirect(['action' => 'userlist']);        
+    }      
 	
 	public function login()
 	{
@@ -71,7 +110,14 @@ class UsersController extends AppController
 			$user = $this->Auth->identify();
 			if ($user) {
 				$this->Auth->setUser($user);
-				return $this->redirect($this->Auth->redirectUrl());
+                if($user['role']=='admin'){
+                    //$this->set('loginuser', $user);
+                    return $this->redirect(['controller'=>'Users', 'action' => 'userlist']); 
+                }else{
+                    //return $this->redirect($this->Auth->redirectUrl());
+                    return $this->redirect(['controller'=>'Users', 'action' => 'map']);                    
+                }
+
 			}
 			$this->Flash->error(__('Invalid username or password, try again'));
 		}
@@ -84,11 +130,32 @@ class UsersController extends AppController
 		return $this->redirect($this->Auth->logout());
 	}	
 
-    public function index()
+    public function map()
     {
-        $this->set('users', $this->Users->find('all'));
-    }
+        $map = "map";
+        $loginuser = $this->Auth->user();
+        $this->set(compact('loginuser'));  
 
+        $data = [];
+        
+        if ($this->request->is('post')) {
+
+            $data = [
+                'From' => $this->request->data['From'],
+                'To' => $this->request->data['To'],
+                'Map' => $this->request->data['Map'],
+                'KeyWord' => $this->request->data['KeyWord'],
+                'latitude1' => $this->request->data['latitude1'],
+                'longitude1' => $this->request->data['longitude1'],
+                'latitude2' => $this->request->data['latitude2'],
+                'longitude2' => $this->request->data['longitude2']
+            ];
+            
+            $this->set('result', $data);    
+        } 
+        //debug($data);     
+    }
+    
     public function add()
     {
         $user = $this->Users->newEntity();
@@ -162,7 +229,8 @@ class UsersController extends AppController
 
                         $this->Auth->setUser($user->toArray());
                         //$this->redirect(BASE_PATH.'articles/index');
-                        return $this->redirect($this->Auth->redirectUrl());
+                        //return $this->redirect($this->Auth->redirectUrl());
+                        return $this->redirect(['controller'=>'Users', 'action' => 'map']); 
                     //}                    
 
                 }else{
@@ -175,7 +243,10 @@ class UsersController extends AppController
                         $data = [
                             'username' => $fb_data['name'],
                             'facebook_id' => $fb_data['id'],
-                            'email' => $fb_data['email'],
+                            //'email' => $fb_data['email'],
+                            'first_name' => "James",
+                            'last_name' => "Na",
+                            'email' => "joe215@gmail.com",
                             'password' => $this->request->data['password']
                         ];
 
@@ -190,18 +261,19 @@ class UsersController extends AppController
 
                             $this->Flash->success(__('The user "'. $fb_data['name'] . '"" has been saved.'));
                             //$this->redirect(BASE_PATH.'articles/index');                        
-                            return $this->redirect($this->Auth->redirectUrl());
+                            //return $this->redirect($this->Auth->redirectUrl());
+                            return $this->redirect(['controller'=>'Users', 'action' => 'map']); 
 
                         }else{
                             $this->Flash->error(__('Unable to add the user.'));
-                            $this->redirect(BASE_PATH.'users/login');
+                            return $this->redirect(['action' => 'login']);
                         }
                     }
                 }
 
             }else{
                 $this->Flash->error(__('Unable to add the user.'));
-                $this->redirect(BASE_PATH.'users/login');
+                return $this->redirect(['action' => 'login']);
             }
         }else{
             $this->set('username', "");
@@ -215,6 +287,12 @@ class UsersController extends AppController
         if (in_array($this->request->action, ['add'])){
             return true;
         }
+
+        if (in_array($this->request->action, ['userlist'])){
+            if($this->Auth->user()['role'] === 'admin'){
+                return true;    
+            }            
+        }        
 
         // Show the only owner profile of logined user.
         if (in_array($this->request->action, ['profile'])){
@@ -231,10 +309,14 @@ class UsersController extends AppController
         }
 
         // The owner of an article can edit and delete it
-        if (in_array($this->request->action, ['edit', 'delete'])) {
+        if (in_array($this->request->action, ['edit', 'delete', 'useredit'])) {
 
             $requestedId = $this->request->params['pass'][0];
             $loginedId = $this->Auth->user()['id'];
+
+            if($this->Auth->user()['role'] == 'admin' ){
+                return true;
+            }
 
             if ($this->Users->isOwnedBy($requestedId, $loginedId)) {
                 return true;

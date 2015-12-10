@@ -16,6 +16,7 @@
 		<li>User Name : <?= $user['username'] ?></li>
 		<li>Gender : <?= $user['gender']=='M'? "Male" : "Female" ?></li>
 		<li>Contact Detail : <?= $user['contactDetail'] ?></li>
+		<li>Default Address : <?= $user['address'] ?></li>
 		<li>Vehicle Info. : <?= $user['vehicle'] ?></li>
 		<li>Smoking : <?= $user['isSmoking']==1? "Yes" : "No" ?></li>
 	</ul>
@@ -26,6 +27,8 @@
 			if(($user['id'] != null && $user['id'] != "")
 				 || $user['role'] == 'admin'){
 				echo "<div id='logout'>";
+				echo $this->Html->link('Search', ['action' => 'map']);	
+				echo " | ";	
 				echo $this->Html->link('Edit', ['action' => 'edit', $user['id']]);	
 				echo "</div>";
 			}			

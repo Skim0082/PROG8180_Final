@@ -100,6 +100,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `modified` datetime DEFAULT NULL,
   `status` int(11) DEFAULT NULL,
   `facebook_id` varchar(20) DEFAULT NULL,
+  `address` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `email` (`email`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=75 ;

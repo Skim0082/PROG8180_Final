@@ -8,13 +8,29 @@ use App\Controller\UsersController;
 
 class ArticlesController extends AppController{
 
+    public $paginate = [
+        'limit' => 7,
+        'order' => [
+            'Articles.title' => 'asc'
+        ]
+    ];
+
+    public function initialize()
+    {
+        parent::initialize();
+        $this->loadComponent('Paginator');
+    }
+
     public function index()
     {
         $articles = $this->Articles->find('all')->contain(['Authors', 'Comments', 'UnapprovedComments', 'Tags']);
         $this->set(compact('articles'));
+        //$this->set('articles', $this->paginate());
+
 		
 		$loginuser = $this->Auth->user();
-		$this->set(compact('loginuser'));	
+		$this->set('loginuser', $loginuser);
+		//$this->set(compact('loginuser'));	
     }
     public function view($id = null)
     {
@@ -44,7 +60,8 @@ class ArticlesController extends AppController{
 			$data = [
 				'From' => $this->request->data['From'],
 				'To' => $this->request->data['To'],
-				'Map' => $this->request->data['Map']
+				'Map' => $this->request->data['Map'],
+				'KeyWord' => $this->request->data['KeyWord']
 			];
 			
 			$this->set('result', $data);	

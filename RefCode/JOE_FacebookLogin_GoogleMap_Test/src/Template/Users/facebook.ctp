@@ -24,7 +24,7 @@
 			<legend><?= __('Sign Up - set password') ?></legend>
 			<?= $this->Form->input('password') ?>
 			<?= $this->Form->input('role', [
-				'options' => ['author' => 'Author']
+				'options' => ['user' => 'User']
 			]) ?>			
 	   </fieldset>
 	<?= $this->Form->button(__('Submit')); ?>

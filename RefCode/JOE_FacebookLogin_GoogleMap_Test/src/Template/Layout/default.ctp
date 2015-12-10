@@ -38,7 +38,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <nav class="top-bar expanded" data-topbar role="navigation">
         <ul class="title-area large-3 medium-4 columns">
             <li class="name">
-                <h1><?= $this->Html->link('Posting List', ['controller' => 'Articles', 'action' => 'index']) ?></h1>				
+                <h1><?= $this->Html->link('Ride Share', ['controller' => 'Users', 'action' => 'map']) ?></h1>				
             </li>
         </ul>
         <section class="top-bar-section">

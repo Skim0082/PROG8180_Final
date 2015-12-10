@@ -13,8 +13,8 @@
 </div>	
 <div id="FbLoging">
 <p>	
-	<a href="/fblogin/users/facebook" class="facebookConnect">
-		<img src="/fblogin/img/fb_login.png" alt="Login with Facebook">
+	<a href="/users/facebook" class="facebookConnect">
+		<img src="/img/fb_login.png" alt="Login with Facebook">
 	</a>	
 </p>
 </div>

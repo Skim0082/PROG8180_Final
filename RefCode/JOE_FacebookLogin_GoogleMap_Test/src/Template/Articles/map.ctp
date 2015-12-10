@@ -17,6 +17,7 @@
 	<?php
 		echo $this->Form->input('From', ['required'=> true]);	//, 'value'=>'Kitchener, 120 Old Carriage Dr'
 		echo $this->Form->input('To', ['required'=> true]);		//, 'value'=>'Kitchener, 299 Doon Valley Dr'
+		echo $this->Form->input('KeyWord');
 
 		$options = [
 			'ROADMAP' => 'ROADMAP',
@@ -97,4 +98,51 @@
 		?>
 
 	</div>	
+</div>
+<div id="Gmap">
+<?php
+	if(!empty($result)){
+
+		echo '<p><h3>Result for: Dec 10, 2015</h3>';
+		echo 'From: ' . $result['From'] . " / To: " . $result['To'] . " / Key: " . $result['KeyWord'] . "</p>";
+
+		echo '<table>';
+		echo '<tr>';
+		echo '<th>User ID</th>';		
+		echo '<th>User Name</th>';
+		echo '<th>Contact Detail</th>';
+		echo '</tr>';
+		echo '<tr>';
+		echo '<td>User ID</td>';		
+		echo '<td>User Name</td>';
+		echo '<td>Contact Detail</td>';
+		echo '</tr>';		
+		echo '</table>';
+	}
+
+?>
+	<table>
+		<tr>
+			<th>User ID</th>			
+			<th>User Name</th>
+			<th>Contact Detail</th>
+		</tr>
+		<tr>
+			<td>User ID</td>			
+			<td>User Name</td>
+			<td>Contact Detail</td>			
+		</tr>
+		<tr>
+			<td>User ID</td>			
+			<td>User Name</td>
+			<td>Contact Detail</td>			
+		</tr>
+		<tr>
+			<td>User ID</td>			
+			<td>User Name</td>
+			<td>Contact Detail</td>			
+		</tr>				
+	</table>
+
+
 </div>

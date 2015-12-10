@@ -11,12 +11,12 @@
 	?>
 </div>
 <div id="main-list">
-	<h1>Blog articles</h1>
+	<h1>Posting List</h1>
 	<table>
 		<tr>
 			<th>ID</th>
 			<th>Title</th>
-			<th>Author</th>
+			<th>Poster</th>
 			<?php
 				//debug($loginuser['role']);
 				if($loginuser['id'] != null){

@@ -9,7 +9,7 @@
 	?>
 </div>
 <div id="main">
-	<h1>Add Article</h1>
+	<h1>Add New Posting</h1>
 	<?php
 		echo $this->Form->create($article);
 		echo $this->Form->input('title');

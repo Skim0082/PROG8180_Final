@@ -16,6 +16,8 @@
 		echo $this->Form->input('first_name', ['required'=> true]);	
 		echo $this->Form->input('last_name', ['required'=> true]);	
 		echo $this->Form->input('username', ['required'=> true]);	
+		echo $this->Form->input('email', ['required'=> true]);	
+		echo $this->Form->input('address');
 		//echo $this->Form->input('gender');
 		echo $this->Form->input('gender', [
 				'options' => ['M' => 'Male','F' =>'Female']
