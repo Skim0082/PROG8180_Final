@@ -57,6 +57,7 @@ $cakeDescription = 'Cocors:Conestoga College Ride Sharing System';
     <?= $this->Html->script('//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js') ?> 
     <?= $this->Html->script('facebook') ?>
     <?= $this->Html->script('http://code.jquery.com/ui/1.11.4/jquery-ui.js') ?>
+    <?= $this->Html->script('http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js') ?>
     <?= $this->Html->script('http://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.8.8/jquery.timepicker.min.js') ?>
     <?= $this->Html->script('getinput.js');  ?>
 </html>

@@ -16,7 +16,7 @@
       <li><a href="/">Home <span class="sr-only">(current)</span></a></li>
         <li><a href="/users">User List <span class="sr-only">(current)</span></a></li>
         <li class="dropdown">
-          <a href="/posts/search" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ride Match <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ride Match <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="/posts">Post List</a></li>
             <li><a href="#">Recent View</a></li>

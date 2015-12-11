@@ -14121,3 +14121,219 @@ Stack Trace:
 #1 {main}
 
 
+2015-12-11 19:01:53 Error: [Cake\Controller\Exception\MissingActionException] Action PostsController::search() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'PostsController',
+  'action' => 'search',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /posts/search
+Stack Trace:
+#0 /Users/infomat/src/web/PROG8180_Final/Src/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /Users/infomat/src/web/PROG8180_Final/Src/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\PostsController))
+#2 /Users/infomat/src/web/PROG8180_Final/Src/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2015-12-11 19:02:02 Error: [Cake\Controller\Exception\MissingActionException] Action PostsController::search() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'PostsController',
+  'action' => 'search',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /posts/search
+Stack Trace:
+#0 /Users/infomat/src/web/PROG8180_Final/Src/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /Users/infomat/src/web/PROG8180_Final/Src/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\PostsController))
+#2 /Users/infomat/src/web/PROG8180_Final/Src/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2015-12-11 19:02:16 Error: [Cake\Controller\Exception\MissingActionException] Action PostsController::search() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'PostsController',
+  'action' => 'search',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /posts/search
+Stack Trace:
+#0 /Users/infomat/src/web/PROG8180_Final/Src/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /Users/infomat/src/web/PROG8180_Final/Src/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\PostsController))
+#2 /Users/infomat/src/web/PROG8180_Final/Src/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2015-12-11 19:02:19 Error: [Cake\Controller\Exception\MissingActionException] Action PostsController::search() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'PostsController',
+  'action' => 'search',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /posts/search
+Stack Trace:
+#0 /Users/infomat/src/web/PROG8180_Final/Src/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /Users/infomat/src/web/PROG8180_Final/Src/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\PostsController))
+#2 /Users/infomat/src/web/PROG8180_Final/Src/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2015-12-11 19:19:27 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Add could not be found.
+Exception Attributes: array (
+  'class' => 'Add',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /add/post
+Stack Trace:
+#0 /Users/infomat/src/web/PROG8180_Final/Src/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-12-11 19:19:34 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /css/images/ui-bg_flat_75_ffffff_40x100.png
+Stack Trace:
+#0 /Users/infomat/src/web/PROG8180_Final/Src/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-12-11 19:19:35 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /css/images/ui-bg_flat_75_ffffff_40x100.png
+Stack Trace:
+#0 /Users/infomat/src/web/PROG8180_Final/Src/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-12-11 19:19:38 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /css/images/ui-bg_highlight-soft_75_cccccc_1x100.png
+Stack Trace:
+#0 /Users/infomat/src/web/PROG8180_Final/Src/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-12-11 19:19:38 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /css/images/ui-bg_glass_55_fbf9ee_1x400.png
+Stack Trace:
+#0 /Users/infomat/src/web/PROG8180_Final/Src/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-12-11 19:19:38 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /css/images/ui-icons_222222_256x240.png
+Stack Trace:
+#0 /Users/infomat/src/web/PROG8180_Final/Src/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-12-11 19:19:38 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /css/images/ui-bg_glass_75_e6e6e6_1x400.png
+Stack Trace:
+#0 /Users/infomat/src/web/PROG8180_Final/Src/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-12-11 19:22:27 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /css/images/ui-bg_flat_75_ffffff_40x100.png
+Stack Trace:
+#0 /Users/infomat/src/web/PROG8180_Final/Src/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-12-11 19:22:34 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /css/images/ui-icons_222222_256x240.png
+Stack Trace:
+#0 /Users/infomat/src/web/PROG8180_Final/Src/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-12-11 19:22:34 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /css/images/ui-bg_highlight-soft_75_cccccc_1x100.png
+Stack Trace:
+#0 /Users/infomat/src/web/PROG8180_Final/Src/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-12-11 19:22:34 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /css/images/ui-bg_glass_75_e6e6e6_1x400.png
+Stack Trace:
+#0 /Users/infomat/src/web/PROG8180_Final/Src/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-12-11 19:22:35 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /css/images/ui-bg_glass_55_fbf9ee_1x400.png
+Stack Trace:
+#0 /Users/infomat/src/web/PROG8180_Final/Src/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
