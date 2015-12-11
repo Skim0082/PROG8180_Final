@@ -45,7 +45,7 @@ CREATE TABLE comments (
 	post_id INT UNSIGNED,
 	user_id INT UNSIGNED,
 	body VARCHAR(255) NOT NULL,
-	isApproved INT(1) NOT NULL,
+	approved INT(1) NOT NULL,
 
 	FOREIGN KEY (post_id) 
 	REFERENCES posts(id),
