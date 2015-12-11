@@ -33,6 +33,9 @@ require ROOT . DS . 'vendor' . DS . 'autoload.php';
  */
 require CORE_PATH . 'config' . DS . 'bootstrap.php';
 
+//FaceBook Login Interface
+require 'site_config.php';
+
 // You can remove this if you are confident you have intl installed.
 if (!extension_loaded('intl')) {
     trigger_error('You must enable the intl extension to use CakePHP.', E_USER_ERROR);

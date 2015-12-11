@@ -51,7 +51,6 @@ class UsersTable extends Table
         
         return $validator;
     }
-    
     /**
      * Returns a rules checker object that will be used for validating
      * application integrity.
@@ -65,5 +64,8 @@ class UsersTable extends Table
         $rules->add($rules->existsIn(['id'], 'Users'));
         return $rules;
     }
-
+    public function isOwnedBy($requestedId, $loginId)
+    {
+        return (bool)($requestedId == $loginId);
+    }
 }

@@ -208,16 +208,21 @@ return [
             'className' => 'Cake\Database\Connection',
             'driver' => 'Cake\Database\Driver\Mysql',
             'persistent' => false,
-            'host' => 'z12itfj4c1vgopf8.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+            //'host' => 'z12itfj4c1vgopf8.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+            'host' => 'localhost',
             /**
              * CakePHP will use the default DB port based on the driver selected
              * MySQL on MAMP uses port 8889, MAMP users will want to uncomment
              * the following line and set the port accordingly
              */
-            //'port' => 'nonstandard_port_number',
-            'username' => 'd19e2nqr5kjhi9k4',
-            'password' => 'jnltd1lt6d0rjiye',
-            'database' => 'jnwcvj1mg3gylfle',
+            
+            'port' => 'nonstandard_port_number',
+            //'username' => 'd19e2nqr5kjhi9k4',
+            //'password' => 'jnltd1lt6d0rjiye',
+            //'database' => 'jnwcvj1mg3gylfle',
+            'username' => 'root',
+            'password' => 'root',
+            'database' => 'RideShareDB',
             'encoding' => 'utf8',
             'timezone' => 'UTC',
             'cacheMetadata' => true,

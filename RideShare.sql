@@ -9,11 +9,12 @@ CREATE TABLE users (
 	password VARCHAR(255) NOT NULL,
 	firstname VARCHAR(255) NOT NULL,
 	lastname VARCHAR(255) NOT NULL,
-	nickname VARCHAR(255) NOT NULL,
-	sex CHAR(1) NOT NULL,
+	username VARCHAR(255) NOT NULL,
+	gender CHAR(1) NOT NULL,
 	isSmoking INT(1) NOT NULL,
 	contactDetail VARCHAR(255) NOT NULL,
 	vehicle VARCHAR(255) NOT NULL,
+    facebood_id VARCHAR(255) NOT NULL,
     created DATETIME DEFAULT NULL,
     modified DATETIME DEFAULT NULL,
 	UNIQUE KEY (email),
@@ -31,12 +32,12 @@ CREATE TABLE posts (
 	preferredContact VARCHAR(255) NOT NULL,
 	departureDate CHAR(10),
 	departureTime CHAR(8),
-	srcStreet VARCHAR(255) NOT NULL,
-	srcCity VARCHAR(255) NOT NULL,
-	srcPostal CHAR(7) NOT NULL,
-	dstStreet VARCHAR(255) NOT NULL,
-	dstCity VARCHAR(255) NOT NULL,
-	dstPostal CHAR(7) NOT NULL,	
+	srcAddr VARCHAR(255) NOT NULL,
+	srcLongitude float NOT NULL,
+    srcLatitude float NOT NULL,
+	dstAddr VARCHAR(255) NOT NULL,
+    dstLongitude float NOT NULL,
+    dstLatitude float NOT NULL,
 	FOREIGN KEY user_key(user_id) REFERENCES users(id)
 );
 
@@ -53,5 +54,25 @@ CREATE TABLE comments (
 	REFERENCES users(id),
 	
 	CONSTRAINT Users_Comments_PK
+	PRIMARY KEY (post_id, user_id)
+)
+
+CREATE TABLE tags (
+  id  INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` varchar(20) NOT NULL,
+  PRIMARY KEY (`tag_id`)
+)
+
+CREATE TABLE poststags (
+    tag_id  INT UNSIGNED,
+    post_id INT UNSIGNED,
+    
+    FOREIGN KEY (post_id) 
+	REFERENCES posts(id),
+	
+	FOREIGN KEY (tag_id) 
+	REFERENCES tags(id),
+	
+	CONSTRAINT Posts_Tags_PK
 	PRIMARY KEY (post_id, user_id)
 )

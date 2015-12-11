@@ -26,67 +26,37 @@ $cakeDescription = 'Cocors:Conestoga College Ride Sharing System';
     </title>
     <?= $this->Html->meta('icon') ?>
 
+    <?= $this->Html->css('https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/flatly/bootstrap.min.css') ?>
+    <?= $this->Html->css('jquery-ui.css') ?> 
     <?= $this->Html->css('base.css') ?>
     <?= $this->Html->css('cake.css') ?>
-    <?= $this->Html->css('cocors.css') ?>
-    <?php /*This is for jquery */ ?>
-    <?= $this->Html->css('http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css') ?>
-    <?= $this->Html->css('https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.8.8/jquery.timepicker.min.css') ?>
-    <?= $this->Html->script('http://code.jquery.com/jquery-1.10.2.js') ?>
-    <?= $this->Html->script('http://code.jquery.com/ui/1.11.4/jquery-ui.js') ?>
-    <?= $this->Html->script('http://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.8.8/jquery.timepicker.min.js') ?>
-    <?= $this->Html->script('getinput.js');  ?>
+    <?= $this->Html->css('jquery.timepicker.min.css') ?>
+    <?= $this->Html->css('cocors.css') ?> 
     
+    <?= $this->Html->script('https://maps.google.com/maps/api/js?sen sor=true') ?>
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
 </head>
 <body>
     <header>
-    <h1>COCORS<small>Conestoga College Ride Sharing System</small><a href="http://cocors.heroku.com"></h1>
-    
+        <h1>COCORS<small>Conestoga College Ride Sharing System</small><a href="#"></h1>
     </header>
-    <nav class="top-bar expanded navmenu" data-topbar role="navigation">
-        <div class="container">
-            <ul class="title-area navmenu pull-right" id="pull-right">
-                <li>
-                    <?= $this->Html->link('My profile', ['controller' => 'Users', 'action' => 'view']) ?>				
-                </li>
-                <li>
-                    <?= $this->Html->link('User Management', ['controller' => 'Users', 'action' => 'index', ]) ?>		
-                </li>
-            </ul>
-            <ul class="title-area navmenu" id="pull-left">
-                <li>
-                    <?= $this->Html->link('Home', ['controller' => 'pages', 'action' => 'display']) ?>				
-                </li>
-                <li>
-                    <?= $this->Html->link('Add Post', ['controller' => 'Posts', 'action' => 'add']) ?>				
-                </li>
-                <li>
-                    <?= $this->Html->link('Search', ['controller' => 'Posts', 'action' => 'index']) ?>				
-                </li>
-            </ul>
-        </div>
+    <nav class="navbar navbar-default">
+        <?= $this->element('navbar'); ?>
     </nav>
     <?= $this->Flash->render() ?>
     <section class="container clearfix">
         <?= $this->fetch('content') ?>
     </section>
     <footer>
-		<nav class="top-bar expanded" data-topbar role="navigation">
-			<ul class="title-area large-3 medium-4 columns">
-				<li class="name">
-					<h1><li><a target="_blank" href="http://cocors.heroku.com">Cocors</a></li></h1>
-				</li>
-			</ul>
-			<section class="top-bar-section">
-				<ul class="right">
-					<li><a target="_blank" href="http://cocors.heroku.com">Conestoga College Ride Sharing System</li>
-				</ul>
-			</section>
-		</nav>	
-	
+        <?= $this->element('footer'); ?>
     </footer>
 </body>
+    <!-- To avoid conflict between script and redering speed, scripts are placed here  (CCH)  -->
+    <?= $this->Html->script('//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js') ?> 
+    <?= $this->Html->script('facebook') ?>
+    <?= $this->Html->script('http://code.jquery.com/ui/1.11.4/jquery-ui.js') ?>
+    <?= $this->Html->script('http://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.8.8/jquery.timepicker.min.js') ?>
+    <?= $this->Html->script('getinput.js');  ?>
 </html>

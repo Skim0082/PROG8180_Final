@@ -134,7 +134,7 @@ class Mobile_Detect
     protected static $mobileHeaders = array(
 
             'HTTP_ACCEPT'                  => array('matches' => array(
-                                                                        // Opera Mini; @reference: http://dev.opera.com/Posts/view/opera-binary-markup-language/
+                                                                        // Opera Mini; @reference: http://dev.opera.com/articles/view/opera-binary-markup-language/
                                                                         'application/x-obml2d',
                                                                         // BlackBerry devices.
                                                                         'application/vnd.rim.html',

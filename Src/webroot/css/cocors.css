@@ -1,5 +1,83 @@
+.view-comment {
+    background: #EFEBE9;
+    padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 10px;
+    padding-bottom: 10px;
+    border: solid #ddd 1px; 
+	margin-bottom: 10px;
+    margin-top:0;
+}
+ul.unapprovedcomment{
+	color: red;
+}
+#main {
+    width: 90%;
+    margin-top:20px;
+    margin-left:5%;
+    margin-right:5%;
+    text-align: left;
+    background: white;
+    padding: 5px 50px 20px;
+    border: solid #ddd;
+    border-width: 1px;
+}
+#FbLoging {
+    width: 90%;
+    margin-top:10px;
+    margin-left:5%;
+    margin-right:5%;
+    text-align: center;
+    background: white;
+    padding-top: 20px;
+    border: solid #ddd;
+    border-width: 1px;
+}
+#main-list {
+    width: 100%;
+    margin: 0 auto;
+    background: white;
+    text-align:center;
+    padding-left: 20px;
+	padding-right: 20px;
+}
+#logout{
+	width: 100%;
+	text-align:right;
+	padding-right: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+hr{
+	margin-top: 0;
+	margin-bottom: 10px;
+}
+.edit-comment{
+	background: #EFEBE9;
+    padding: 5px; 
+	margin-bottom: 10px;
+	border: solid #ddd 1px;
+}
+.GgoogleMap{
+    text-align:center;
+    margin-top: 0;
+    margin-bottom: 10px;
+    border: solid #ddd 1px;
+}
+#Gmap {
+    width: 800px;
+    margin: 20px auto;
+    text-align: left;
+    background: white;
+    padding: 5px 50px 20px;
+    border: solid #ddd;
+    border-width: 1px;
+}
+
 header h1 {
     color:#333333;
+    margin-top: 0.2em;
+    padding: 0.1em 0.3em 0.1em 0.3em;
 }
 
 header h1 small {
@@ -7,33 +85,27 @@ header h1 small {
     color:#E0FFFF;
 }
 
-nav a {
+nav ul {
   color: #5a5a5a;
   font-size: 0.8em;
-  font-weight: bold;
   text-transform: uppercase;
-}
-
-.navmenu a {
-  color: #eeeeee;
-  font-size: 11px;
-  font-weight: bold;
-  padding: 14px 10px;
-  text-transform: uppercase;
-}
-
-.navmenu li{
-    display: inline;
 }
 
 
 #pull-left {
     float:left;
-    width: 50%
+    width: 60%
 }
 
 
 #pull-right {
     float:right;
-    width: 20%
+    width: 25%
+}
+#searchbox {
+    margin-top: 0.4em;
+}
+
+#footer {
+    font-size: 70%
 }

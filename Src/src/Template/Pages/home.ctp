@@ -1,35 +1,15 @@
-<!-- views/pages/index.ejs -->
+<div id="main">
+    <div class="jumbotron">
+        <h1>This is Home Page</h1>
+        <p>Welcome to templating using EJS</p>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <?= $this->element('homehead');?>
-</head>
-<body class="container">
-    
-    <header>
-    <?=    $this->element('homeheader'); ?>
-    </header>
+        <h2>This is an example of using element which is located element folder</h2>
 
-    <main>
-        <div class="jumbotron">
-            <h1>This is Home Page</h1>
-            <p>Welcome to templating using EJS</p>
+        <ol>
+          <li>create common html with ctp at Template-Element folder</li>
+          <li>Just Call $this->element('homeheader') </li>
+          <li>Note that there's no ctp extension at the above statement  </li>
+        </ol>
+    </div>
+</div>
 
-            <h2>This is an example of using element which is located element folder</h2>
-    
-            <ol>
-              <li>create common html with ctp at Template-Element folder</li>
-              <li>Just Call $this->element('homeheader') </li>
-              <li>Note that there's no ctp extension at the above statement  </li>
-            </ol>
-
-        </div>
-    </main>
-
-    <footer>
-    <?= $this->element('footer'); ?>
-    </footer>
-    
-</body>
-</html>

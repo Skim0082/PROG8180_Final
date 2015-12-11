@@ -1,0 +1,12 @@
+2015-11-13 21:20:55 Error: [Cake\Console\Exception\MissingShellException] Shell class for "?" could not be found.
+Exception Attributes: array (
+  'class' => '?',
+)
+Stack Trace:
+#0 C:\wamp\www\Test\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(209): Cake\Console\ShellDispatcher->findShell('?')
+#1 C:\wamp\www\Test\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(179): Cake\Console\ShellDispatcher->_dispatch(Array)
+#2 C:\wamp\www\Test\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(126): Cake\Console\ShellDispatcher->dispatch(Array)
+#3 C:\wamp\www\Test\bin\cake.php(33): Cake\Console\ShellDispatcher::run(Array)
+#4 {main}
+
+

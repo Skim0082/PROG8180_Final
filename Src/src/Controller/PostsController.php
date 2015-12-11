@@ -3,39 +3,91 @@
 
 namespace App\Controller;
 
+use App\Controller\UsersController;
+
+
 class PostsController extends AppController{
-    
+
+    public $paginate = [
+        'limit' => 7,
+        'order' => [
+            'Posts.title' => 'asc'
+        ]
+    ];
+
+    public function initialize()
+    {
+        parent::initialize();
+        $this->loadComponent('Paginator');
+    }
+
     public function index()
     {
-        $Posts = $this->Posts->find('all')->contain(['Users', 'Comments', 'UnapprovedComments']);
+        $Posts = $this->Posts->find('all')->contain(['Users', 'Comments', 'UnapprovedComments', 'Tags']);
         $this->set(compact('Posts'));
+       
+
 		
 		$loginuser = $this->Auth->user();
-		$this->set(compact('loginuser'));
+		$this->set('loginuser', $loginuser);
     }
-    
     public function view($id = null)
     {
         $post = $this->Posts->get($id, [
-			'contain' => ['Comments', 'UnapprovedComments']
+			'contain' => ['Comments', 'UnapprovedComments', 'Tags']
 		]);
         $this->set(compact('post'));
 		
-		$user = $this->Posts->Users->get($post->id);
+		$user = $this->Posts->Users->get($post->user_id);
 		$this->set(compact('user'));
 		
 		$loginuser = $this->Auth->user();
 		$this->set(compact('loginuser'));
+
     }	
+
+    public function map()
+    {
+    	$map = "map";
+		$loginuser = $this->Auth->user();
+		$this->set(compact('loginuser'));  
+
+		$data = [];
+		
+		if ($this->request->is('post')) {
+
+			$data = [
+				'From' => $this->request->data['From'],
+				'To' => $this->request->data['To'],
+				'Map' => $this->request->data['Map'],
+				'KeyWord' => $this->request->data['KeyWord']
+			];
+			
+			$this->set('result', $data);	
+		} 
+		//debug($data); 	
+    }
 	
     public function add()
     {
         $post = $this->Posts->newEntity();
 		
         if ($this->request->is('post')) {
-			$this->request->data['user_id'] = $this->Auth->user('id');
-		    $post = $this->Posts->patchEntity($post, $this->request->data);
-            
+
+			$data = [
+				'title' => $this->request->data['title'],
+				'body' => $this->request->data['body'],
+				'user_id' => $this->Auth->user('id'),
+				'tags' => [
+					'_ids'=>$this->request->data['tags']
+				]
+			];	
+			
+            $post = $this->Posts->patchEntity($post, $data,[
+				'associated' => ['Tags' => ['validate' => false]]
+			]);		
+
+		
             if ($this->Posts->save($post)) {
                 $this->Flash->success(__('Your post has been saved.'));
                 return $this->redirect(['action' => 'index']);
@@ -50,13 +102,14 @@ class PostsController extends AppController{
 	public function edit($id = null)
 	{
 		$post = $this->Posts->get($id, [
-			'contain' => ['Comments', 'UnapprovedComments']
+			'contain' => ['Comments', 'UnapprovedComments', 'Tags']
 		]);
 		
 		if ($this->request->is(['post', 'put'])) {
 			
 			$this->Posts->patchEntity($post, $this->request->data, [
 				'associated' => [
+					'Tags',
 					'Comments',
 					'UnapprovedComments'
 				]

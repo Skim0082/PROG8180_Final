@@ -19,20 +19,28 @@ class PostsTable extends Table
 			'className' => 'Comments',
 			'foreignKey' => 'post_id',
 			'dependent' => true,
+			'conditions' => ['approved' => true]
 		]);
 		
 		$this->hasMany('UnapprovedComments', [
 			'className' => 'Comments',
 			'foreignKey' => 'post_id',
 			'dependent' => true,			
-			'conditions' => ['isApproved' => false],
+			'conditions' => ['approved' => false],
             'propertyName' => 'unapproved_comments'
 		]);	
 		
+		$this->belongsToMany('Tags', [
+			'joinTable' => 'poststags'
+		]);
     }
     public function validationDefault(Validator $validator)
     {
         $validator
+            ->notEmpty('postType')
+            ->requirePresence('postType')
+            ->notEmpty('preferredContact')
+            ->requirePresence('preferredContact')
             ->notEmpty('seatsAvailable')
             ->requirePresence('seatsAvailable')
             ->notEmpty('costPerPerson')
@@ -41,10 +49,10 @@ class PostsTable extends Table
             ->requirePresence('departureDate')
             ->notEmpty('departureTime')
             ->requirePresence('departureTime')
-            ->notEmpty('srcPostal')
-            ->requirePresence('srcPostal')
-            ->notEmpty('dstPostal')
-            ->requirePresence('dstPostal');
+            ->notEmpty('srcAddr')
+            ->requirePresence('srcAddr')
+            ->notEmpty('dstAddr')
+            ->requirePresence('dstAddr');
 
         return $validator;
     }

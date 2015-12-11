@@ -1,4 +1,4 @@
   $(function() {
-    $( "#datepicker" ).datepicker();
+    $('#datepicker').datepicker();
     $('#timepicker').timepicker({ 'scrollDefault': 'now' });
   });

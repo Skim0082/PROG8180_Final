@@ -6,6 +6,10 @@ use Cake\Event\Event;
 
 class AppController extends Controller
 {
+    public function map() {
+    $this->helpers[] = 'Tools.GoogleMapHelper';
+    // rest of your code       
+    }
 
     public function initialize()
     {
@@ -28,7 +32,7 @@ class AppController extends Controller
                 'controller' => 'Posts',
                 'action' => 'index'
             ]
-        ]);
+        ]);   
     }
 	public function isAuthorized($user)
 	{
@@ -36,14 +40,13 @@ class AppController extends Controller
 		if (isset($user['role']) && $user['role'] === 'admin') {
 			return true;
 		}
-
 		// Default deny
 		return false;
 	}	
 	
     public function beforeFilter(Event $event)
     {
-        $this->Auth->allow(['index', 'view', 'display']);
+        $this->Auth->allow(['index', 'view', 'display','map']);
     }
 	
     /**
@@ -51,7 +54,8 @@ class AppController extends Controller
      *
      * @param \Cake\Event\Event $event The beforeRender event.
      * @return void
-
+    */
+    /*
     public function beforeRender(Event $event)
     {
         if (!array_key_exists('_serialize', $this->viewVars) &&

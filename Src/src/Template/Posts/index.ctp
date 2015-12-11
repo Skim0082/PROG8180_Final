@@ -1,6 +1,5 @@
 <!-- File: src/Template/Posts/index.ctp -->
 
-
 <div id="logout">
 	<?php
 		if($loginuser['id'] != null){
@@ -10,8 +9,11 @@
 		}
 	?>
 </div>
+
+
 <div id="main-list">
 	<h1>Riding Share Posts</h1>
+    <?php $this->GoogleMap->map(); ?>
 	<table>
 		<tr>
 			<th>ID</th>
@@ -68,11 +70,9 @@
 			</td>
             <td>
 				<?= $post->srcPostal ?>
-           
 			</td>
             <td>
 				<?= $post->dstPostal ?>
-          
 			</td>
 				<?php
 					if($loginuser['id'] != null){
