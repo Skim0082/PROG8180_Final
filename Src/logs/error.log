@@ -14404,3 +14404,16 @@ Stack Trace:
 #3 {main}
 
 
+2015-12-14 17:20:22 Error: [Cake\Routing\Exception\MissingControllerException] Controller class DocsAssets could not be found.
+Exception Attributes: array (
+  'class' => 'DocsAssets',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /docs-assets/ico/favicon.png
+Stack Trace:
+#0 /Users/infomat/src/web/PROG8180_Final/Src/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+

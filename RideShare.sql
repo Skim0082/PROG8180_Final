@@ -2,6 +2,8 @@ CREATE DATABASE RideShareDB;
 USE RideShareDB;
 
 
+
+
 CREATE TABLE users (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     role VARCHAR(255) NOT NULL,
@@ -14,7 +16,7 @@ CREATE TABLE users (
 	isSmoking INT(1) NOT NULL,
 	contactDetail VARCHAR(255) NOT NULL,
 	vehicle VARCHAR(255) NOT NULL,
-    facebood_id VARCHAR(255) NOT NULL,
+    facebood_id VARCHAR(20) NOT NULL,
     created DATETIME DEFAULT NULL,
     modified DATETIME DEFAULT NULL,
 	UNIQUE KEY (email),
@@ -55,13 +57,12 @@ CREATE TABLE comments (
 	
 	CONSTRAINT Users_Comments_PK
 	PRIMARY KEY (post_id, user_id)
-)
+);
 
 CREATE TABLE tags (
-  id  INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `name` varchar(20) NOT NULL,
-  PRIMARY KEY (`tag_id`)
-)
+  id  INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `name` varchar(20) NOT NULL
+);
 
 CREATE TABLE poststags (
     tag_id  INT UNSIGNED,
@@ -74,5 +75,5 @@ CREATE TABLE poststags (
 	REFERENCES tags(id),
 	
 	CONSTRAINT Posts_Tags_PK
-	PRIMARY KEY (post_id, user_id)
+	PRIMARY KEY (post_id, tag_id)
 )

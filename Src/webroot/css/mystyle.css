@@ -1,0 +1,35 @@
+#status {
+	color:#ffffff;
+	margin-right : 2em;
+    margin-left : 2em;
+}
+#status a {
+    color:#CCCC66;
+    margin-left : 2em;
+}
+
+#title a {
+   color:#362A1E; 
+    
+}
+
+.error {
+    color : red;
+}
+
+#tax_rate{
+    font-size: 70%;
+    color:darkred;
+}
+
+.topping{
+    font-weight: bold;
+}
+
+#topping_p {
+    margin-top:0.1em;
+    margin-bottom:0.2em;
+    font-size: 90%;
+    color:darkred;
+}
+

@@ -219,7 +219,7 @@ return [
             'port' => 'nonstandard_port_number',
             //'username' => 'd19e2nqr5kjhi9k4',
             //'password' => 'jnltd1lt6d0rjiye',
-            //'database' => 'jnwcvj1mg3gylfle',
+            //'database' => 'z12itfj4c1vgopf8.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
             'username' => 'root',
             'password' => 'root',
             'database' => 'RideShareDB',

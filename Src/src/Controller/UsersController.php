@@ -7,8 +7,9 @@ use App\Controller\AppController;
 use Cake\Event\Event;
 use Cake\Validation\Validation;
 
-define('FACEBOOK_SDK_V4_SRC_DIR','../Vendor/fb/src/Facebook/');
-require_once("../Vendor/fb/autoload.php");
+define('FACEBOOK_SDK_V4_SRC_DIR',$_SERVER['DOCUMENT_ROOT'].'/vendor/fb/src/Facebook/');
+
+require_once($_SERVER['DOCUMENT_ROOT']."/vendor/fb/autoload.php");
 
 use Facebook\FacebookSession;
 use Facebook\FacebookRedirectLoginHelper;
