@@ -1,53 +1,82 @@
 <!-- File: src/Template/Posts/view.ctp -->
-<div id="logout">
-	<?php
-		if($loginuser['id'] != null){
-			echo $this->Html->link('Log Out', ['controller' => 'Users', 'action' => 'logout']); 
-		}else{
-			echo $this->Html->link('Log In', ['controller' => 'Users', 'action' => 'login']);
-		}
-	?>
-</div>
 <div id="main">
-	<h1><?= h($post->title) ?> by <?= $user->username?></h1>
-
-	<p><?= h($post->body) ?></p>
-
-	<p>Created : <?= $post->created->format(DATE_RFC850) ?></p>
-
-	<div class="view-comment">
-		<?php
-			if(count($post -> tags)>0){
-				echo "<strong>Tag:</strong><ul>";
-				foreach ($post -> tags as $tag){
-					echo "<li>" . $tag -> tag . "</li>";
-				}
-				echo "</ul>";
-			}
-			
-			if($loginuser['id'] != null){
-				if(count($post -> comments)>0){
-					echo "<strong>Comments:</strong><ul>";
-					foreach ($post -> comments as $comment){
-						echo "<li>" . $comment -> comment . "</li>";
-					}
-					echo "</ul>";
-				}
-			}
-			
-			if($loginuser['role'] == 'admin'){
-				if(count($post -> unapproved_comments)>0){
-					echo "<ul class='unapprovedcomment'>";
-					foreach ($post -> unapproved_comments as $comment){
-						echo "<li>" . $comment -> comment . "</li>";
-						
-					}
-					echo "</ul>";
-				}
-			}			
-		?>
-	</div>
-
+    <?php
+        $map_options = array(
+            "localize" => false,
+            "type" => "ROADMAP",
+            "zoom" => 10,
+            "marker" => true,
+            "draggableMarker" => false,
+            "width"  => "100%",
+            "height" => "20em",
+            "infoWindow" => true
+        );
+    ?>
+    <table class="vertical-table">
+            <tr>
+                <th><?= __('Post ID') ?></th>
+                <td><?= h($post->id) ?></td>
+            </tr>
+            <tr>
+                <th><?= __('User') ?></th>
+                <td><?= h($user->nickname) ?></td>
+            </tr>
+            <tr>
+                <th><?= __('Post Type') ?></th>
+                <td><?= h($post->postType) ?></td>
+            </tr>
+            <tr>
+                <th><?= __('Number of Seats') ?></th>
+                <td><?= h($post->seatsAvailable) ?></td>
+            </tr>
+            <tr>
+                <th><?= __('Preferred Contact') ?></th>
+                <td><?= h($post->preferredContact) ?></td>
+            </tr>
+            <tr>
+                <th><?= __('Departure Date') ?></th>
+                <td><?= h($post->departureDate) ?></td>
+            </tr>
+            <tr>
+                <th><?= __('Departure Time') ?></th>
+                <td><?= h($post->departureTime) ?></td>
+            </tr>
+            <tr>
+                <th><?= __('Additional Comment') ?></th>
+                <td><?= h($post->description) ?></td>
+            </tr>
+            <tr>
+                <th><?= __('From:') ?></th>
+                <td><?= h($post->srcAddr) ?></td>
+            </tr>
+            <tr>
+                <th><?= __('To:') ?></th>
+                <td><?= h($post->dstAddr) ?></td>
+            </tr>
+            <tr>
+                <th><?= __('Created') ?></th>
+                <td><?= h($post->created) ?></td>
+            </tr>
+            <tr>
+                <th><?= __('Modified') ?></th>
+                <td><?= h($post->modified) ?></td>
+            </tr>
+    </table>
+    <h5>Directions by GoogleMap</h5>
+    <p class=cocorsnotice>* Directions are shown for user's convenience. It can be changed by driver</p>
+	<?php
+     echo $this->GoogleMap->map($map_options);
+    
+     echo '<div id="directions"> </div>';
+ 
+     echo   $this->GoogleMap->getDirections("map_canvas", "directions1", array(
+        "from" => array("latitude" => $post->srcLatitude, "longitude" => $post->srcLongitude),
+        "to"   => array("latitude" => $post->dstLatitude, "longitude" => $post->dstLongitude)
+        ), array(
+        "travelMode" => "DRIVING",
+        "directionsDiv" => "directions",
+       ));
+    ?>
 	<p>
 		<?php
 			if($loginuser['id'] != null){

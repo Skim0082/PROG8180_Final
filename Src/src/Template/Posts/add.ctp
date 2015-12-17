@@ -1,15 +1,5 @@
 <!-- File: src/Template/Posts/add.ctp -->
-<div id="logout">
-	<?php
-		if($loginuser['id'] != null){
-			echo $this->Html->link('Log Out', ['controller' => 'Users', 'action' => 'logout']); 
-		}else{
-			echo $this->Html->link('Log In', ['controller' => 'Users', 'action' => 'login']);
-		}
-	?>
-</div>
 <div id="main">
-	<h1>Add Posts</h1>
 	<?php
         $map_options = array(
             "localize" => false,
@@ -32,7 +22,9 @@
         echo $this->Form->input('departureDate',['id' => 'datepicker']);
         echo $this->Form->input('departureTime',['id' => 'timepicker','type' => 'text', 'class'=>'ui-timepicker-input']);
     
-    //For simplicity, start with postal code
+        echo $this->Form->input('description',['label' => 'Additioal Comment', 'rows' => '3']);
+  
+    //updated by helper, if user move marker
         echo $this->Form->input('srcAddr',['id'=>'address_1', 'label' => 'From','readonly' => true]);
         echo $this->Form->input('dstAddr',['id'=>'address_2', 'label' => 'To', 'readonly' => true]);
         

@@ -1,13 +1,4 @@
 <!-- File: src/Template/Posts/edit.ctp -->
-<div id="logout">
-	<?php
-		if($loginuser['id'] != null){
-			echo $this->Html->link('Log Out', ['controller' => 'Users', 'action' => 'logout']); 
-		}else{
-			echo $this->Html->link('Log In', ['controller' => 'Users', 'action' => 'login']);
-		}
-	?>
-</div>
 <div id="main">
 	<h1>Edit Posts</h1>
 	<?php

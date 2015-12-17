@@ -41,6 +41,7 @@ ul.unapprovedcomment{
     padding-left: 20px;
 	padding-right: 20px;
 }
+
 #logout{
 	width: 100%;
 	text-align:right;
@@ -108,4 +109,10 @@ nav ul {
 
 #footer {
     font-size: 70%
+}
+
+.cocorsnotice {
+    font-size: 80%;
+    color:#C2140B;
+    text-align: right;
 }

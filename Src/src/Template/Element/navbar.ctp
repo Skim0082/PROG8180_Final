@@ -39,7 +39,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <?php 
-              if (is_null($this->request->session()->read('Auth.User.username'))) {
+              if (is_null($this->request->session()->read('Auth.User.id'))) {
                 echo "<li><a href='/users/signup'>Signup</a></li>";
                 echo "<li><a href='/users/login'>Login</a></li>";  
               } else{
