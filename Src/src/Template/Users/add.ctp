@@ -8,7 +8,7 @@
 			<?= $this->Form->input('lastname') ?>
             <?= $this->Form->input('firstname') ?>
             <?= $this->Form->input('nickname') ?>
-            <?= $this->Form->input('sex', [
+            <?= $this->Form->input('gender', [
 				'options' => ['M' => 'Male','F' =>'Female']
 			]) ?>	
             <?= $this->Form->input('isSmoking', [

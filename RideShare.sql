@@ -11,7 +11,7 @@ CREATE TABLE users (
 	password VARCHAR(255) NOT NULL,
 	firstname VARCHAR(255) NOT NULL,
 	lastname VARCHAR(255) NOT NULL,
-	username VARCHAR(255) NOT NULL,
+	nickname VARCHAR(255) NOT NULL,
 	gender CHAR(1) NOT NULL,
 	isSmoking INT(1) NOT NULL,
 	contactDetail VARCHAR(255) NOT NULL,
@@ -46,6 +46,7 @@ CREATE TABLE posts (
 );
 
 CREATE TABLE comments (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 	post_id INT UNSIGNED,
 	user_id INT UNSIGNED,
 	body VARCHAR(255) NOT NULL,

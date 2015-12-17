@@ -21,8 +21,9 @@
     // Using jQEURY DatePicker
         echo $this->Form->input('departureDate',['id' => 'datepicker']);
         echo $this->Form->input('departureTime',['id' => 'timepicker','type' => 'text', 'class'=>'ui-timepicker-input']);
-    
-        echo $this->Form->input('description',['label' => 'Additioal Comment', 'rows' => '3']);
+        echo '<label for="description">Additioal Description</label>';
+        echo $this->Form->textarea('description');
+      //  echo $this->Form->input('description',['label' => 'Additioal Comment', 'rows' => '3']);
   
     //updated by helper, if user move marker
         echo $this->Form->input('srcAddr',['id'=>'address_1', 'label' => 'From','readonly' => true]);

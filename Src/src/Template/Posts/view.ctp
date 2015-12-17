@@ -22,8 +22,20 @@
                 <td><?= h($user->nickname) ?></td>
             </tr>
             <tr>
+                <th><?= __('Gender') ?></th>
+                <td><?= $user->gender=='M' ? __('Male'): __('Female') ?></td>
+            </tr>
+            <tr>
+                <th><?= __('Smoking') ?></th>
+                <td><?= $user->isSmoking ? __('Yes'): __('No') ?></td>                
+            </tr>
+            <tr>
+                <th><?= __('Vehicle') ?></th>
+                <td><?= h($user->vehicle) ?></td>
+            </tr>
+            <tr>
                 <th><?= __('Post Type') ?></th>
-                <td><?= h($post->postType) ?></td>
+                <td><?= $post->postType==1 ? __('Looking for Car') : __('Looking for Passenger') ?></td>
             </tr>
             <tr>
                 <th><?= __('Number of Seats') ?></th>
@@ -43,7 +55,7 @@
             </tr>
             <tr>
                 <th><?= __('Additional Comment') ?></th>
-                <td><?= h($post->description) ?></td>
+                <td><?= nl2br(h($post->description)) ?></td>
             </tr>
             <tr>
                 <th><?= __('From:') ?></th>

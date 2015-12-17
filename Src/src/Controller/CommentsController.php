@@ -8,6 +8,7 @@ use Cake\Event\Event;
 
 class CommentsController extends AppController
 {
+
     public function add($id = null)
     {
         $comment = $this->Comments->newEntity();
@@ -15,11 +16,13 @@ class CommentsController extends AppController
             $comment = $this->Comments->patchEntity($comment, $this->request->data);			
 			$comment->post_id = $id;
             $comment->user_id = $this->Auth->user('id');
+
             if ($this->Comments->save($comment)) {
                 $this->Flash->success(__('The comment has been saved.'));
                 return $this->redirect(['controller' => 'Posts', 'action' => 'index']);
+            } else {
+                $this->Flash->error(__('Unable to add comments.'));
             }
-            $this->Flash->error(__('Unable to add the user.'));
         }
         $this->set('comment', $comment);
     }

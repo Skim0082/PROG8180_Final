@@ -1,16 +1,18 @@
 <!-- File: src/Template/Posts/index.ctp -->
 <div id="main-list">
-	<table>
+    <div class="column content">
+	<table cellpadding="0" cellspacing="0">
 		<tr>
             <th class="large-1 medium-1">ID</th>
 			<th class="large-1 medium-1">Request Type</th>
-			<th class="large-1 medium-1">User Name</th>
+            <th class="large-1 medium-1">User</th>
             <th class="large-1 medium-1">Available Seats</th>
             <th class="large-1 medium-1">Cost Per Person</th>
             <th class="large-1 medium-1">Departure Date</th>
             <th class="large-1 medium-1">Departure Time</th>
-            <th class="large-2 medium-1">From</th>
-            <th class="large-2 medium-1">To</th>
+            <th class="large-2 medium-2">From</th>
+            <th class="large-2 medium-2">To</th>
+            <th class="large-1 medium-1">#Of Comments</th>
             <th class="large-1 medium-1">Actions</th>
 		</tr>
 
@@ -45,6 +47,9 @@
             <td>
 				<?= $post->dstAddr ?>
 			</td>	
+            <td>
+				<?= $post->comment_count ?>
+			</td>
 			<?php
 				if($post->user_id == $loginuser['id'] || $loginuser['role'] == 'admin'){
 					echo "<td>";
@@ -72,4 +77,5 @@
 		<?php endforeach; ?>
         
 	</table>
+    </div>
 </div>
