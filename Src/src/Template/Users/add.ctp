@@ -8,13 +8,13 @@
 			<?= $this->Form->input('lastname') ?>
             <?= $this->Form->input('firstname') ?>
             <?= $this->Form->input('nickname') ?>
-            <?= $this->Form->input('sex', [
+            <?= $this->Form->input('gender', [
 				'options' => ['M' => 'Male','F' =>'Female']
 			]) ?>	
             <?= $this->Form->input('isSmoking', [
-				'options' => ['1' => 'Yes','0' =>'No']
+				'options' => ['0' =>'No','1' => 'Yes']
 			]) ?>	
-            <?= $this->Form->input('contactDetail') ?>	
+            <?= $this->Form->input('contactDetail') ?>		
 		    <?= $this->Form->input('vehicle') ?>	
 			<?= $this->Form->input('role', [
 				'options' => ['user' => 'User']

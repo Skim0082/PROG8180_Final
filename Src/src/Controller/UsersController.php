@@ -150,8 +150,7 @@ class UsersController extends AppController
             ];
             
             $this->set('result', $data);    
-        } 
-        //debug($data);     
+        }      
     }
     
     public function add()
@@ -161,8 +160,16 @@ class UsersController extends AppController
             $user = $this->Users->patchEntity($user, $this->request->data);
 
             if ($this->Users->save($user)) {
-                $this->Flash->success(__('The user has been saved.'));
-                return $this->redirect(['action' => 'login']);
+
+                $id=$user->id;
+                $user = $this->Users->find()
+                    ->where(['id'=> $id])
+                    ->first();                            
+                //login and set the Authentication for the sign up user
+                $this->Auth->setUser($user->toArray());
+
+                $this->Flash->success(__('The user "' . $user->nickname . '" has been saved.'));
+                return $this->redirect(['action' => 'profile']);
             }
             $this->Flash->error(__('Unable to add the user.'));
         }
@@ -180,7 +187,6 @@ class UsersController extends AppController
         FacebookSession::setDefaultApplication(FACEBOOK_APP_ID, FACEBOOK_APP_SECRET);
         $helper = new FacebookJavaScriptLoginHelper();
         $session = $helper->getSession();
-        //$output = $session->getUserId();
 
         if(isset($_SESSION['fb_token'])){
             $session = new FacebookSession($_SESSION['fb_token']);
@@ -197,40 +203,21 @@ class UsersController extends AppController
         if(isset($session)){
 
             $_SESSION['fb_token'] = $session->getToken();
-            $request = new FacebookRequest($session, 'GET', '/me');
+            $request = new FacebookRequest($session, 'GET', '/me?fields=email,name,gender,first_name,last_name');
             $response = $request->execute();
             $graph = $response->getGraphObject(GraphUser::className());
 
             $fb_data = $graph->asArray();
 
-            if(!empty($fb_data)){    
+            if(!empty($fb_data)){   
 
-                $fb_data['email'] = $graph->getProperty('email');            
-
-                //$result = $this->Users->findByEmail( $fb_data['email'] );
                 $user = $this->Users->find()
                     ->where(['facebook_id'=> $fb_data['id']])
                     ->first();
 
                 if(!empty($user)){
-
-                    /*
-                    $user = array(
-                        'id' => $result['id'],
-                        'username' => $result['username'], 
-                        'password'=> $result['password'],
-                        'role' => $result['role']
-                        );
-                    */
-
-                    //if ($user) {
-
-                        $this->Auth->setUser($user->toArray());
-                        //$this->redirect(BASE_PATH.'articles/index');
-                        //return $this->redirect($this->Auth->redirectUrl());
-                        return $this->redirect(['controller'=>'Users', 'action' => 'map']); 
-                    //}                    
-
+                    $this->Auth->setUser($user->toArray());
+                    return $this->redirect(['controller'=>'Users', 'action' => 'map']);                 
                 }else{
 
                     $this->set('username', $fb_data['name']);
@@ -239,44 +226,47 @@ class UsersController extends AppController
                     if ($this->request->is(['post'])) {
 
                         $data = [
-                            'username' => $fb_data['name'],
+                            'nickname' => $fb_data['name'],
                             'facebook_id' => $fb_data['id'],
-                            //'email' => $fb_data['email'],
-                            'first_name' => "James",
-                            'last_name' => "Na",
-                            'email' => "joe215@gmail.com",
-                            'password' => $this->request->data['password']
+                            'firstname' => $fb_data['first_name'],
+                            'lastname' => $fb_data['last_name'],
+                            'gender' => strtoupper(substr($fb_data['gender'], 0, 1)),
+                            'email' => $fb_data['email'],
+                            'password' => $this->request->data['password'],
+                            'role' => $this->request->data['role']
                         ];
 
                         $user = $this->Users->patchEntity($user, $data);
+                        //var_dump($user);
+                        if($result = $this->Users->save($user)){
 
-                        if($result = $this->Users->save( $user )){
+                            $id=$user->id;
+                            $user = $this->Users->find()
+                                ->where(['id'=> $id])
+                                ->first();
                             
                             //login and set the Authentication for the sign up user
-                            $this->request->data = ['username' => $data['username'], 'password'=>$data['password']];
-                            $user = $this->Auth->identify();
-                            $this->Auth->setUser($user);
+                            $this->Auth->setUser($user->toArray());
 
                             $this->Flash->success(__('The user "'. $fb_data['name'] . '"" has been saved.'));
                             //$this->redirect(BASE_PATH.'articles/index');                        
                             //return $this->redirect($this->Auth->redirectUrl());
-                            return $this->redirect(['controller'=>'Users', 'action' => 'map']); 
+                            return $this->redirect(['controller'=>'Users', 'action' => 'edit', $id]); 
 
                         }else{
                             $this->Flash->error(__('Unable to add the user.'));
+                            //var_dump($data);
                             return $this->redirect(['action' => 'login']);
                         }
                     }
                 }
-
             }else{
                 $this->Flash->error(__('Unable to add the user.'));
                 return $this->redirect(['action' => 'login']);
             }
         }else{
             $this->set('username', "");
-        }
-        
+        }        
     }
 
     public function isAuthorized($user)

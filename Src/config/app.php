@@ -222,7 +222,7 @@ return [
             //'database' => 'z12itfj4c1vgopf8.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
             'username' => 'root',
             'password' => 'root',
-            'database' => 'RideShareDB',
+            'database' => 'cocorsdb',
             'encoding' => 'utf8',
             'timezone' => 'UTC',
             'cacheMetadata' => true,

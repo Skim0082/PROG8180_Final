@@ -1,13 +1,4 @@
 <!-- File: src/Template/Users/userlist.ctp -->
-<div id="logout">
-	<?php
-		if($loginuser['id'] != null && $loginuser['id'] != ""){
-			echo $this->Html->link('Log Out', ['controller' => 'Users', 'action' => 'logout'], ['class'=>'facebookLogout']); 
-		}else{
-			echo $this->Html->link('Log In', ['controller' => 'Users', 'action' => 'login']);
-		}
-	?>
-</div>
 <div id="main-list">
 	<h1>User list</h1>
 	<table>
@@ -27,7 +18,7 @@
 				<?= $user->id ?>
 			</td>	
 			<td>
-				<?= $user->username ?>
+				<?= $user->nickname ?>
 			</td>
 			<td>
 				<?= $user->email ?>
