@@ -1,13 +1,4 @@
 <!-- src/Template/Users/facebook.ctp -->
-<div id="logout">
-	<?php
-		if($loginuser['id'] != null && $loginuser['id'] != ""){
-			echo $this->Html->link('Log Out', ['controller' => 'Users', 'action' => 'logout'], ['class'=>'facebookLogout']); 
-		}else{
-			echo $this->Html->link('Log In', ['controller' => 'Users', 'action' => 'login']);
-		}
-	?>
-</div>
 <div id="main">
 	<h1>Hello <?= $username ?>!</h1>
 	<?= $this->Flash->render('auth') ?>

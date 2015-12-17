@@ -5,7 +5,7 @@ window.fbAsyncInit = function() {
     status     : true,
     cookie     : true,
     oauth      : true,
-    version    : 'v2.5'
+    version    : 'v2.3'
   });
 };
 

@@ -13,8 +13,8 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-      <li><a href="/">Home <span class="sr-only">(current)</span></a></li>
-        <li><a href="/users">User List <span class="sr-only">(current)</span></a></li>
+      <!--<li><a href="/">Home <span class="sr-only">(current)</span></a></li>-->
+
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ride Match <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -28,9 +28,9 @@
       </ul>
       <form class="navbar-form navbar-left" role="search">
         <div id="searchbox" class="form-group">
-          <input type="text" class="form-control" placeholder="Search Matches">
+          <input type="text" class="form-control" placeholder="Search Key Word">
         </div>
-        <button type="submit" class="btn btn-info">Search</button>
+        <button type="submit" class="btn btn-success">Search</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/pages/contact">Contact</a></li>
@@ -40,16 +40,18 @@
           <ul class="dropdown-menu">
             <?php 
               if (is_null($this->request->session()->read('Auth.User.id'))) {
-                echo "<li><a href='/users/signup'>Signup</a></li>";
                 echo "<li><a href='/users/login'>Login</a></li>";  
               } else{
-                echo "<li><a href='/users/profile'>My Profile</a></li>";
-                echo "<li><a href='/users/edit'>Edit Profile</a></li>";
-                echo "<li><a href='#'>Something else here</a></li>";
-                echo "<li role='separator' class='divider'></li>";
-                echo "<li><a href='/posts/recent'>My Recent Ride</a></li>";
-                echo "<li role='separator' class='divider'></li>";
-                echo "<li><a href='/users/logout'>Edit Profile</a></li>";
+                if($this->request->session()->read('Auth.User.role') == 'user'){
+                  echo "<li><a href='/users/profile'>My Profile</a></li>";
+                  echo "<li><a href='/users/edit/" . $this->request->session()->read('Auth.User.id') . "'>Edit Profile</a></li>";
+                  echo "<li role='separator' class='divider'></li>";
+                  echo "<li><a href='/posts/recent'>My Recent Ride</a></li>";
+                }else{
+                  echo "<li><a href='/users/userlist/'>User List</a></li>";
+                }
+                  echo "<li role='separator' class='divider'></li>"; 
+                  echo "<li>" . $this->Html->link('Log Out', ['controller' => 'Users', 'action' => 'logout'], ['class'=>'facebookLogout']) . "</li>";
               }
             ?>
           </ul>

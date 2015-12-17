@@ -49,6 +49,8 @@ Router::scope('/', function ($routes) {
      */
      //$routes->connect('/', ['controller' => 'Posts', 'action' => 'index']);
 	 $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
+     $routes->connect('/pages/contact', ['controller' => 'Pages', 'action' => 'display', 'contact']);
+     $routes->connect('/pages/about', ['controller' => 'Pages', 'action' => 'display', 'about']);
 
     /**
      * ...and connect the rest of 'Pages' controller's URLs.

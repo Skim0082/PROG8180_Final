@@ -14430,3 +14430,580 @@ Stack Trace:
 #1 {main}
 
 
+2015-12-17 18:55:14 Warning: Warning (2): require_once(C:/wamp/www//vendor/fb/autoload.php): failed to open stream: No such file or directory in [C:\wamp\www\cocors\src\Controller\UsersController.php, line 12]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 140
+require_once - APP/Controller\UsersController.php, line 12
+include - APP/Controller\UsersController.php, line 12
+Composer\Autoload\includeFile - ROOT\vendor\composer\ClassLoader.php, line 412
+Composer\Autoload\ClassLoader::loadClass() - ROOT\vendor\composer\ClassLoader.php, line 301
+spl_autoload_call - [internal], line ??
+class_exists - [internal], line ??
+Cake\Core\App::_classExistsInBase() - CORE\src\Core\App.php, line 87
+Cake\Core\App::className() - CORE\src\Core\App.php, line 64
+Cake\Routing\Filter\ControllerFactoryFilter::_getController() - CORE\src\Routing\Filter\ControllerFactoryFilter.php, line 82
+Cake\Routing\Filter\ControllerFactoryFilter::beforeDispatch() - CORE\src\Routing\Filter\ControllerFactoryFilter.php, line 50
+Cake\Routing\DispatcherFilter::handle() - CORE\src\Routing\DispatcherFilter.php, line 145
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 389
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Routing\Dispatcher::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 62
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2015-12-17 18:57:17 Warning: Warning (2): require_once(C:/wamp/www//vendor/fb/autoload.php): failed to open stream: No such file or directory in [C:\wamp\www\cocors\src\Controller\UsersController.php, line 12]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 140
+require_once - APP/Controller\UsersController.php, line 12
+include - APP/Controller\UsersController.php, line 12
+Composer\Autoload\includeFile - ROOT\vendor\composer\ClassLoader.php, line 412
+Composer\Autoload\ClassLoader::loadClass() - ROOT\vendor\composer\ClassLoader.php, line 301
+spl_autoload_call - [internal], line ??
+class_exists - [internal], line ??
+Cake\Core\App::_classExistsInBase() - CORE\src\Core\App.php, line 87
+Cake\Core\App::className() - CORE\src\Core\App.php, line 64
+Cake\Routing\Filter\ControllerFactoryFilter::_getController() - CORE\src\Routing\Filter\ControllerFactoryFilter.php, line 82
+Cake\Routing\Filter\ControllerFactoryFilter::beforeDispatch() - CORE\src\Routing\Filter\ControllerFactoryFilter.php, line 50
+Cake\Routing\DispatcherFilter::handle() - CORE\src\Routing\DispatcherFilter.php, line 145
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 389
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Routing\Dispatcher::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 62
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2015-12-17 18:59:32 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Cocors could not be found.
+Exception Attributes: array (
+  'class' => 'Cocors',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /cocors/users/login
+Stack Trace:
+#0 C:\wamp\www\cocors\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-12-17 19:34:15 Error: [Facebook\FacebookAuthorizationException] This authorization code has been used.
+Request URL: /users/facebook
+Stack Trace:
+#0 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\FacebookRequest.php(280): Facebook\FacebookRequestException::create('{"error":{"mess...', Object(stdClass), 400)
+#1 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\Entities\AccessToken.php(328): Facebook\FacebookRequest->execute()
+#2 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\Entities\AccessToken.php(242): Facebook\Entities\AccessToken::request('/oauth/access_t...', Array, NULL, NULL)
+#3 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\Entities\AccessToken.php(187): Facebook\Entities\AccessToken::requestAccessToken(Array, NULL, NULL)
+#4 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\FacebookSession.php(271): Facebook\Entities\AccessToken::getAccessTokenFromCode('AQCUOc9fZTRmblk...')
+#5 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\FacebookSession.php(252): Facebook\FacebookSession::newSessionAfterValidation(Object(Facebook\Entities\SignedRequest))
+#6 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\FacebookSignedRequestFromInputHelper.php(93): Facebook\FacebookSession::newSessionFromSignedRequest(Object(Facebook\Entities\SignedRequest))
+#7 C:\wamp\www\cocors\src\Controller\UsersController.php(182): Facebook\FacebookSignedRequestFromInputHelper->getSession()
+#8 [internal function]: App\Controller\UsersController->facebook()
+#9 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Controller\Controller.php(429): call_user_func_array(Array, Array)
+#10 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#11 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\UsersController))
+#12 C:\wamp\www\cocors\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#13 {main}
+
+
+2015-12-17 19:44:17 Warning: Warning (4096): Argument 1 passed to Cake\Controller\Component\AuthComponent::setUser() must be of the type array, boolean given, called in C:\wamp\www\cocors\src\Controller\UsersController.php on line 264 and defined in [C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Controller\Component\AuthComponent.php, line 629]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 140
+Cake\Controller\Component\AuthComponent::setUser() - CORE\src\Controller\Component\AuthComponent.php, line 629
+App\Controller\UsersController::facebook() - APP/Controller\UsersController.php, line 264
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 429
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2015-12-17 19:44:17 Warning: Warning (4096): Argument 1 passed to Cake\Auth\Storage\SessionStorage::write() must be of the type array, boolean given, called in C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Controller\Component\AuthComponent.php on line 631 and defined in [C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Auth\Storage\SessionStorage.php, line 97]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 140
+Cake\Auth\Storage\SessionStorage::write() - CORE\src\Auth\Storage\SessionStorage.php, line 97
+Cake\Controller\Component\AuthComponent::setUser() - CORE\src\Controller\Component\AuthComponent.php, line 631
+App\Controller\UsersController::facebook() - APP/Controller\UsersController.php, line 264
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 429
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2015-12-17 19:44:17 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Error\Debugger.php:744) in [C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Network\Session.php, line 573]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 140
+setcookie - [internal], line ??
+Cake\Network\Session::renew() - CORE\src\Network\Session.php, line 573
+Cake\Auth\Storage\SessionStorage::write() - CORE\src\Auth\Storage\SessionStorage.php, line 101
+Cake\Controller\Component\AuthComponent::setUser() - CORE\src\Controller\Component\AuthComponent.php, line 631
+App\Controller\UsersController::facebook() - APP/Controller\UsersController.php, line 264
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 429
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2015-12-17 19:44:17 Warning: Warning (2): session_regenerate_id() [<a href='http://php.net/function.session-regenerate-id'>function.session-regenerate-id</a>]: Cannot regenerate session id - headers already sent in [C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Network\Session.php, line 576]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 140
+session_regenerate_id - [internal], line ??
+Cake\Network\Session::renew() - CORE\src\Network\Session.php, line 576
+Cake\Auth\Storage\SessionStorage::write() - CORE\src\Auth\Storage\SessionStorage.php, line 101
+Cake\Controller\Component\AuthComponent::setUser() - CORE\src\Controller\Component\AuthComponent.php, line 631
+App\Controller\UsersController::facebook() - APP/Controller\UsersController.php, line 264
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 429
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2015-12-17 19:44:32 Error: [Facebook\FacebookAuthorizationException] This authorization code has been used.
+Request URL: /users/facebook
+Stack Trace:
+#0 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\FacebookRequest.php(280): Facebook\FacebookRequestException::create('{"error":{"mess...', Object(stdClass), 400)
+#1 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\Entities\AccessToken.php(328): Facebook\FacebookRequest->execute()
+#2 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\Entities\AccessToken.php(242): Facebook\Entities\AccessToken::request('/oauth/access_t...', Array, NULL, NULL)
+#3 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\Entities\AccessToken.php(187): Facebook\Entities\AccessToken::requestAccessToken(Array, NULL, NULL)
+#4 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\FacebookSession.php(271): Facebook\Entities\AccessToken::getAccessTokenFromCode('AQAW9LAHKuTU18K...')
+#5 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\FacebookSession.php(252): Facebook\FacebookSession::newSessionAfterValidation(Object(Facebook\Entities\SignedRequest))
+#6 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\FacebookSignedRequestFromInputHelper.php(93): Facebook\FacebookSession::newSessionFromSignedRequest(Object(Facebook\Entities\SignedRequest))
+#7 C:\wamp\www\cocors\src\Controller\UsersController.php(182): Facebook\FacebookSignedRequestFromInputHelper->getSession()
+#8 [internal function]: App\Controller\UsersController->facebook()
+#9 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Controller\Controller.php(429): call_user_func_array(Array, Array)
+#10 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#11 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\UsersController))
+#12 C:\wamp\www\cocors\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#13 {main}
+
+
+2015-12-17 19:44:33 Error: [Facebook\FacebookAuthorizationException] This authorization code has been used.
+Request URL: /users/facebook
+Stack Trace:
+#0 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\FacebookRequest.php(280): Facebook\FacebookRequestException::create('{"error":{"mess...', Object(stdClass), 400)
+#1 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\Entities\AccessToken.php(328): Facebook\FacebookRequest->execute()
+#2 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\Entities\AccessToken.php(242): Facebook\Entities\AccessToken::request('/oauth/access_t...', Array, NULL, NULL)
+#3 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\Entities\AccessToken.php(187): Facebook\Entities\AccessToken::requestAccessToken(Array, NULL, NULL)
+#4 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\FacebookSession.php(271): Facebook\Entities\AccessToken::getAccessTokenFromCode('AQAW9LAHKuTU18K...')
+#5 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\FacebookSession.php(252): Facebook\FacebookSession::newSessionAfterValidation(Object(Facebook\Entities\SignedRequest))
+#6 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\FacebookSignedRequestFromInputHelper.php(93): Facebook\FacebookSession::newSessionFromSignedRequest(Object(Facebook\Entities\SignedRequest))
+#7 C:\wamp\www\cocors\src\Controller\UsersController.php(182): Facebook\FacebookSignedRequestFromInputHelper->getSession()
+#8 [internal function]: App\Controller\UsersController->facebook()
+#9 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Controller\Controller.php(429): call_user_func_array(Array, Array)
+#10 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#11 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\UsersController))
+#12 C:\wamp\www\cocors\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#13 {main}
+
+
+2015-12-17 19:50:45 Warning: Warning (4096): Argument 1 passed to Cake\Controller\Component\AuthComponent::setUser() must be of the type array, boolean given, called in C:\wamp\www\cocors\src\Controller\UsersController.php on line 264 and defined in [C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Controller\Component\AuthComponent.php, line 629]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 140
+Cake\Controller\Component\AuthComponent::setUser() - CORE\src\Controller\Component\AuthComponent.php, line 629
+App\Controller\UsersController::facebook() - APP/Controller\UsersController.php, line 264
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 429
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2015-12-17 19:50:45 Warning: Warning (4096): Argument 1 passed to Cake\Auth\Storage\SessionStorage::write() must be of the type array, boolean given, called in C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Controller\Component\AuthComponent.php on line 631 and defined in [C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Auth\Storage\SessionStorage.php, line 97]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 140
+Cake\Auth\Storage\SessionStorage::write() - CORE\src\Auth\Storage\SessionStorage.php, line 97
+Cake\Controller\Component\AuthComponent::setUser() - CORE\src\Controller\Component\AuthComponent.php, line 631
+App\Controller\UsersController::facebook() - APP/Controller\UsersController.php, line 264
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 429
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2015-12-17 19:50:45 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Error\Debugger.php:744) in [C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Network\Session.php, line 573]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 140
+setcookie - [internal], line ??
+Cake\Network\Session::renew() - CORE\src\Network\Session.php, line 573
+Cake\Auth\Storage\SessionStorage::write() - CORE\src\Auth\Storage\SessionStorage.php, line 101
+Cake\Controller\Component\AuthComponent::setUser() - CORE\src\Controller\Component\AuthComponent.php, line 631
+App\Controller\UsersController::facebook() - APP/Controller\UsersController.php, line 264
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 429
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2015-12-17 19:50:45 Warning: Warning (2): session_regenerate_id() [<a href='http://php.net/function.session-regenerate-id'>function.session-regenerate-id</a>]: Cannot regenerate session id - headers already sent in [C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Network\Session.php, line 576]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 140
+session_regenerate_id - [internal], line ??
+Cake\Network\Session::renew() - CORE\src\Network\Session.php, line 576
+Cake\Auth\Storage\SessionStorage::write() - CORE\src\Auth\Storage\SessionStorage.php, line 101
+Cake\Controller\Component\AuthComponent::setUser() - CORE\src\Controller\Component\AuthComponent.php, line 631
+App\Controller\UsersController::facebook() - APP/Controller\UsersController.php, line 264
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 429
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2015-12-17 19:53:17 Error: Fatal Error (1): Call to a member function toArray() on a non-object in [C:\wamp\www\cocors\src\Controller\UsersController.php, line 264]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 209
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 92
+[main] - [internal], line ??
+
+
+
+2015-12-17 19:53:17 Error: [Cake\Error\FatalErrorException] Call to a member function toArray() on a non-object
+Request URL: /users/facebook
+Stack Trace:
+#0 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(92): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'C:\\wamp\\www\\coc...', 264)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-12-17 19:57:20 Error: [Facebook\FacebookAuthorizationException] This authorization code has been used.
+Request URL: /users/facebook
+Stack Trace:
+#0 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\FacebookRequest.php(280): Facebook\FacebookRequestException::create('{"error":{"mess...', Object(stdClass), 400)
+#1 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\Entities\AccessToken.php(328): Facebook\FacebookRequest->execute()
+#2 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\Entities\AccessToken.php(242): Facebook\Entities\AccessToken::request('/oauth/access_t...', Array, NULL, NULL)
+#3 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\Entities\AccessToken.php(187): Facebook\Entities\AccessToken::requestAccessToken(Array, NULL, NULL)
+#4 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\FacebookSession.php(271): Facebook\Entities\AccessToken::getAccessTokenFromCode('AQDbTPsZ_GBZUYH...')
+#5 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\FacebookSession.php(252): Facebook\FacebookSession::newSessionAfterValidation(Object(Facebook\Entities\SignedRequest))
+#6 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\FacebookSignedRequestFromInputHelper.php(93): Facebook\FacebookSession::newSessionFromSignedRequest(Object(Facebook\Entities\SignedRequest))
+#7 C:\wamp\www\cocors\src\Controller\UsersController.php(182): Facebook\FacebookSignedRequestFromInputHelper->getSession()
+#8 [internal function]: App\Controller\UsersController->facebook()
+#9 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Controller\Controller.php(429): call_user_func_array(Array, Array)
+#10 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#11 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\UsersController))
+#12 C:\wamp\www\cocors\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#13 {main}
+
+
+2015-12-17 20:04:13 Error: Fatal Error (4): syntax error, unexpected ')', expecting ']' in [C:\wamp\www\cocors\src\Controller\UsersController.php, line 264]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 209
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 92
+[main] - [internal], line ??
+
+
+
+2015-12-17 20:04:14 Error: [Cake\Error\FatalErrorException] syntax error, unexpected ')', expecting ']'
+Request URL: /users/logout
+Stack Trace:
+#0 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(92): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', 'C:\\wamp\\www\\coc...', 264)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-12-17 20:37:38 Error: [Facebook\FacebookAuthorizationException] This authorization code has been used.
+Request URL: /users/facebook
+Stack Trace:
+#0 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\FacebookRequest.php(280): Facebook\FacebookRequestException::create('{"error":{"mess...', Object(stdClass), 400)
+#1 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\Entities\AccessToken.php(328): Facebook\FacebookRequest->execute()
+#2 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\Entities\AccessToken.php(242): Facebook\Entities\AccessToken::request('/oauth/access_t...', Array, NULL, NULL)
+#3 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\Entities\AccessToken.php(187): Facebook\Entities\AccessToken::requestAccessToken(Array, NULL, NULL)
+#4 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\FacebookSession.php(271): Facebook\Entities\AccessToken::getAccessTokenFromCode('AQDzuPMLIkInrg2...')
+#5 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\FacebookSession.php(252): Facebook\FacebookSession::newSessionAfterValidation(Object(Facebook\Entities\SignedRequest))
+#6 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\FacebookSignedRequestFromInputHelper.php(93): Facebook\FacebookSession::newSessionFromSignedRequest(Object(Facebook\Entities\SignedRequest))
+#7 C:\wamp\www\cocors\src\Controller\UsersController.php(181): Facebook\FacebookSignedRequestFromInputHelper->getSession()
+#8 [internal function]: App\Controller\UsersController->facebook()
+#9 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Controller\Controller.php(429): call_user_func_array(Array, Array)
+#10 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#11 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\UsersController))
+#12 C:\wamp\www\cocors\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#13 {main}
+
+
+2015-12-17 20:57:38 Error: [Facebook\FacebookAuthorizationException] This authorization code has been used.
+Request URL: /users/facebook?code=AQA4jPVH8G2cKoOPyWm72Ny0VcquvxDgouhApKnUKNvD3LGX8i83sWdCaizfQncFIQsFTjw_BK47KfF1xpUcluo-FM_jjn7vPoT8EZvjnxjcIhWJ9yYOE9g3ji88BKeaU6sHoUAFZw05SaLgI_HiznQGHEBPigMfvCt8Kj7ERmVHYLl0mHiROwHt9thHeQlI9g300M0OqS4V9HlI5QUSlxL9CEyQewb0BBNB5LiixhDHXi7PgF0lHTpzbVMeDeMJir2ycSya2ewZZK76dWMJY8DOoOzw5Ru1yEoQDorZuip_Ys5AB5QvShiq3Fl8_Nfr088RcLLnDXRPK7s7_vOP9Thz&state=cb3596a26de4150c9715e72435ade898
+Stack Trace:
+#0 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\FacebookRequest.php(280): Facebook\FacebookRequestException::create('{"error":{"mess...', Object(stdClass), 400)
+#1 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\Entities\AccessToken.php(328): Facebook\FacebookRequest->execute()
+#2 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\Entities\AccessToken.php(242): Facebook\Entities\AccessToken::request('/oauth/access_t...', Array, NULL, NULL)
+#3 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\Entities\AccessToken.php(187): Facebook\Entities\AccessToken::requestAccessToken(Array, NULL, NULL)
+#4 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\FacebookSession.php(271): Facebook\Entities\AccessToken::getAccessTokenFromCode('AQAcYrtGZzlPnEM...')
+#5 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\FacebookSession.php(252): Facebook\FacebookSession::newSessionAfterValidation(Object(Facebook\Entities\SignedRequest))
+#6 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\FacebookSignedRequestFromInputHelper.php(93): Facebook\FacebookSession::newSessionFromSignedRequest(Object(Facebook\Entities\SignedRequest))
+#7 C:\wamp\www\cocors\src\Controller\UsersController.php(181): Facebook\FacebookSignedRequestFromInputHelper->getSession()
+#8 [internal function]: App\Controller\UsersController->facebook()
+#9 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Controller\Controller.php(429): call_user_func_array(Array, Array)
+#10 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#11 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\UsersController))
+#12 C:\wamp\www\cocors\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#13 {main}
+
+
+2015-12-17 20:58:48 Error: [Facebook\FacebookAuthorizationException] This authorization code has been used.
+Request URL: /users/facebook?code=AQA6UW-m5toiyvd0iB0mlcT6mJR3Y14_987yvpYmUO_jbkd2KdXpTeqoDClg95qWKRoUy5YDFhCSLSdklQkwMPB_uC7q_AwFUheqp0Sw_N-v9rpVvHp84kjHi-6OGqShNzLWO-p5fOxvf69dz06MrDFeh07f-kApFgsFpKIv631_32WZsxOuQqwU185bs3Di4noElvTXzw-fjLZqHyAwIjhCPxRoASbRtLIYP0hTZZ8niBbAdoQsykBTS-YBKzYx9VtoeOZh262Yv2C8uLuSyhuqQCmIrWwEAy4pNDxSRVQKESxLfkhie4ebzuRpWydOujqoNP2PufC0RhVMKhL5-MuN&state=78bed409d440234ef2f7b718ad4be55c
+Stack Trace:
+#0 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\FacebookRequest.php(280): Facebook\FacebookRequestException::create('{"error":{"mess...', Object(stdClass), 400)
+#1 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\Entities\AccessToken.php(328): Facebook\FacebookRequest->execute()
+#2 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\Entities\AccessToken.php(242): Facebook\Entities\AccessToken::request('/oauth/access_t...', Array, NULL, NULL)
+#3 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\Entities\AccessToken.php(187): Facebook\Entities\AccessToken::requestAccessToken(Array, NULL, NULL)
+#4 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\FacebookSession.php(271): Facebook\Entities\AccessToken::getAccessTokenFromCode('AQBoGSvglGH13Ay...')
+#5 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\FacebookSession.php(252): Facebook\FacebookSession::newSessionAfterValidation(Object(Facebook\Entities\SignedRequest))
+#6 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\FacebookSignedRequestFromInputHelper.php(93): Facebook\FacebookSession::newSessionFromSignedRequest(Object(Facebook\Entities\SignedRequest))
+#7 C:\wamp\www\cocors\src\Controller\UsersController.php(181): Facebook\FacebookSignedRequestFromInputHelper->getSession()
+#8 [internal function]: App\Controller\UsersController->facebook()
+#9 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Controller\Controller.php(429): call_user_func_array(Array, Array)
+#10 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#11 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\UsersController))
+#12 C:\wamp\www\cocors\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#13 {main}
+
+
+2015-12-17 20:59:03 Error: [Facebook\FacebookAuthorizationException] This authorization code has been used.
+Request URL: /users/facebook?code=AQA6UW-m5toiyvd0iB0mlcT6mJR3Y14_987yvpYmUO_jbkd2KdXpTeqoDClg95qWKRoUy5YDFhCSLSdklQkwMPB_uC7q_AwFUheqp0Sw_N-v9rpVvHp84kjHi-6OGqShNzLWO-p5fOxvf69dz06MrDFeh07f-kApFgsFpKIv631_32WZsxOuQqwU185bs3Di4noElvTXzw-fjLZqHyAwIjhCPxRoASbRtLIYP0hTZZ8niBbAdoQsykBTS-YBKzYx9VtoeOZh262Yv2C8uLuSyhuqQCmIrWwEAy4pNDxSRVQKESxLfkhie4ebzuRpWydOujqoNP2PufC0RhVMKhL5-MuN&state=78bed409d440234ef2f7b718ad4be55c
+Stack Trace:
+#0 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\FacebookRequest.php(280): Facebook\FacebookRequestException::create('{"error":{"mess...', Object(stdClass), 400)
+#1 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\Entities\AccessToken.php(328): Facebook\FacebookRequest->execute()
+#2 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\Entities\AccessToken.php(242): Facebook\Entities\AccessToken::request('/oauth/access_t...', Array, NULL, NULL)
+#3 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\Entities\AccessToken.php(187): Facebook\Entities\AccessToken::requestAccessToken(Array, NULL, NULL)
+#4 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\FacebookSession.php(271): Facebook\Entities\AccessToken::getAccessTokenFromCode('AQBoGSvglGH13Ay...')
+#5 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\FacebookSession.php(252): Facebook\FacebookSession::newSessionAfterValidation(Object(Facebook\Entities\SignedRequest))
+#6 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\FacebookSignedRequestFromInputHelper.php(93): Facebook\FacebookSession::newSessionFromSignedRequest(Object(Facebook\Entities\SignedRequest))
+#7 C:\wamp\www\cocors\src\Controller\UsersController.php(181): Facebook\FacebookSignedRequestFromInputHelper->getSession()
+#8 [internal function]: App\Controller\UsersController->facebook()
+#9 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Controller\Controller.php(429): call_user_func_array(Array, Array)
+#10 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#11 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\UsersController))
+#12 C:\wamp\www\cocors\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#13 {main}
+
+
+2015-12-17 20:59:19 Error: [Facebook\FacebookAuthorizationException] This authorization code has been used.
+Request URL: /users/facebook?code=AQDVSpRxY4qx8gD1Ww7DTrW8XV49GSg_nAg8dH4eMJ8FEovMC6mEFIX5auFa7LgiWh_vQC8qUdmiLaPk5nu-D4o6JoqAYRUn81SUQtTki0a1-WQqBnawjQ4rOLpJ0NMq67nun_waT4YITMDfM8K_fRjrAMyXjouzksgSUjtlrSKJI3-mwE6bmdy3EYFaV9AOMjoa84f2JtIuqWg71mIl0MA4O2iErXwX_i3yn0n7RIAA4C3Ve2EuYTAQVdiYvRzUN0U4dTnvu6nES3qG5kNsGu8Dmtq0sAEB6zBzofvecLtqPalTc9urB2yQ6s9kF7Rs5d0WlkBFX8VBpsI3c6rXju7D&state=b6a3dd710c9d8f3fdac84e60ced7785a
+Stack Trace:
+#0 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\FacebookRequest.php(280): Facebook\FacebookRequestException::create('{"error":{"mess...', Object(stdClass), 400)
+#1 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\Entities\AccessToken.php(328): Facebook\FacebookRequest->execute()
+#2 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\Entities\AccessToken.php(242): Facebook\Entities\AccessToken::request('/oauth/access_t...', Array, NULL, NULL)
+#3 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\Entities\AccessToken.php(187): Facebook\Entities\AccessToken::requestAccessToken(Array, NULL, NULL)
+#4 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\FacebookSession.php(271): Facebook\Entities\AccessToken::getAccessTokenFromCode('AQCuXxq2_BlYrAU...')
+#5 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\FacebookSession.php(252): Facebook\FacebookSession::newSessionAfterValidation(Object(Facebook\Entities\SignedRequest))
+#6 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\FacebookSignedRequestFromInputHelper.php(93): Facebook\FacebookSession::newSessionFromSignedRequest(Object(Facebook\Entities\SignedRequest))
+#7 C:\wamp\www\cocors\src\Controller\UsersController.php(181): Facebook\FacebookSignedRequestFromInputHelper->getSession()
+#8 [internal function]: App\Controller\UsersController->facebook()
+#9 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Controller\Controller.php(429): call_user_func_array(Array, Array)
+#10 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#11 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\UsersController))
+#12 C:\wamp\www\cocors\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#13 {main}
+
+
+2015-12-17 21:09:20 Error: [Facebook\FacebookAuthorizationException] This authorization code has been used.
+Request URL: /users/facebook
+Stack Trace:
+#0 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\FacebookRequest.php(280): Facebook\FacebookRequestException::create('{"error":{"mess...', Object(stdClass), 400)
+#1 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\Entities\AccessToken.php(328): Facebook\FacebookRequest->execute()
+#2 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\Entities\AccessToken.php(242): Facebook\Entities\AccessToken::request('/oauth/access_t...', Array, NULL, NULL)
+#3 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\Entities\AccessToken.php(187): Facebook\Entities\AccessToken::requestAccessToken(Array, NULL, NULL)
+#4 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\FacebookSession.php(271): Facebook\Entities\AccessToken::getAccessTokenFromCode('AQDOvFTS-7Suukw...')
+#5 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\FacebookSession.php(252): Facebook\FacebookSession::newSessionAfterValidation(Object(Facebook\Entities\SignedRequest))
+#6 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\FacebookSignedRequestFromInputHelper.php(93): Facebook\FacebookSession::newSessionFromSignedRequest(Object(Facebook\Entities\SignedRequest))
+#7 C:\wamp\www\cocors\src\Controller\UsersController.php(181): Facebook\FacebookSignedRequestFromInputHelper->getSession()
+#8 [internal function]: App\Controller\UsersController->facebook()
+#9 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Controller\Controller.php(429): call_user_func_array(Array, Array)
+#10 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#11 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\UsersController))
+#12 C:\wamp\www\cocors\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#13 {main}
+
+
+2015-12-17 21:09:26 Error: [Facebook\FacebookAuthorizationException] (#100) Tried accessing nonexisting field (firstname) on node type (User)
+Request URL: /users/facebook
+Stack Trace:
+#0 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\FacebookRequest.php(280): Facebook\FacebookRequestException::create('{"error":{"mess...', Object(stdClass), 400)
+#1 C:\wamp\www\cocors\src\Controller\UsersController.php(207): Facebook\FacebookRequest->execute()
+#2 [internal function]: App\Controller\UsersController->facebook()
+#3 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Controller\Controller.php(429): call_user_func_array(Array, Array)
+#4 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#5 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\UsersController))
+#6 C:\wamp\www\cocors\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#7 {main}
+
+
+2015-12-17 21:09:49 Error: [Facebook\FacebookAuthorizationException] (#12) username field is deprecated for versions v2.0 and higher
+Request URL: /users/facebook
+Stack Trace:
+#0 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\FacebookRequest.php(280): Facebook\FacebookRequestException::create('{"error":{"mess...', Object(stdClass), 400)
+#1 C:\wamp\www\cocors\src\Controller\UsersController.php(207): Facebook\FacebookRequest->execute()
+#2 [internal function]: App\Controller\UsersController->facebook()
+#3 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Controller\Controller.php(429): call_user_func_array(Array, Array)
+#4 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#5 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\UsersController))
+#6 C:\wamp\www\cocors\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#7 {main}
+
+
+2015-12-17 21:10:01 Error: [Facebook\FacebookAuthorizationException] (#12) username field is deprecated for versions v2.0 and higher
+Request URL: /users/facebook
+Stack Trace:
+#0 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\FacebookRequest.php(280): Facebook\FacebookRequestException::create('{"error":{"mess...', Object(stdClass), 400)
+#1 C:\wamp\www\cocors\src\Controller\UsersController.php(207): Facebook\FacebookRequest->execute()
+#2 [internal function]: App\Controller\UsersController->facebook()
+#3 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Controller\Controller.php(429): call_user_func_array(Array, Array)
+#4 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#5 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\UsersController))
+#6 C:\wamp\www\cocors\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#7 {main}
+
+
+2015-12-17 21:12:03 Error: [Facebook\FacebookAuthorizationException] (#100) Tried accessing nonexisting field (firstName) on node type (User)
+Request URL: /users/facebook
+Stack Trace:
+#0 C:\wamp\www\cocors\vendor\facebook\php-sdk-v4\src\Facebook\FacebookRequest.php(280): Facebook\FacebookRequestException::create('{"error":{"mess...', Object(stdClass), 400)
+#1 C:\wamp\www\cocors\src\Controller\UsersController.php(207): Facebook\FacebookRequest->execute()
+#2 [internal function]: App\Controller\UsersController->facebook()
+#3 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Controller\Controller.php(429): call_user_func_array(Array, Array)
+#4 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#5 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\UsersController))
+#6 C:\wamp\www\cocors\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#7 {main}
+
+
+2015-12-17 22:12:42 Error: Fatal Error (4): syntax error, unexpected ')', expecting ',' or ';' in [C:\wamp\www\cocors\src\Template\Element\navbar.ctp, line 47]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 209
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 92
+[main] - [internal], line ??
+
+
+
+2015-12-17 22:12:42 Error: [Cake\Error\FatalErrorException] syntax error, unexpected ')', expecting ',' or ';'
+Request URL: /users/profile
+Stack Trace:
+#0 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(92): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', 'C:\\wamp\\www\\coc...', 47)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-12-17 22:54:45 Error: [Cake\Controller\Exception\MissingActionException] Action PagesController::about() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'PagesController',
+  'action' => 'about',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /pages/about
+Stack Trace:
+#0 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\PagesController))
+#2 C:\wamp\www\cocors\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2015-12-17 22:59:07 Error: [Cake\Controller\Exception\MissingActionException] Action PagesController::contact() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'PagesController',
+  'action' => 'contact',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /pages/contact
+Stack Trace:
+#0 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\PagesController))
+#2 C:\wamp\www\cocors\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2015-12-17 23:03:17 Error: [Cake\Controller\Exception\MissingActionException] Action PagesController::contact.php() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'PagesController',
+  'action' => 'contact.php',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /pages/contact.php
+Stack Trace:
+#0 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\PagesController))
+#2 C:\wamp\www\cocors\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2015-12-17 23:06:36 Error: [Cake\Controller\Exception\MissingActionException] Action PagesController::contact.php() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'PagesController',
+  'action' => 'contact.php',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /pages/contact.php
+Stack Trace:
+#0 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\PagesController))
+#2 C:\wamp\www\cocors\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2015-12-17 23:14:14 Error: [Cake\Controller\Exception\MissingActionException] Action PagesController::about() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'PagesController',
+  'action' => 'about',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /pages/about
+Stack Trace:
+#0 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\PagesController))
+#2 C:\wamp\www\cocors\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2015-12-17 23:14:56 Error: [Cake\Controller\Exception\MissingActionException] Action PagesController::about() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'PagesController',
+  'action' => 'about',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /pages/about
+Stack Trace:
+#0 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\PagesController))
+#2 C:\wamp\www\cocors\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2015-12-17 23:32:45 Error: [Cake\Controller\Exception\MissingActionException] Action UsersController::signup() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'signup',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /users/signup
+Stack Trace:
+#0 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\UsersController))
+#2 C:\wamp\www\cocors\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2015-12-17 23:36:16 Error: [Cake\Controller\Exception\MissingActionException] Action PostsController::recent() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'PostsController',
+  'action' => 'recent',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /posts/recent
+Stack Trace:
+#0 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 C:\wamp\www\cocors\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\PostsController))
+#2 C:\wamp\www\cocors\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+

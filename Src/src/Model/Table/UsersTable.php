@@ -14,17 +14,21 @@ class UsersTable extends Table
     }
 
     public function validationDefault(Validator $validator)
-    {
+    {        
+        $validator
+            ->requirePresence('nickname', 'create')
+            ->notEmpty('nickname');
+
+        $validator
+            ->requirePresence('password', 'create')
+            ->notEmpty('password'); 
+
         $validator
             ->add('email', 'valid', ['rule' => 'email'])
             ->requirePresence('email', 'create')
             ->notEmpty('email')
             ->add('email', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
 
-        $validator
-            ->requirePresence('password', 'create')
-            ->notEmpty('password'); 
-        
         $validator
             ->requirePresence('lastname', 'create')
             ->notEmpty('lastname');
@@ -34,13 +38,9 @@ class UsersTable extends Table
             ->notEmpty('firstname');
         
         $validator
-            ->requirePresence('firstname', 'create')
-            ->notEmpty('firstname');
-        
-        $validator
-            ->requirePresence('nickname', 'create')
-            ->notEmpty('nickname');
-       
+            ->requirePresence('gender', 'create')
+            ->notEmpty('gender');
+
         $validator
             ->requirePresence('role', 'create')
          ->notEmpty('role', 'A role is required')
