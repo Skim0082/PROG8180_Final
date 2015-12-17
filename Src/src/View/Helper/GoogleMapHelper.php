@@ -234,14 +234,14 @@ class GoogleMapHelper extends Helper {
               google.maps.event.addListener(markers[index], 'click', function() {
                 for(w=0;w<markers.length;w++){
                   infowindow.setContent(content);
-                  infowindow.open(map,this)
+                  infowindow.open(map,this);
                 }
               });
             }
             if (draggableMarker) {
               google.maps.event.addListener(markers[index], 'dragend', function(event) {
                 updateCoordinatesDisplayed(id, event.latLng.lat(), event.latLng.lng());
-                updateAddress(id, event.latLng.lat(), event.latLng.lng());
+                updateAddress(id, markers[id], event.latLng.lat(), event.latLng.lng(),showInfoWindow,map,infowindow);
               });
             }
          }";
@@ -257,18 +257,19 @@ class GoogleMapHelper extends Helper {
           }
          ";
          $map .= "
-          // An input with an id of 'latitude_<id>' and 'longitude_<id>' will be set, only if it exist
-          function updateAddress(markerId, latitude, longitude) {
+          // An input with an id of 'address_<id>' and 'address_<id>' will be set, only if it exist
+          function updateAddress(markerId, marker, latitude, longitude, showInfoWindow, map,infowindow) {
                 var latlng = {lat: latitude, lng: longitude};
-
+                
                 geocoder.geocode({'location': latlng}, function(results, status) {
                 if (status === google.maps.GeocoderStatus.OK) {
                   if (results[1]) {
                         if (document.getElementById('address_'+markerId)) {
-                          console.log(markerId);
                           document.getElementById('address_' + markerId).value = results[1].formatted_address;
-                          //infowindow.setContent(results[1]);
-                          console.log(results[1]);
+                          if(showInfoWindow){
+                            infowindow.setContent(results[1].formatted_address);
+                            infowindow.open(map,marker);
+                          }
                         } 
                   } else {
                     window.alert('No results found');

@@ -4,7 +4,7 @@
 namespace App\Controller;
 
 use App\Controller\UsersController;
-
+use Cake\Event\Event;
 
 class PostsController extends AppController{
 
@@ -19,18 +19,26 @@ class PostsController extends AppController{
     {
         parent::initialize();
         $this->loadComponent('Paginator');
+        $this->loadComponent('Flash'); // Include the FlashComponent
     }
+    
+    public function beforeFilter(Event $event)
+    {
+        parent::beforeFilter($event);
+        $this->Auth->allow(['index', 'view']);
 
+    }
+    
     public function index()
     {
         $Posts = $this->Posts->find('all')->contain(['Users', 'Comments', 'UnapprovedComments', 'Tags']);
         $this->set(compact('Posts'));
-       
 
-		
+
 		$loginuser = $this->Auth->user();
 		$this->set('loginuser', $loginuser);
     }
+    
     public function view($id = null)
     {
         $post = $this->Posts->get($id, [
@@ -73,26 +81,17 @@ class PostsController extends AppController{
         $post = $this->Posts->newEntity();
 		
         if ($this->request->is('post')) {
+            $post = $this->Posts->patchEntity($post, $this->request->data);
+            if ($this->Auth->user('id') != null) {
+                $post->user_id = $this->Auth->user('id');
+            }
 
-			$data = [
-				'title' => $this->request->data['title'],
-				'body' => $this->request->data['body'],
-				'user_id' => $this->Auth->user('id'),
-				'tags' => [
-					'_ids'=>$this->request->data['tags']
-				]
-			];	
-			
-            $post = $this->Posts->patchEntity($post, $data,[
-				'associated' => ['Tags' => ['validate' => false]]
-			]);		
-
-		
             if ($this->Posts->save($post)) {
                 $this->Flash->success(__('Your post has been saved.'));
                 return $this->redirect(['action' => 'index']);
+            } else {
+                $this->Flash->error(__('Unable to add your post.'));
             }
-            $this->Flash->error(__('Unable to add your post.'));
         }
         $this->set('post', $post);
 		
@@ -101,7 +100,7 @@ class PostsController extends AppController{
     }	
 	public function edit($id = null)
 	{
-		$post = $this->Posts->get($id, [
+		$post = $this->Posts->get($id,[
 			'contain' => ['Comments', 'UnapprovedComments', 'Tags']
 		]);
 		

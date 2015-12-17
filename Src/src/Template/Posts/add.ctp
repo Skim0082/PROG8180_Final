@@ -18,7 +18,8 @@
             "marker" => true,
             "draggableMarker" => false,
             "width"  => "100%",
-            "height" => "20em"
+            "height" => "20em",
+            "showWindow" => true
         );
     
 		echo $this->Form->create($post);
@@ -32,8 +33,8 @@
         echo $this->Form->input('departureTime',['id' => 'timepicker','type' => 'text', 'class'=>'ui-timepicker-input']);
     
     //For simplicity, start with postal code
-        echo $this->Form->input('address_1',['id'=>'address_1', 'label' => 'From']);
-        echo $this->Form->input('address_2',['id'=>'address_2', 'label' => 'To']);
+        echo $this->Form->input('srcAddr',['id'=>'address_1', 'label' => 'From','readonly' => true]);
+        echo $this->Form->input('dstAddr',['id'=>'address_2', 'label' => 'To', 'readonly' => true]);
         
         echo $this->GoogleMap->map($map_options);
         echo $this->GoogleMap->addMarker(
@@ -50,8 +51,8 @@
           array("draggableMarker" => true, "windowText" => "Destination", "markerTitle"=>"Destination")
         );
     
-        echo $this->Form->hidden('orgLatitude',['id'=>'latitude_1']);
-        echo $this->Form->hidden('orgLongitude',['id'=>'longitude_1']);
+        echo $this->Form->hidden('srcLatitude',['id'=>'latitude_1']);
+        echo $this->Form->hidden('srcLongitude',['id'=>'longitude_1']);
         echo $this->Form->hidden('dstLatitude', ['id'=>'latitude_2']);
         echo $this->Form->hidden('dstLongitude',['id'=>'longitude_2']);
 

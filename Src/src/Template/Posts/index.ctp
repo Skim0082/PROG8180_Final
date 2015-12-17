@@ -10,34 +10,19 @@
 	?>
 </div>
 
-
 <div id="main-list">
-	<h1>Riding Share Posts</h1>
-    <?php $this->GoogleMap->map(); ?>
 	<table>
 		<tr>
-			<th>ID</th>
-			<th>Request Type</th>
-			<th>User Name</th>
-            <th>Available Seats</th>
-            <th>Cost Per Person</th>
-            <th>Preferred Contact</th>
-            <th>Departure Date</th>
-            <th>Departure Time</th>
-            <th>Origin PostalCode</th>
-            <th>Destination PostalCode</th>
-            <th>Actions</th>
-			<?php
-				if($loginuser['id'] != null){
-					echo "<th>Comments</th>";			
-				}
-
-				
-				
-				if($loginuser['id'] != null){
-					echo "<th>Action</th>";
-				} 
-			?>
+            <th class="large-1 medium-1">ID</th>
+			<th class="large-1 medium-1">Request Type</th>
+			<th class="large-1 medium-1">User Name</th>
+            <th class="large-1 medium-1">Available Seats</th>
+            <th class="large-1 medium-1">Cost Per Person</th>
+            <th class="large-1 medium-1">Departure Date</th>
+            <th class="large-1 medium-1">Departure Time</th>
+            <th class="large-2 medium-1">From</th>
+            <th class="large-2 medium-1">To</th>
+            <th class="large-1 medium-1">Actions</th>
 		</tr>
 
 		<!-- Here is where we iterate through our $Posts query object, printing out post info -->
@@ -51,7 +36,7 @@
 				<?= h($post->post_type)==1 ? 'Looking for Car':'Looking for Passenger' ?>
 			</td>
 			<td>
-				<?= $post->user->lastname.', '.$post->user->firstname ?>
+				<?= $post->user->nickname ?>
 			</td>
             <td>
 				<?= $post->seatsAvailable ?>
@@ -60,44 +45,17 @@
 				<?= $post->costPerPerson ?>
 			</td>
             <td>
-				<?= $post->preferredContact ?>
-			</td>
-            <td>
 				<?= $post->departureDate ?>
 			</td>
             <td>
 				<?= $post->departureTime ?>
 			</td>
             <td>
-				<?= $post->srcPostal ?>
+				<?= $post->srcAddr ?>
 			</td>
             <td>
-				<?= $post->dstPostal ?>
-			</td>
-				<?php
-					if($loginuser['id'] != null){
-						echo "<td>";
-						
-						// Comments
-						if(count($post -> comments)>0){
-							echo "<ul>";
-							foreach ($post -> comments as $comment){
-								echo "<li>" . $comment -> body . "</li>"; 
-							}
-							echo "</ul>";
-						}
-						
-						if($loginuser['role'] == 'admin'){
-                            echo $this->Form->postLink(
-                                        '[Del]',
-                                        ['controller' => 'Comments', 'action' => 'delete', $comment->id],
-                                        ['confirm' => 'Are you sure?']
-                                    );				
-                        }
-                        echo "</td>";
-					}
-				?>		
-		
+				<?= $post->dstAddr ?>
+			</td>	
 			<?php
 				if($post->user_id == $loginuser['id'] || $loginuser['role'] == 'admin'){
 					echo "<td>";
@@ -123,5 +81,6 @@
 			?>					
 		</tr>
 		<?php endforeach; ?>
+        
 	</table>
 </div>

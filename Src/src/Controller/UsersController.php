@@ -113,10 +113,10 @@ class UsersController extends AppController
 				$this->Auth->setUser($user);
                 if($user['role']=='admin'){
                     //$this->set('loginuser', $user);
-                    return $this->redirect(['controller'=>'Users', 'action' => 'userlist']); 
+                    return $this->redirect($this->Auth->redirectUrl());
                 }else{
                     //return $this->redirect($this->Auth->redirectUrl());
-                    return $this->redirect(['controller'=>'Users', 'action' => 'map']);                    
+                    return $this->redirect($this->Auth->redirectUrl());            
                 }
 
 			}
