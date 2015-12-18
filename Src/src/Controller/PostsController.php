@@ -50,16 +50,24 @@ class PostsController extends AppController{
         
         if ($id == null) {
             $Posts = $this->Posts->find('all')
-                                ->contain(['Users', 'Comments', 'UnapprovedComments', 'Tags'])
+                                ->contain(['Users', 'Comments', 'UnapprovedComments', 'ApprovedComments'])
                                 ->order(['departureDate' => 'ASC', 'departureTime' => 'ASC'])
                                 ->where(['completed' => 0]);
+         } else if ($id == 'comment') {
+            $Posts = $this->Posts->find('all')
+                                ->contain(['Users', 'Comments', 'UnapprovedComments', 'ApprovedComments'])
+                                ->order(['completed' => 'ASC','departureDate' => 'ASC', 'departureTime' => 'ASC']);
+            $Posts->matching('Comments', function ($q) {
+                return $q->where(['Comments.user_id' => $this->request->session()->read('Auth.User.id')]);
+            });
+            
         } else if (($id == 0) && ($loginuser['role'] == 'admin')) {
             $Posts = $this->Posts->find('all')
-                                ->contain(['Users', 'Comments', 'UnapprovedComments', 'Tags'])
+                                ->contain(['Users', 'Comments', 'UnapprovedComments', 'ApprovedComments'])
                                 ->order(['completed' => 'ASC','departureDate' => 'ASC', 'departureTime' => 'ASC']);
         } else {
             $Posts = $this->Posts->find('all')
-                                ->contain(['Users', 'Comments', 'UnapprovedComments', 'Tags'])
+                                ->contain(['Users', 'Comments', 'UnapprovedComments', 'ApprovedComments'])
                                 ->order(['departureDate' => 'ASC', 'departureTime' => 'ASC'])
                                 ->where(['user_id' => $loginuser['id']]);
         }
@@ -72,7 +80,7 @@ class PostsController extends AppController{
     public function view($id = null)
     {
         $post = $this->Posts->get($id, [
-			'contain' => ['Comments', 'UnapprovedComments', 'Tags', 'Users']
+			'contain' => ['Comments', 'UnapprovedComments', 'ApprovedComments', 'Users']
 		]);
         $this->set(compact('post'));
 		
@@ -135,8 +143,9 @@ class PostsController extends AppController{
     
 	public function edit($id = null)
 	{
+        return $this->redirect($this->referer());
 		$post = $this->Posts->get($id,[
-			'contain' => ['Comments', 'UnapprovedComments', 'Tags']
+			'contain' => ['Comments', 'UnapprovedComments', 'ApprovedComments']
 		]);
 		
 		if ($this->request->is(['post', 'put'])) {

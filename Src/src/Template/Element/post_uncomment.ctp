@@ -8,10 +8,25 @@
                 <p class="comment"><?= h($uncomment->body) ?></p>
                 </td>
                 <td class="actions large-2">
-                    <?= $this->Html->link(__('Approve'), ['controller'=>'comments','action' => 'approve', $uncomment->id]) ?>
-                    <?= $this->Html->link(__('View'), ['controller'=>'comments','action' => 'view', $uncomment->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['controller'=>'comments','action' => 'edit', $uncomment->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['controller'=>'comments','action' => 'delete', $uncomment->comment_id], ['confirm' => __('Are you sure you want to delete # {0}?', $uncomment->id)]) ?>
+                    <?php 
+                        $loginuser = $this->request->session()->read('Auth.User');
+                        if($loginuser['role'] == 'admin') {
+                            echo $this->Html->link(__('Approve'), ['controller'=>'comments','action' => 'approve', $uncomment->id]);
+                            echo " | ";
+                            echo $this->Form->postLink(__('Delete'), ['controller'=>'comments','action' => 'delete', $uncomment->id],
+                                ['confirm' => __('Are you sure you want to delete comment # {0}?', $uncomment->id)]);
+                        } else {
+                            if($loginuser['id'] == $uncomment->user_id) {
+                                echo $this->Form->postLink(__('Delete'), ['controller'=>'comments','action' => 'delete', $uncomment->id], 
+                                    ['confirm' => __('Are you sure you want to delete # {0}?', $uncomment->id)]);
+                            } 
+                            if(($loginuser['id'] == $post->user_id) && ($uncomment->user_id != $post->user_id)) {
+                                    if($loginuser['id'] == $uncomment->user_id)
+                                        echo " | ";
+                                    echo $this->Html->link(__('Approve'), ['controller'=>'comments','action' => 'approve', $uncomment->id]);
+                            }
+                        }
+                    ?>
                  </td>
             </div>
             </tr>

@@ -19,6 +19,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ride Match <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="/posts">Post List</a></li>
+            <li><a href="/posts/index/comment">My Comment List</a></li>
             <li><a href="#">Recent View</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="/posts/add">Add New Post</a></li>		

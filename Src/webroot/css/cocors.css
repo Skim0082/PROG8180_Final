@@ -76,6 +76,7 @@ hr{
 }
 
 header h1 {
+    font-family: 'Montserrat', sans-serif;
     color:#333333;
     margin-top: 0.2em;
     padding: 0.1em 0.3em 0.1em 0.3em;

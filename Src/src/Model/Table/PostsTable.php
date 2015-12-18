@@ -18,10 +18,17 @@ class PostsTable extends Table
 		$this->hasMany('Comments', [
 			'className' => 'Comments',
 			'foreignKey' => 'post_id',
-			'dependent' => true,
-			'conditions' => ['approved' => true]
+			'dependent' => true
 		]);
 		
+        $this->hasMany('ApprovedComments', [
+			'className' => 'Comments',
+			'foreignKey' => 'post_id',
+			'dependent' => true,			
+			'conditions' => ['approved' => true],
+            'propertyName' => 'approved_comments'
+		]);	
+        
 		$this->hasMany('UnapprovedComments', [
 			'className' => 'Comments',
 			'foreignKey' => 'post_id',
@@ -56,6 +63,7 @@ class PostsTable extends Table
 
         return $validator;
     }
+    
 	public function isOwnedBy($postId, $userId)
 	{
 		return $this->exists(['id' => $postId, 'user_id' => $userId]);

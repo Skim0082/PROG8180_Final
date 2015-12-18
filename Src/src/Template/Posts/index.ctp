@@ -3,10 +3,14 @@
     <?php
         if ($mode === null) {
             $title = 'Post List';
-        } else if($mode == 0) {
-            $title = 'All Posted List';
-        } else {
-            $title = 'My Posted List';
+        } else  {
+            if($mode == 'comment') {
+                $title = 'My Comment List';
+            } else if ($mode == '0') {
+                $title = 'All Post List';
+            } else {
+                $title = 'My Posted List';
+            }
         }
     ?>
     <h1 class = 'left'><?= $title ?></h1>
@@ -59,14 +63,14 @@
                     echo $this->Html->link('Add Comment', ['controller'=>'comments','action' => 'add', $post->id]);
                     echo " | ";
                     echo $this->Html->link('View', ['action' => 'view', $post->id]);
-                    echo " | ";
-					echo $this->Html->link('Edit', ['action' => 'edit', $post->id]);
-					echo " | ";
-					echo $this->Form->postLink(
-						'Delete',
-						['action' => 'delete', $post->id],
-						['confirm' => 'Are you sure?']
-					);					
+                    if ($loginuser['role'] == 'admin') {
+                        echo " | ";
+                        echo $this->Form->postLink(
+                            'Delete',
+                            ['action' => 'delete', $post->id],
+                            ['confirm' => 'Are you sure?']
+                        );		
+                    }
 					echo "</td>";
 				} else {
 					echo "<td>";

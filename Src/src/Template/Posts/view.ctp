@@ -92,9 +92,9 @@
     ?>
     
     <div class="row">
-        <h4><?= __('Comments') ?></h4>
+        <h4><?= __('Approved Comments') ?></h4>
         <table cellpadding="0" cellspacing="0">
-        <?php foreach ($post->comments as $comment): ?>
+        <?php foreach ($post->approved_comments as $comment): ?>
             <tr>
                 <td class="large-10">
                 <div class="commentrow">
@@ -112,30 +112,30 @@
             echo $this->element('post_uncomment');
         ?>
     </div>
-
 	<p>
 		<?php
 			if($loginuser['id'] != null){
 				echo $this->Html->link('Add Comment', ['controller'=>'Comments', 'action' => 'add', $post->id]);	
 			}
-			
-			if($user->id == $loginuser['id'] || $loginuser['role'] == 'admin'){
-				echo "<div id='logout'>";
-				echo $this->Html->link('Edit', ['action' => 'edit', $post->id]);
-				echo " | ";
-				echo $this->Form->postLink(
-					'CloseDeal',
-					['action' => 'finish', $post->id],
-					['confirm' => 'After closing deal, posts will not be shown to public. Are you sure?']
-				);	
-                echo " | ";
-				echo $this->Form->postLink(
+            echo "<div id='logout'>";
+
+            if(($user->id == $loginuser['id']) || $loginuser['role'] == 'admin'){
+                if ($loginuser['role'] == 'admin') {
+                    echo $this->Form->postLink(
 					'Delete',
 					['action' => 'delete', $post->id],
 					['confirm' => 'Are you sure?']
-				);	
-				echo "</div>";
-			}			
+				    );	
+                    echo " | ";
+			     }
+                
+                echo $this->Form->postLink(
+                'CloseDeal',
+                ['action' => 'finish', $post->id],
+                ['confirm' => 'After closing deal, posts will not be shown to public. Are you sure?']
+                );
+            }
+            echo "</div>";
 		?>
 	</p>
 </div>

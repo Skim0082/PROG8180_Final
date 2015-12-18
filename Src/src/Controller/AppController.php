@@ -3,7 +3,7 @@ namespace App\Controller;
 
 use Cake\Controller\Controller;
 use Cake\Event\Event;
-
+    
 class AppController extends Controller
 {
     public function map() {
@@ -25,12 +25,12 @@ class AppController extends Controller
                 ]
             ],
             'loginRedirect' => [
-                'controller' => 'Posts',
-                'action' => 'index'
+                'controller' => 'Pages',
+                'action' => 'display'
             ],
             'logoutRedirect' => [
-                'controller' => 'Posts',
-                'action' => 'index'
+                'controller' => 'Pages',
+                'action' => 'display'
             ]
         ]);   
     }
