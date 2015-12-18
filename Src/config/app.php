@@ -167,16 +167,16 @@ return [
      */
     'EmailTransport' => [
         'default' => [
-            'className' => 'Mail',
+            'className' => 'Smtp',
             // The following keys are used in SMTP transports
-            'host' => 'localhost',
+            'host' => 'smtp.postmarkapp.com',
             'port' => 25,
             'timeout' => 30,
-            'username' => 'user',
-            'password' => 'secret',
+            'username' => 'de91d95d-7ac5-4676-aafa-e40761deb4a8',
+            'password' => 'de91d95d-7ac5-4676-aafa-e40761deb4a8',
             'client' => null,
             'tls' => null,
-        ],
+        ],     
     ],
 
     /**
@@ -191,7 +191,7 @@ return [
     'Email' => [
         'default' => [
             'transport' => 'default',
-            'from' => 'you@localhost',
+            'from' => 'admin@localhost',
             //'charset' => 'utf-8',
             //'headerCharset' => 'utf-8',
         ],
