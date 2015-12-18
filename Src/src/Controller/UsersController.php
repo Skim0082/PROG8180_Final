@@ -32,14 +32,15 @@ class UsersController extends AppController
 		// Allow users to register and logout.
 		// You should not add the "login" action to allow list. Doing so would
 		// cause problems with normal functioning of AuthComponent.
-		$this->Auth->allow(['add', 'logout', 'facebook','mail']);
+		$this->Auth->allow(['add', 'logout', 'facebook', 'mail', 'contactus']);
         parent::beforeFilter($event);
     }
+
     public function mail(){  
 
         $mail = "mail";
         $loginuser = $this->Auth->user();
-        //$this->set(compact('loginuser'));  
+        $this->set(compact('loginuser'));  
         $data = [];
         
         if ($this->request->is('post')) {
@@ -49,18 +50,45 @@ class UsersController extends AppController
                 'email' => $this->request->data['email'],
                 'mailSubject' => $this->request->data['mailSubject'],
                 'mailText' => $this->request->data['mailText']
-            ];
-
-            var_dump($data);
-            
+            ];            
+                     
             $email = new Email('default');
             $email->from(['cchoi1803@conestogac.on.ca' => 'COCORS Site']);
-            $email->to($data['mailTo']);
+            $email->to($data['email']);
             $email->subject($data['mailSubject']); 
-            $email->send($data['mailText']); 
+            $email->send($data['mailText']);               
             
-            $this->set('result', $data);    
-        }      
+            $this->set('result', $data);  
+        }        
+    }
+
+    public function contactus(){  
+
+        $mail = "mail";
+        $loginuser = $this->Auth->user();
+        $this->set(compact('loginuser')); 
+
+        $data = [];
+        
+        if ($this->request->is('post')) {
+
+            $fullText = '"' . $this->request->data['email'] . '" SENT : ' . $this->request->data['mailText'];            
+
+            $data = [
+                'mailTo' => $this->request->data['mailTo'],
+                'email' => $this->request->data['email'],
+                'mailSubject' => $this->request->data['mailSubject'],
+                'mailText' => $fullText
+            ];            
+            
+            $email = new Email('default');
+            $email->from(['cchoi1803@conestogac.on.ca' => 'From Contact US']);
+            $email->to(['cchoi1803@conestogac.on.ca']);
+            $email->subject($data['mailSubject']); 
+            $email->send($fullText);  
+            
+            $this->set('result', $data);  
+        }        
     }
 
     public function userlist()
@@ -146,7 +174,6 @@ class UsersController extends AppController
                     //return $this->redirect($this->Auth->redirectUrl());
                     return $this->redirect($this->Auth->redirectUrl());            
                 }
-
 			}
 			$this->Flash->error(__('Invalid username or password, try again'));
 		}
@@ -183,6 +210,14 @@ class UsersController extends AppController
     
     public function add()
     {
+        $loginuser = $this->Auth->user();
+        $this->set(compact('loginuser'));
+
+        if($loginuser['role'] != 'admin'){
+            $this->Flash->error(__('Only "Admin" role is allowed to add new user.'));
+            return $this->redirect(['action' => 'login']);
+        }
+
         $user = $this->Users->newEntity();
         if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->data);
