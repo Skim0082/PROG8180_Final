@@ -1,14 +1,14 @@
 <!-- src/Template/Pages/home.ctp -->
 <div class="jumbotron">
-    <h1>This is Home Page</h1>
-    <p>Welcome to Conestoga College Ride Sharing!</p>
+   <h1>COCORS</h1>
+        <p>Welcome to COCORS - The Conestoga College Ride Sharing System!</p>
 
-    <h2>This is an example of using element which is located element folder</h2>
+        <h2>This system will let you offer rides or look for a driver to carpool with and enjoy the benefits such as...  </h2>
 
-    <ol>
-      <li>create common html with ctp at Template-Element folder</li>
-      <li>Just Call $this->element('homeheader') </li>
-      <li>Note that there's no ctp extension at the above statement  </li>
-    </ol>
+        <ol>
+          <li>Saving money</li>
+          <li>Reducing pollution</li>
+          <li>Saving time(who likes waiting at a bus stop on a cold winter's day?)</li>
+        </ol>
 </div>
 
