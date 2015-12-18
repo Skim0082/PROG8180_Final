@@ -3,18 +3,20 @@
 
 - We have tested using **Google Chrome Browser**, Please review my works with Chrome Browser.
 - This project was worked with **cakephp version 3.1.2**
-- Heroku URL is (http://cocors.herokuapp.com/)
+- Heroku URL of our project is as like : (http://cocors.herokuapp.com/)
 
-## CakePHP Association
+## Develop Information
 
-  - **Development Environment** : WAMP Server
-  - **Database name** : assignment3
-  - **Table names** : articles, users, comments, tags, articles_tags
-  - **Database access user**  : user : **root**  / password : **root**
-    - Configuration for connection of database was already set in app.php in config folder of CakePHP 
-    - Database schema are located in the folder of 'config/schema' in CakePHP structure
-      - **Schema files name** : **Assignment3_DB.sql** which includes creating Database, Tables, and insert data already exist
-  - I did not implement to validate specific details such as the wrong url address.
+  - **Development Environment** : CakePhp 3.1.2 / MySQL / PostMark / Heroku
+  - **Database name** : 
+  - **Table names** : users, posts, poststags, tags, comments
+  - **Database access user**  : admin : **admin@gmail.com**  / password : **11111**
+    - User is required email and password with Facebook athentification
+    - After Facebook athentification, user set the password for our site 
+    - This password will be used logIn password (It does not need to be the same with the facebook's)
+    - admin is allow to add new user after login as admin role
+    - User is not 
+  - We did not implement to validate specific details such as the wrong url address.
   - public user (not logedin) only can see title, body, tags (no comments)
   - author logedin can see only approved comments
   - admin can see all and edit, delete comments as well.
