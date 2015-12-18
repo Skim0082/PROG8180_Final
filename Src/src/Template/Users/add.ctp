@@ -16,10 +16,8 @@
 			]) ?>	
             <?= $this->Form->input('contactDetail') ?>		
 		    <?= $this->Form->input('vehicle') ?>	
-			<?= $this->Form->input('role', [
-				'options' => ['user' => 'User']
-			]) ?>			
+			<?=	 $this->Form->input('role', ['options' => ['user' => 'User', 'admin'=>'Admin']]) ?>		
 	   </fieldset>
-	<?= $this->Form->button(__('Submit')); ?>
+	<?= $this->Form->button(__('Add User')); ?>
 	<?= $this->Form->end() ?>
 </div>	

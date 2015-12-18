@@ -49,6 +49,7 @@
                   echo "<li><a href='/posts/recent'>My Recent Ride</a></li>";
                 }else{
                   echo "<li><a href='/users/userlist/'>User List</a></li>";
+                  echo "<li><a href='/users/add/'>Add User</a></li>";
                 }
                   echo "<li role='separator' class='divider'></li>"; 
                   echo "<li>" . $this->Html->link('Log Out', ['controller' => 'Users', 'action' => 'logout'], ['class'=>'facebookLogout']) . "</li>";
