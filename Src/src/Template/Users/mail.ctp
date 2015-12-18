@@ -1,9 +1,9 @@
-<!-- File: src/Template/users/view.ctp -->
+<!-- File: src/Template/users/mail.ctp -->
 <div class="jumbotron">
-	<h1>Email Message</h1>
+	<h1>Send Message</h1>
 	<fieldset>
 	<?= $this->Flash->render('auth') ?>
-	<legend>Please enter your message to send</legend>
+	<legend>Anything you want to know about our service.</legend>
 	<?= $this->Form->create() ?>				
 		<?= $this->Form->input('From', [
 			'label'=>['text'=>'From'], 
@@ -15,7 +15,7 @@
 		<?= $this->Form->input('email', ['label'=>['text'=>'To'], 'required'=> true, 'placeholder'=>'Receiver email address']) ?>
 		<?= $this->Form->input('mailSubject', ['label'=>['text'=>'Subject'], 'required'=> true, 'placeholder'=>'Enter the Subject']) ?>
 		<?= $this->Form->input('mailText', ['label'=>['text'=>'Message'], 'rows' => '3', 'required'=> true, 'placeholder'=>'Enter message']) ?>	
-	<?= $this->Form->button(__('Send')); ?>
+	<?= '<button type="submit" class="btn btn-info">Send Message</button>' ?>
 	</fieldset>
 	<?= $this->Form->end() ?>
 
