@@ -19,10 +19,17 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ride Match <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="/posts">Post List</a></li>
+            <li><a href="/posts/index/comment">My Comment List</a></li>
             <li><a href="#">Recent View</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="/posts/add">Add New Post</a></li>		            
-            <li><a href="#">My Posted List</a></li>
+            <li><a href="/posts/add">Add New Post</a></li>		
+            <?php 
+              if($this->request->session()->read('Auth.User.role') == 'admin'){
+                  echo "<li><a href='/posts/index/0'>All Posted List</a></li>";
+              } else {
+                  echo "<li><a href='/posts/index/".$this->request->session()->read('Auth.User.id')."'>My Posted List</a></li>";
+              }
+             ?>
           </ul>		          
         </li>
       </ul>
