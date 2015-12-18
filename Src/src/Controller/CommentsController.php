@@ -5,6 +5,7 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 use Cake\Event\Event;
+use Cake\Mailer\Email;
 
 class CommentsController extends AppController
 {
@@ -19,6 +20,9 @@ class CommentsController extends AppController
 
             if ($this->Comments->save($comment)) {
                 $this->Flash->success(__('The comment has been saved.'));
+                $this->loadModel('Posts');
+                $post = $this->Posts->get($comment->post_id, ['contain' => ['Users']]);
+                $this->commentmail($id, $post->user['nickname'], $post->user['email']);
                 return $this->redirect(['controller' => 'Posts', 'action' => 'index']);
             } else {
                 $this->Flash->error(__('Unable to add comments.'));
@@ -47,7 +51,7 @@ class CommentsController extends AppController
     public function approve($id = null)
     {
         $comment = $this->Comments->get($id, [
-            'contain' => ['Posts']
+            'contain' => ['Posts', 'Users']
         ]);
         
         //This is to block unauthorized user from apporving comment.
@@ -61,11 +65,57 @@ class CommentsController extends AppController
 
         if ($this->Comments->save($comment)) {
             $this->Flash->success(__('The comment has been approved.'));
+             
+            $this->approvalmail($comment->post_id, $comment->user['nickname'], $comment->user['email']);
+
             return $this->redirect(['controller'=>'Posts','action' => 'index']);
         } else {
             $this->Flash->error(__('The comment could not be approved. Please, try again.'));
         }
     }
+    
+    
+    public function approvalmail($id, $nickname, $email)
+    {
+        $subject = "Post ID:".$id."  Approval of your comment";
+        $mailText = "Hello ".$nickname.", \r\n".
+            "Your comment is approved\r\n\r\nYou can view your messgae with following link\r\n".
+            "http://cocors.herokuapp.com/posts/view/".$id;
+        self::sendmail($id, $email, $subject, $mailText);
+    }
+    
+    public function commentmail($id, $nickname, $email)
+    {
+        $subject = "Post ID:".$id."Updated for your comment or post";
+        $mailText = "Hello ".$nickname.", \r\n".
+            "New comments added\r\n\r\nYou can view your messgae with following link\r\n".
+            "http://cocors.herokuapp.com/posts/view/".$id;
+        self::sendmail($id, $email, $subject, $mailText);
+    }
+    
+    public function sendmail($id, $email, $subject, $mailText)
+    {  
+        
+        $mail = "mail";
+        $loginuser = $this->Auth->user();
+        $data = [];
+
+        $data = [
+            'mailFrom' => 'cchoi1803@conestogac.on.ca',
+            'email' => $email,
+            'mailSubject' => $subject,
+            'mailText' => $mailText
+        ];
+
+        $email = new Email('default');
+        $email->from(['cchoi1803@conestogac.on.ca' => 'COCORS Site']);
+        $email->to($data['email']);
+        $email->subject($data['mailSubject']); 
+        $email->send($data['mailText']); 
+
+        $this->set('result', $data);    
+    }
+    
     
 	public function isAuthorized($user)
 	{
