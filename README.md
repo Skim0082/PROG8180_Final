@@ -1,7 +1,9 @@
-## PROG8180 Web Technologies - Assignment 3
+## PROG8180 Web Technologies - Final Project
+  ### Group 1 : Changho Choi, Hassan Nahhal, Nicholas Collins, SungJoe KIM
 
-- I have tested using **Google Chrome Browser**, Please review my works with Chrome Browser.
-- I worked it with **cakephp version 3.1.2**
+- We have tested using **Google Chrome Browser**, Please review my works with Chrome Browser.
+- This project was worked with **cakephp version 3.1.2**
+- Heroku URL is (http://cocors.herokuapp.com/)
 
 ## CakePHP Association
 
