@@ -15037,3 +15037,16 @@ Stack Trace:
 #3 {main}
 
 
+2015-12-18 19:53:10 Error: [Cake\Routing\Exception\MissingControllerException] Controller class User could not be found.
+Exception Attributes: array (
+  'class' => 'User',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /user/mail
+Stack Trace:
+#0 /Users/infomat/src/web/PROG8180_Final/Src/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
