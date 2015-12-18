@@ -1,5 +1,6 @@
 <!-- File: src/Template/Posts/view.ctp -->
 <div id="main">
+    <h1>View Posts</h1>
     <?php
         $map_options = array(
             "localize" => false,
@@ -89,6 +90,29 @@
         "directionsDiv" => "directions",
        ));
     ?>
+    
+    <div class="row">
+        <h4><?= __('Comments') ?></h4>
+        <table cellpadding="0" cellspacing="0">
+        <?php foreach ($post->comments as $comment): ?>
+            <tr>
+                <td class="large-10">
+                <div class="commentrow">
+                    <h5 class="commentid"><?=$comment->user_id==null ? "Anonymous" : $userlist[$comment->user_id] ?> </h5>
+                    <p class="comment"><?= h($comment->body) ?></p>
+                </div>
+                </td>
+                <td class="large-2">
+                    <?= __('Approved') ?>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+        </table>
+        <?php
+            echo $this->element('post_uncomment');
+        ?>
+    </div>
+
 	<p>
 		<?php
 			if($loginuser['id'] != null){

@@ -1,5 +1,6 @@
 <!-- File: src/Template/Posts/add.ctp -->
 <div id="main">
+    <h1>New Post</h1>
 	<?php
         $map_options = array(
             "localize" => false,

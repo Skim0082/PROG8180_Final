@@ -116,3 +116,20 @@ nav ul {
     color:#C2140B;
     text-align: right;
 }
+
+td{
+    word-wrap: break-word;
+}
+
+.commentid {
+   font-family: sans-serif;
+   color: #1798B8;
+   font-style: bold;
+}
+.comment {
+    display:inline-block;
+    text-align: left;
+}
+.commentrow {
+    border-bottom-color: cadetblue
+}

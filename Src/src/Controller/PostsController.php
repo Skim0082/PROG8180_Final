@@ -9,15 +9,16 @@ use Cake\Event\Event;
 class PostsController extends AppController{
 
     public $paginate = [
-        'limit' => 7,
-        'order' => [
-            'Posts.title' => 'asc'
-        ]
+        'Posts' => [],
+        'Users' => [],
+        'Comments' => []
     ];
-
+    
+    
     public function initialize()
     {
         parent::initialize();
+
         $this->loadComponent('Paginator');
         $this->loadComponent('Flash'); // Include the FlashComponent
     }
@@ -32,8 +33,11 @@ class PostsController extends AppController{
     public function index()
     {
         $Posts = $this->Posts->find('all')->contain(['Users', 'Comments', 'UnapprovedComments', 'Tags']);
-        $this->set(compact('Posts'));
-
+        $this->paginate = [
+        'contain' => ['Users', 'Comments']
+        ];
+        
+        $this->set('Posts', $this->paginate());
 
 		$loginuser = $this->Auth->user();
 		$this->set('loginuser', $loginuser);
@@ -42,15 +46,19 @@ class PostsController extends AppController{
     public function view($id = null)
     {
         $post = $this->Posts->get($id, [
-			'contain' => ['Comments', 'UnapprovedComments', 'Tags']
+			'contain' => ['Comments', 'UnapprovedComments', 'Tags', 'Users']
 		]);
         $this->set(compact('post'));
 		
 		$user = $this->Posts->Users->get($post->user_id);
 		$this->set(compact('user'));
-		
+        
+		$userlist = $this->Posts->Users->find('list',['keyField' => 'id',
+                            'valueField' => 'nickname'])
+                      ->toArray();
+        
 		$loginuser = $this->Auth->user();
-		$this->set(compact('loginuser'));
+		$this->set(compact('loginuser','userlist'));
 
     }	
 

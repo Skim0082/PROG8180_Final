@@ -26,8 +26,6 @@ class CommentsTable extends Table
     {
         parent::initialize($config);
 
-        parent::initialize($config);
-
         $this->table('comments');
         $this->displayField('id');
         $this->primaryKey('id');

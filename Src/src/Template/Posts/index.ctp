@@ -1,15 +1,14 @@
 <!-- File: src/Template/Posts/index.ctp -->
 <div id="main-list">
+    <h1 class = 'left'>Post List</h1>
     <div class="column content">
 	<table cellpadding="0" cellspacing="0">
 		<tr>
-            <th class="large-1 medium-1">ID</th>
-			<th class="large-1 medium-1">Request Type</th>
-            <th class="large-1 medium-1">User</th>
-            <th class="large-1 medium-1">Available Seats</th>
-            <th class="large-1 medium-1">Cost Per Person</th>
-            <th class="large-1 medium-1">Departure Date</th>
-            <th class="large-1 medium-1">Departure Time</th>
+			<th class="large-1 medium-1"><?= $this->Paginator->sort('postType','Request Type') ?></th>
+            <th class="large-1 medium-1"><?= $this->Paginator->sort('user_id','User') ?></th>
+            <th class="large-1 medium-1"><?= $this->Paginator->sort('seatsAvailable','Available Seats') ?></th>
+            <th class="large-1 medium-1"><?= $this->Paginator->sort('costPerPerson','Cost Per Person') ?></th>
+            <th class="large-2 medium-1"><?= $this->Paginator->sort('departureDate','Departure Date') ?></th>
             <th class="large-2 medium-2">From</th>
             <th class="large-2 medium-2">To</th>
             <th class="large-1 medium-1">#Of Comments</th>
@@ -21,13 +20,10 @@
 		<?php foreach ($Posts as $post): ?>
 		<tr>
 			<td>
-				<?= $post->id ?>
-			</td>	
-			<td>
-				<?= h($post->post_type)==1 ? 'Looking for Car':'Looking for Passenger' ?>
+				<?= $post->postType == 1 ? 'Looking for Car':'Looking for Passenger' ?>
 			</td>
 			<td>
-				<?= $post->user->nickname ?>
+                <?= $post->user->nickname ?>
 			</td>
             <td>
 				<?= $post->seatsAvailable ?>
@@ -37,9 +33,7 @@
 			</td>
             <td>
 				<?= $post->departureDate ?>
-			</td>
-            <td>
-				<?= $post->departureTime ?>
+                <?= $post->departureTime ?>
 			</td>
             <td>
 				<?= $post->srcAddr ?>
@@ -74,8 +68,7 @@
                 }
 			?>					
 		</tr>
-		<?php endforeach; ?>
-        
+		<?php endforeach; ?>    
 	</table>
     </div>
 </div>
