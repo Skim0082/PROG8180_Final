@@ -5,13 +5,18 @@ namespace App\Controller;
 
 use App\Controller\UsersController;
 use Cake\Event\Event;
+use Cake\ORM\TableRegistry;
 
 class PostsController extends AppController{
 
     public $paginate = [
         'Posts' => [],
         'Users' => [],
-        'Comments' => []
+        'Comments' => [],
+        'order' => [
+            'Posts.completed' => 'desc',
+            'Posts.departureDate' => 'asc',
+        ]
     ];
     
     
@@ -30,17 +35,38 @@ class PostsController extends AppController{
 
     }
     
-    public function index()
+    public function afterSave(Event $event)
     {
-        $Posts = $this->Posts->find('all')->contain(['Users', 'Comments', 'UnapprovedComments', 'Tags']);
+        parent::afterSave($event);
+    }
+    
+    public function index($id = null)
+    {
         $this->paginate = [
         'contain' => ['Users', 'Comments']
         ];
         
-        $this->set('Posts', $this->paginate());
-
-		$loginuser = $this->Auth->user();
+        $loginuser = $this->Auth->user();
+        
+        if ($id == null) {
+            $Posts = $this->Posts->find('all')
+                                ->contain(['Users', 'Comments', 'UnapprovedComments', 'Tags'])
+                                ->order(['departureDate' => 'ASC', 'departureTime' => 'ASC'])
+                                ->where(['completed' => 0]);
+        } else if (($id == 0) && ($loginuser['role'] == 'admin')) {
+            $Posts = $this->Posts->find('all')
+                                ->contain(['Users', 'Comments', 'UnapprovedComments', 'Tags'])
+                                ->order(['completed' => 'ASC','departureDate' => 'ASC', 'departureTime' => 'ASC']);
+        } else {
+            $Posts = $this->Posts->find('all')
+                                ->contain(['Users', 'Comments', 'UnapprovedComments', 'Tags'])
+                                ->order(['departureDate' => 'ASC', 'departureTime' => 'ASC'])
+                                ->where(['user_id' => $loginuser['id']]);
+        }
+        
+        $this->set('Posts', $this->paginate($Posts));
 		$this->set('loginuser', $loginuser);
+        $this->set('mode', $id);
     }
     
     public function view($id = null)
@@ -106,6 +132,7 @@ class PostsController extends AppController{
 		$loginuser = $this->Auth->user();
 		$this->set(compact('loginuser'));		
     }	
+    
 	public function edit($id = null)
 	{
 		$post = $this->Posts->get($id,[
@@ -134,6 +161,25 @@ class PostsController extends AppController{
 		$loginuser = $this->Auth->user();
 		$this->set(compact('loginuser'));		
 	}	
+    
+    public function finish($id = null)
+    {
+        if ($id != null) {
+            $post = $this->Posts->get($id);
+            $post -> completed = 1;
+            $post -> seatsAvailable = 0;
+            if ($this->Posts->save($post)) {
+                $this->Flash->success(__('Thank you! You can find your post at my Posted List'));
+                return $this->redirect(['controller'=>'Posts','action' => 'index']);
+            } else {
+                $this->Flash->error(__('The post could not be closed. Please, try again.'));
+            }
+        } else {
+            $this->Flash->error(__('Unable to process your request.'));
+        }
+        
+    }
+    
 	public function delete($id)
 	{
 		$this->request->allowMethod(['post', 'delete']);
@@ -153,7 +199,7 @@ class PostsController extends AppController{
 		}
 
 		// The owner of an post can edit and delete it
-		if (in_array($this->request->action, ['edit', 'delete'])) {
+		if (in_array($this->request->action, ['edit', 'delete', 'finish'])) {
 			$id = (int)$this->request->params['pass'][0];
 			if ($this->Posts->isOwnedBy($id, $user['id'])) {
 				return true;

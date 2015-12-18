@@ -124,6 +124,12 @@
 				echo $this->Html->link('Edit', ['action' => 'edit', $post->id]);
 				echo " | ";
 				echo $this->Form->postLink(
+					'CloseDeal',
+					['action' => 'finish', $post->id],
+					['confirm' => 'After closing deal, posts will not be shown to public. Are you sure?']
+				);	
+                echo " | ";
+				echo $this->Form->postLink(
 					'Delete',
 					['action' => 'delete', $post->id],
 					['confirm' => 'Are you sure?']

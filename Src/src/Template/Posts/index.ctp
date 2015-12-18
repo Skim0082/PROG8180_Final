@@ -1,6 +1,15 @@
 <!-- File: src/Template/Posts/index.ctp -->
 <div id="main-list">
-    <h1 class = 'left'>Post List</h1>
+    <?php
+        if ($mode === null) {
+            $title = 'Post List';
+        } else if($mode == 0) {
+            $title = 'All Posted List';
+        } else {
+            $title = 'My Posted List';
+        }
+    ?>
+    <h1 class = 'left'><?= $title ?></h1>
     <div class="column content">
 	<table cellpadding="0" cellspacing="0">
 		<tr>

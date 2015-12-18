@@ -38,6 +38,28 @@ class CommentsController extends AppController
 		}
 	}	
 
+    /**
+     * Approve method
+     *
+     * @param string|null $id Comment id.
+     * @return void Redirects on successful edit, renders view otherwise.
+     * @throws \Cake\Network\Exception\NotFoundException When record not found.
+     */
+    public function approve($id = null)
+    {
+        $comment = $this->Comments->get($id, [
+            'contain' => ['Posts']
+        ]);
+        $comment->approved = 1;
+        
+        if ($this->Comments->save($comment)) {
+            $this->Flash->success(__('The comment has been approved.'));
+            return $this->redirect(['controller'=>'Posts','action' => 'index']);
+        } else {
+            $this->Flash->error(__('The comment could not be approved. Please, try again.'));
+        }
+    }
+    
 	public function isAuthorized($user)
 	{
 		// All registered users can add Posts

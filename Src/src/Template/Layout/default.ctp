@@ -31,8 +31,9 @@ $cakeDescription = 'Cocors:Conestoga College Ride Sharing System';
     <?= $this->Html->css('base.css') ?>
     <?= $this->Html->css('cake.css') ?>
     <?= $this->Html->css('jquery.timepicker.min.css') ?>
-    <?= $this->Html->css('cocors.css') ?> 
-    
+    <?= $this->Html->css('cocors.css') ?>   
+    <?= $this->Html->css('https://fonts.googleapis.com/css?family=Montserrat')?>
+
     <?= $this->Html->script('https://maps.google.com/maps/api/js?sen sor=true') ?>
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>

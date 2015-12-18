@@ -15022,3 +15022,18 @@ Stack Trace:
 #3 {main}
 
 
+2015-12-18 01:40:12 Error: [Cake\Controller\Exception\MissingActionException] Action CommentsController::approve() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'CommentsController',
+  'action' => 'approve',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /comments/approve/7
+Stack Trace:
+#0 /Users/infomat/src/web/PROG8180_Final/Src/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /Users/infomat/src/web/PROG8180_Final/Src/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\CommentsController))
+#2 /Users/infomat/src/web/PROG8180_Final/Src/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
