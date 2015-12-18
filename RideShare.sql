@@ -34,7 +34,6 @@ CREATE TABLE posts (
 	preferredContact VARCHAR(255) NOT NULL,
 	departureDate CHAR(10),
 	departureTime CHAR(8),
-    completed INT(1) DEFAULT 0,
 	srcAddr VARCHAR(255) NOT NULL,
 	srcLongitude float NOT NULL,
     srcLatitude float NOT NULL,

@@ -35,7 +35,6 @@ class UsersController extends AppController
 		$this->Auth->allow(['add', 'logout', 'facebook','mail']);
         parent::beforeFilter($event);
     }
-    
     public function mail(){  
 
         $mail = "mail";
@@ -51,10 +50,12 @@ class UsersController extends AppController
                 'mailSubject' => $this->request->data['mailSubject'],
                 'mailText' => $this->request->data['mailText']
             ];
+
+            var_dump($data);
             
             $email = new Email('default');
             $email->from(['cchoi1803@conestogac.on.ca' => 'COCORS Site']);
-            $email->to($data['email']);
+            $email->to($data['mailTo']);
             $email->subject($data['mailSubject']); 
             $email->send($data['mailText']); 
             
