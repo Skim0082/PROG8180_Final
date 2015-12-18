@@ -1,5 +1,5 @@
 ## PROG8180 Web Technologies - Final Project
-  ### Group 1 : Changho Choi, Hassan Nahhal, Nicholas Collins, SungJoe KIM
+### Group 1 : Changho Choi, Hassan Nahhal, Nicholas Collins, SungJoe KIM
 
 - We have tested using **Google Chrome Browser**, Please review my works with Chrome Browser.
 - This project was worked with **cakephp version 3.1.2**
