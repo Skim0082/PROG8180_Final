@@ -39,7 +39,8 @@
         <button type="submit" class="btn btn-success">Search</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/pages/contact">Contact</a></li>
+        <!--<li><a href="/pages/contact">Contact</a></li>-->
+		 <li><a href="/users/mail">Contact</a></li>
         <li><a href="/pages/about">About</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account <span class="caret"></span></a>
