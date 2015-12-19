@@ -21,4 +21,10 @@
   - There are 3 type of users, unlogined user, logined user, admin user
   - Each user has own limitation to access to the pages and usage
 
+## Important for testing
+ - **Due to there's quata for Google GEO API with free key and heroku IP is shared. 
+ - **Thus quata limite will be overed easily.
+ - **For testing operation adding post that is interoperated with Google geo API, using local Apache server is needed
+ - **However, heroku database is still available
+ - **For Commercial purpose, commerical key can be bought or proxy server can be used.
 
