@@ -2,7 +2,7 @@
 ### COCORS (Ride Sharing System)
 ### Group 1 : Changho Choi, Hassan Nahhal, Nicholas Collins, SungJoe KIM
 
-- We have tested using **Google Chrome Browser**, Please review my works with Chrome Browser.
+- We have tested using **Google Chrome Browser**, Please review our project with Chrome Browser.
 - This project was worked with **cakephp version 3.1.2**
 - Heroku URL of our project is as like : (http://cocors.herokuapp.com/)
 
