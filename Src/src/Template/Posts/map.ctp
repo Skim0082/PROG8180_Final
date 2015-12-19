@@ -1,5 +1,5 @@
 <!-- File: src/Template/Articles/map.ctp -->
-<div id="Gmap">
+<div class="container clearfix" id="Gmap">
 
 	<h1>Ride Share Matching</h1>
 	<?= $this->Form->create("Search"); ?>

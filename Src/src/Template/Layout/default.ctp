@@ -26,7 +26,7 @@ $cakeDescription = 'Cocors:Conestoga College Ride Sharing System';
     </title>
     <?= $this->Html->meta('icon') ?>
 
-    <?= $this->Html->css('https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/flatly/bootstrap.min.css') ?>
+    <?= $this->Html->css('flatly.bootstrap.min.css') ?>
     <?= $this->Html->css('jquery-ui.css') ?> 
     <?= $this->Html->css('base.css') ?>
     <?= $this->Html->css('cake.css') ?>
@@ -49,7 +49,7 @@ $cakeDescription = 'Cocors:Conestoga College Ride Sharing System';
         <?= $this->element('navbar'); ?>
     </nav>
     <?= $this->Flash->render() ?>
-    <section class="container clearfix">
+    <section>
         <?= $this->fetch('content') ?>
     </section>
     <footer>

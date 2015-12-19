@@ -1,10 +1,10 @@
 <!-- src/Template/Comments/add.ctp -->
-<div id="main">
+<div class="container clearfix" id="main">	
 	<?= $this->Form->create($comment) ?>
-		<fieldset>
-			<legend><?= __('Add Comment') ?></legend>
-			<?= $this->Form->input('body') ?>
-	   </fieldset>
-	<?= $this->Form->button(__('Save Comment')); ?>
+	<legend><?= __('Add Comment') ?></legend>
+	<fieldset>
+		<?= $this->Form->input('body') ?>
+		<?= $this->Form->button('Save Comment', ['type'=>'submit','class'=>'btn btn-primary']); ?>
+	</fieldset>	
 	<?= $this->Form->end() ?>
 </div>

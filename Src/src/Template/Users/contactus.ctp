@@ -1,5 +1,5 @@
 <!-- File: src/Template/users/contactus.ctp -->
-<div class="jumbotron">
+<div class="container clearfix" id="main">
 	<h1>Contact Us</h1>
 	<fieldset>
 	<?= $this->Flash->render('auth') ?>

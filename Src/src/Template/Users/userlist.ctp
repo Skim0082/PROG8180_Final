@@ -1,5 +1,5 @@
 <!-- File: src/Template/Users/userlist.ctp -->
-<div id="main-list">
+<div class="container clearfix" id="main">
 	<h1>User list</h1>
 	<table>
 		<tr>

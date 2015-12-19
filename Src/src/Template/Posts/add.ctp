@@ -1,5 +1,5 @@
 <!-- File: src/Template/Posts/add.ctp -->
-<div id="main">
+<div class="container clearfix" id="main">
     <h1>New Post</h1>
 	<?php
         $map_options = array(
@@ -50,8 +50,7 @@
         echo $this->Form->hidden('dstLatitude', ['id'=>'latitude_2']);
         echo $this->Form->hidden('dstLongitude',['id'=>'longitude_2']);
 
-		echo $this->Form->button(__('Save Post'));
-				
+        echo $this->Form->button('Save Post', ['type'=>'submit','class'=>'btn btn-primary']);			
 		echo $this->Form->end();
 	?>
 </div>

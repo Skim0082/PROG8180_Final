@@ -1,14 +1,14 @@
 <!-- File: src/Template/Users/login.ctp -->
-<div id="main">
+<div class="container clearfix" id="main">
 	<h1>Log In</h1>
+	<fieldset>
 	<?= $this->Flash->render('auth') ?>
-	<?= $this->Form->create() ?>
-		<fieldset>
-			<legend><?= __('Please enter your email and password') ?></legend>
-			<?= $this->Form->input('email') ?>
-			<?= $this->Form->input('password') ?>
-		</fieldset>
-	<?= $this->Form->button(__('Login')); ?>
+	<legend><?= __('Please enter your email and password') ?></legend>
+	<?= $this->Form->create() ?>				
+		<?= $this->Form->input('email', ['required'=> true, 'placeholder'=>'Email']) ?>
+		<?= $this->Form->input('password', ['required'=> true, 'placeholder'=>'Password']) ?>		
+		<?= $this->Form->button('Log In', ['type'=>'submit','class'=>'btn btn-primary']); ?>
+	</fieldset>
 	<?= $this->Form->end() ?>
 </div>	
 <div id="FbLoging">

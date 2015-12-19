@@ -1,5 +1,5 @@
 <!-- File: src/Template/Posts/index.ctp -->
-<div id="main-list">
+<div class="container clearfix" id="main-list">
     <?php
         if ($mode === null) {
             $title = 'Post List';

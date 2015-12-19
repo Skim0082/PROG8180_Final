@@ -1,5 +1,5 @@
 <!-- src/Template/Pages/about.ctp -->
-<div class="jumbotron">
+<div class="container clearfix" id="main">
     <h1>COCORS</h1>
         <p></p>
 
@@ -23,6 +23,8 @@
 		<p>After you create an account or login with facebook, you can respond to posts.  If you are a driver, you 
 		   can approve posts and accept someone in your carpool by closing the deal.  
 		</p>
-</div>
+<p> </P>
+</div><p> </P>
+
 
 

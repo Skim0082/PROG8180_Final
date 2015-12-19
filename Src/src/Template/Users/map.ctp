@@ -1,5 +1,5 @@
 <!-- File: src/Template/Users/map.ctp -->
-<div id="Gmap">
+<div class="container clearfix"  id="main">
 
 	<h1>Ride Share Matching</h1>
 	<?= $this->Form->create("Search"); ?>
@@ -29,8 +29,7 @@
 			'BOTH' => 'BOTH'
 		];		
 		echo $this->Form->input('Type',['type'=>'select', 'options'=> $optionstype, 'default'=>'PASSENGER']);	
-
-		echo $this->Form->button(__('Search Direction'));
+		echo $this->Form->button('Search Direction', ['type'=>'submit','class'=>'btn btn-primary']);
 	?>
 	</fieldset>
 	<?= $this->Form->end(); ?>
@@ -50,11 +49,11 @@
 
 				$map_options = array(
 					"id"       => "map_canvas",
-					"width"    => "697px",
-					"height"   => "400px",
-					"localize" => false,
+					"width"    => "100%",
+					"height"   => "300px",
+					"localize" => true,
 					"zoom"     => 14,
-					"marker"   => false,
+					"marker"   => false,				
 					"address" => "Kitchener, 229 Doon Valley Dr",
 					"infoWindow" => true,
 					"type"     => $type
@@ -86,26 +85,9 @@
 				        "travelMode" => "DRIVING",
 				        "directionsDiv" => "directions",
 				      ));	
-					      
-				      /*
-				      $result['latitude1'] = "";
-				      $result['latitude2'] = "";
-				      $result['longitude1'] = "";
-				      $result['longitude2'] = "";
-				      */
 				}
 
 			}else{
-				// add the marker with options
-				/*
-				echo $this->GoogleMap->addMarker("map_canvas", 2, "Toronto, ON", array(
-				"showWindow"   => true,
-				"windowText"   => "Marker",
-				"markerTitle"  => "Title",
-				"markerIcon"   => "http://labs.google.com/ridefinder/images/mm_20_purple.png",
-				"markerShadow" => "http://labs.google.com/ridefinder/images/mm_20_purpleshadow.png"
-				));
-				*/
 				// add the marker with latitude and longitude
 				echo $this->GoogleMap->addMarker("map_canvas", 2, 
 					array(
@@ -126,89 +108,8 @@
 						"draggableMarker" => true,
 						"windowText"=>"Conestoga College", 
 						"markerTitle"=>"Conestoga College"
-						));
-
-
-				// add the marker with address
-				//echo $this->GoogleMap->addMarker("map_canvas", 2, "Waterloo, ON");		
+						));		
 			}
 		?>
-
 	</div>	
-</div>
-<div id="Gmap">
-<?php
-	if(!empty($result)){
-
-		echo '<p><h3>Result for: Dec 10, 2015</h3>';
-		echo 'From: ' . $result['From'] . " / To: " . $result['To'] . " / Key: " . $result['KeyWord'] . "</p>";
-
-		echo '<table>';
-		echo '<tr>';		
-		echo '<th class="large-2 medium-4">Poster</th>';
-		echo '<th class="large-3 medium-4">Departure Date/Time</th>';
-		echo '<th class="large-2 medium-4">Contact</th>';
-		echo '<th class="large-1 medium-4">Seats</th>';
-		echo '<th class="large-3 medium-4">Place</th>';
-		echo '</tr>';
-
-		echo '<tr>';	
-		echo '<td>John</td>';
-		echo '<td>Dec 10, 16:00 pm</td>';
-		echo '<td>Email</td>';
-		echo '<td>2</td>';		
-		echo '<td>Door 3</td>';
-		echo '</tr>';	
-
-		echo '<tr>';
-		echo '<td>Emily</td>';		
-		echo '<td>Dec 10, 17:00 pm</td>';
-		echo '<td>Email</td>';
-		echo '<td>1</td>';	
-		echo '<td>Door 6</td>';	
-		echo '</tr>';
-
-		echo '<tr>';
-		echo '<td>Mac</td>';		
-		echo '<td>Dec 10, 17:30 pm</td>';
-		echo '<td>Phone</td>';
-		echo '<td>1</td>';	
-		echo '<td>Rec</td>';	
-		echo '</tr>';
-
-		echo '<tr>';
-		echo '<td>Smith</td>';		
-		echo '<td>Dec 11, 10:00 am</td>';
-		echo '<td>Phone</td>';
-		echo '<td>1</td>';
-		echo '<td>Tim Hortons</td>';		
-		echo '</tr>';
-
-		echo '<tr>';
-		echo '<td>John</td>';		
-		echo '<td>Dec 11, 11:00 am</td>';
-		echo '<td>Email</td>';
-		echo '<td>2</td>';	
-		echo '<td>Door 3</td>';	
-		echo '</tr>';
-
-		echo '<tr>';
-		echo '<td>Mark</td>';		
-		echo '<td>Dec 11, 11:30 am</td>';
-		echo '<td>Phone</td>';
-		echo '<td>1</td>';	
-		echo '<td>Door 6</td>';	
-		echo '</tr>';
-
-		echo '<tr>';
-		echo '<td>Tom</td>';		
-		echo '<td>Dec 11, 12:00 am</td>';
-		echo '<td>Email</td>';
-		echo '<td>1</td>';
-		echo '<td>Library</td>';		
-		echo '</tr>';									
-		echo '</table>';
-	}
-
-?>
 </div>

@@ -1,5 +1,5 @@
 <!-- src/Template/Users/add.ctp -->
-<div id="main">
+<div class="container clearfix"  id="main">
 	<?= $this->Form->create($user) ?>
 		<fieldset>
 			<legend><?= __('Add User') ?></legend>

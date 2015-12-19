@@ -1,5 +1,5 @@
 <!-- File: src/Template/users/view.ctp -->
-<div id="main">
+<div class="container clearfix"  id="main">
 	<h1>User Profile</h1>
 	<ul>
 		<li>First Name : <?= $user['firstname'] ?></li>
@@ -11,10 +11,8 @@
 		<li>Vehicle Info. : <?= $user['vehicle'] ?></li>
 		<li>Smoking : <?= $user['isSmoking']==1? "Yes" : "No" ?></li>
 	</ul>
-
 	<p>
-		<?php
-			
+		<?php			
 			if(($user['id'] != null && $user['id'] != "")
 				 || $user['role'] == 'admin'){
 				echo "<div id='logout'>";
@@ -24,6 +22,5 @@
 				echo "</div>";
 			}			
 		?>
-	</p>	
-
+	</p>
 </div>

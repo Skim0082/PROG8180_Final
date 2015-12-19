@@ -1,5 +1,5 @@
 <!-- File: src/Template/Posts/view.ctp -->
-<div id="main">
+<div class="container clearfix" id="main">
     <h1>View Posts</h1>
     <?php
         $map_options = array(

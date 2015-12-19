@@ -20,7 +20,7 @@
           <ul class="dropdown-menu">
             <li><a href="/posts">Post List</a></li>
             <li><a href="/posts/index/comment">My Comment List</a></li>
-            <li><a href="#">Recent View</a></li>
+            <!--<li><a href="#">Recent View</a></li>-->
             <li role="separator" class="divider"></li>
             <li><a href="/posts/add">Add New Post</a></li>		
             <?php 
@@ -33,12 +33,14 @@
           </ul>		          
         </li>
       </ul>
+      <!--
       <form class="navbar-form navbar-left" role="search">
         <div id="searchbox" class="form-group">
           <input type="text" class="form-control" placeholder="Search Key Word">
         </div>
         <button type="submit" class="btn btn-success">Search</button>
       </form>
+    -->
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/users/contactus">Contact</a></li>
         <li><a href="/pages/about">About</a></li>

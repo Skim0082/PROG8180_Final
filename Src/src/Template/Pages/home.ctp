@@ -1,10 +1,12 @@
 <!-- src/Template/Pages/home.ctp -->
-<div class="jumbotron">
-   <h1>COCORS</h1>
-        <p>Welcome to COCORS - The Conestoga College Ride Sharing System!</p>
+<div class="overlayimg">
+<img alt="logo" src="/img/bg.jpg" />
+<h2 class="intro-lead-in">Welcome To Ride Sharing System!</h2>
+<h1 class="overlaytxt">Save Your Time & Efforts</h1>
+</div>
+<div class="container clearfix" id="main">
 
-        <h2>This system will let you offer rides or look for a driver to carpool with and enjoy the benefits such as...  </h2>
-
+        <h3>This system will let you offer rides or look for a driver to carpool with and enjoy the benefits such as...  </h2>
         <ol>
           <li>Saving money</li>
           <li>Reducing pollution</li>

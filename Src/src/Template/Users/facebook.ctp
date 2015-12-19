@@ -1,5 +1,5 @@
 <!-- src/Template/Users/facebook.ctp -->
-<div id="main">
+<div class="container clearfix" id="main">
 	<h1>Hello <?= $username ?>!</h1>
 	<?= $this->Flash->render('auth') ?>
 	<?php if($username != null && $username != ""){
@@ -11,13 +11,12 @@
 	}
 	?>	
 	<?= $this->Form->create() ?>
-		<fieldset>
-			<legend><?= __('Sign Up - set password') ?></legend>
-			<?= $this->Form->input('password') ?>
-			<?= $this->Form->input('role', [
-				'options' => ['user' => 'User']
-			]) ?>			
-	   </fieldset>
-	<?= $this->Form->button(__('Submit')); ?>
+	<fieldset>			
+		<?= $this->Form->input('password') ?>
+		<?= $this->Form->input('role', [
+			'options' => ['user' => 'User']
+		]) ?>			
+		<?= $this->Form->button('Sign Up', ['type'=>'submit','class'=>'btn btn-primary']); ?>
+	</fieldset>
 	<?= $this->Form->end() ?>
 </div>	
