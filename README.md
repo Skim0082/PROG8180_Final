@@ -28,3 +28,4 @@
  - However, Database is still available on Heroku
  - For Commercial purpose, commerical key can be bought or proxy server can be used.
 
+![Build Status](https://github.com/infomat/PROG8180_Final/blob/master/Src/mainpage_screen.png)
