@@ -14,28 +14,10 @@
     - User is required email and password with Facebook athentification
     - After Facebook athentification, user set the password for our site 
     - This password will be used logIn password (It does not need to be the same with the facebook's)
-    - admin is allow to add new user after login as admin role
-    - User is not 
-  - We did not implement to validate specific details such as the wrong url address.
-  - public user (not logedin) only can see title, body, tags (no comments)
-  - author logedin can see only approved comments
-  - admin can see all and edit, delete comments as well.
+    - Admin is allow to add new user after login as admin role
+    - User is not allowed to modify user's information which come from facebook
+    - Admin can modify every information, delete as well
+  - There are 3 type of users, unlogined user, logined user, admin user
+  - Each user has own limitation to access to the pages and usage
 
-###Blog Articles Url 
-  - **'Assignment3'** in the below URL is **case sensitive** and others are case insensitive.
-  - **Articles List** : ```http://localhost/Assignment3/articles/index```
-  - **Add new article** : ```http://localhost/Assignment3/articles/add```
-  - **Log in** : ```http://localhost/Assignment3/users/login```
-  - **Tag List** : ```http://localhost/Assignment3/Tags/index```
-  - **Tag Add** : ```http://localhost/Assignment3/Tags/add```
-
-## LogIn Information
-  - **login access as admin** : user name / password --> **admin** / **admin**
-     - above Assignment3_DB.sql includes admin data in the users table
-     - if users table has no data of admin, can add the add page as below;
-       - http://localhost/Assignment3/users/add
-  -  **Author password** : all Authors password are same with **aaa**
-
-![Build Status](https://github.com/Skim0082/PROG8180_Assignment3/blob/master/tablesRelation.JPG)
-![Build Status](https://github.com/Skim0082/PROG8180_Assignment3/blob/master/Screenshot01.png)
 
