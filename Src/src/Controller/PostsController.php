@@ -32,7 +32,9 @@ class PostsController extends AppController{
     {
         parent::beforeFilter($event);
         $this->Auth->allow(['index', 'view']);
-
+        
+  //      $this->Cookie->configKey('lastview', 'path', '/');
+//        $this->Cookie->configKey('lastview', ['encryption'=>false, 'httpOnly' => false]);
     }
     
     public function afterSave(Event $event)

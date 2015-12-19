@@ -34,7 +34,9 @@ $cakeDescription = 'Cocors:Conestoga College Ride Sharing System';
     <?= $this->Html->css('cocors.css') ?>   
     <?= $this->Html->css('https://fonts.googleapis.com/css?family=Montserrat')?>
 
-    <?= $this->Html->script('https://maps.google.com/maps/api/js?sen sor=true') ?>
+    <?= $this->Html->script('//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js') ?> 
+    <?= $this->Html->script('http://maps.google.com/maps/api/js?sensor=true')?>
+
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
@@ -55,7 +57,6 @@ $cakeDescription = 'Cocors:Conestoga College Ride Sharing System';
     </footer>
 </body>
     <!-- To avoid conflict between script and redering speed, scripts are placed here  (CCH)  -->
-    <?= $this->Html->script('//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js') ?> 
     <?= $this->Html->script('facebook') ?>
     <?= $this->Html->script('http://code.jquery.com/ui/1.11.4/jquery-ui.js') ?>
     <?= $this->Html->script('http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js') ?>
