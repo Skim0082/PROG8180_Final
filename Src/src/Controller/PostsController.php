@@ -49,21 +49,21 @@ class PostsController extends AppController{
         
         if ($id == null) {
             $Posts = $this->Posts->find('all')
-                                ->contain(['Users', 'Comments', 'UnapprovedComments', 'ApprovedComments'])
+                                ->contain(['Users'])
                                 ->where(['completed' => 0]);
          } else if ($id == 'comment') {
-            $Posts = $this->Posts->find('all')
-                                ->contain(['Users', 'Comments', 'UnapprovedComments', 'ApprovedComments']);
-            $Posts->matching('Comments', function ($q) {
-                return $q->where(['Comments.user_id' => $this->request->session()->read('Auth.User.id')]);
-            });
+            $Posts = $this->Posts->find('all',['group' => 'Posts.id'])
+                                ->contain(['Users'])
+                                ->matching('Comments', function ($q) {
+                                    return $q->where(['Comments.user_id' => $this->request->session()->read('Auth.User.id')]);
+                                });
             
         } else if (($id == 0) && ($loginuser['role'] == 'admin')) {
             $Posts = $this->Posts->find('all')
-                                ->contain(['Users', 'Comments', 'UnapprovedComments', 'ApprovedComments']);
+                                ->contain(['Users']);
         } else {
             $Posts = $this->Posts->find('all')
-                                ->contain(['Users', 'Comments', 'UnapprovedComments', 'ApprovedComments'])
+                                ->contain(['Users'])
                                 ->where(['user_id' => $loginuser['id']]);
         }
         
@@ -81,34 +81,34 @@ class PostsController extends AppController{
         
         $curDateTime = Time::now()->i18nFormat('yy-MM-dd HH:mm');
         
-        $pastUploadedCompletedPosts = $this->Posts->find('all')
+        $pastUploadedPosts = $this->Posts->find('all')
                 ->contain(['Users'])
                 ->where(['user_id' => $loginuser['id']])
                 ->andWhere(['departureDateTime <' => $curDateTime]);
         
-        $futureUploadedCompletedPosts = $this->Posts->find('all')
+        $futureUploadedPosts = $this->Posts->find('all')
                 ->contain(['Users'])
                 ->where(['user_id' => $loginuser['id']])
                 ->andWhere(['departureDateTime >=' => $curDateTime]);
   
-        $pastCommentedCompletedPosts = $this->Posts->find('all',['group' => 'Posts.id'])
+        $pastCommentedPosts = $this->Posts->find('all',['group' => 'Posts.id'])
                 ->contain(['Users'])
                 ->andWhere(['departureDateTime <' => $curDateTime])
                 ->matching('Comments', function ($q) {
                     return $q->where(['Comments.user_id' => $this->request->session()->read('Auth.User.id')]);
                     });
         
-        $futureCommentedCompletedPosts = $this->Posts->find('all',['group' => 'Posts.id'])
+        $futureCommentedPosts = $this->Posts->find('all',['group' => 'Posts.id'])
                 ->contain(['Users'])
                 ->andWhere(['departureDateTime >=' => $curDateTime])
                 ->matching('Comments', function ($q) {
                     return $q->where(['Comments.user_id' => $this->request->session()->read('Auth.User.id')]);
                     });
         
-        $this->set('pastUploadedCompletedPosts', $this->paginate($pastUploadedCompletedPosts));
-        $this->set('futureUploadedCompletedPosts', $this->paginate($futureUploadedCompletedPosts));
-        $this->set('pastCommentedCompletedPosts', $this->paginate($pastCommentedCompletedPosts));
-        $this->set('futureCommentedCompletedPosts', $this->paginate($futureCommentedCompletedPosts));
+        $this->set('pastUploadedCompletedPosts', $this->paginate($pastUploadedPosts));
+        $this->set('futureUploadedCompletedPosts', $this->paginate($futureUploadedPosts));
+        $this->set('pastCommentedCompletedPosts', $this->paginate($pastCommentedPosts));
+        $this->set('futureCommentedCompletedPosts', $this->paginate($futureCommentedPosts));
 		$this->set('loginuser', $loginuser);
         $this->set('mode', $id);
     }

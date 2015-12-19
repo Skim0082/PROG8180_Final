@@ -4,9 +4,10 @@
         <th class="large-2 medium-1"><?= $this->Paginator->sort('postType','Request Type') ?></th>
         <th class="large-1 medium-1"><?= $this->Paginator->sort('user_id','User') ?></th>
         <th class="large-1 medium-1"><?= $this->Paginator->sort('costPerPerson','Cost Per Person') ?></th>
-        <th class="large-2 medium-1"><?= $this->Paginator->sort('departureDate','Departure Date') ?></th>
+        <th class="large-1 medium-1"><?= $this->Paginator->sort('departureDate','Departure Date') ?></th>
         <th class="large-2 medium-2"><?= $this->Paginator->sort('srcAddr','From') ?></th>
         <th class="large-2 medium-2"><?= $this->Paginator->sort('dstAddr','To') ?></th>
+        <th class="large-1 medium-1"><?= $this->Paginator->sort('completed','Status') ?></th>
         <th class="large-1 medium-1">Actions</th>
     </tr>
 
@@ -36,6 +37,9 @@
         <td>
             <?= $post->dstAddr ?>
         </td>	
+        <td>
+            <?= $post->completed ? __('Closed') : __('Ongoing')  ?>
+        </td>
         <?php
             echo "<td>";
             echo $this->Html->link('Add Comment', ['controller'=>'comments','action' => 'add', $post->id]);

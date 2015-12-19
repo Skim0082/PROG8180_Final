@@ -134,9 +134,8 @@ td{
     border-bottom-color: cadetblue
 }
 
-.overlayimg{
-    position:relative;
-    width: 100%;
+#legend_r {
+    color:#BE140B;
 }
 
 .overlaytxt {
