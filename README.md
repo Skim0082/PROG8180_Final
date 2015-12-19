@@ -9,7 +9,7 @@
 ## Develop Information
 
   - **Development Environment** : CakePhp 3.1.2 / MySQL / PostMark / Heroku
-  - **Database ** : Embedded in Heroku with MySQl
+  - **Database** : Embedded in Heroku with MySQl
   - **Table names** : users, posts, poststags, tags, comments
   - **Database access user**  : admin : **admin@gmail.com**  / password : **11111**
     - User is required email and password with Facebook athentification
