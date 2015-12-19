@@ -22,8 +22,8 @@
   - Each user has limitations to access certain pages and data, and usage
 
 ## Important for testing
- - Due to the quota for Google GEO API with free key and heroku IP is shared. 
- - Thus quota limite will be exceeded easily.  This affects the ability of the system to get GeoLocation data.  
+ - Due to the quota for Google GEO API with free key and heroku IP is shared, so quota limite will be exceeded easily.  
+ - Thus, this affects the ability of the system to get GeoLocation data.  
  - For testing the operation of adding a post that uses Google geo API, using local Apache server works any time; on Heroku, it only works until the day's limit has been exceeded(i.e. many users on Heroku can surpass Google's limit since Google sees Heroku as one IP address)
  - However, Database is still available on Heroku
  - For Commercial purpose, commerical key can be bought or proxy server can be used.
