@@ -22,8 +22,8 @@
             <th class="large-1 medium-1"><?= $this->Paginator->sort('seatsAvailable','Available Seats') ?></th>
             <th class="large-1 medium-1"><?= $this->Paginator->sort('costPerPerson','Cost Per Person') ?></th>
             <th class="large-2 medium-1"><?= $this->Paginator->sort('departureDate','Departure Date') ?></th>
-            <th class="large-2 medium-2">From</th>
-            <th class="large-2 medium-2">To</th>
+            <th class="large-2 medium-2"><?= $this->Paginator->sort('srcAddr','From') ?></th>
+            <th class="large-2 medium-2"><?= $this->Paginator->sort('dstAddr','To') ?></th>
             <th class="large-1 medium-1">#Of Comments</th>
             <th class="large-1 medium-1">Actions</th>
 		</tr>

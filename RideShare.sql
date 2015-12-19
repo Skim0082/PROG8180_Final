@@ -42,7 +42,8 @@ CREATE TABLE posts (
     dstLatitude float NOT NULL,
 	FOREIGN KEY user_key(user_id) REFERENCES users(id)
     created DATETIME NOT NULL,
-    modifed DATETIME NOT NULL
+    modifed DATETIME NOT NULL,
+    departureDateTime DATETIME NOT NULL
 );
 
 CREATE TABLE comments (

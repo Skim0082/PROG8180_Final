@@ -6,6 +6,7 @@ namespace App\Controller;
 use App\Controller\UsersController;
 use Cake\Event\Event;
 use Cake\ORM\TableRegistry;
+use Cake\I18n\Time;
 
 class PostsController extends AppController{
 
@@ -44,33 +45,25 @@ class PostsController extends AppController{
     
     public function index($id = null)
     {
-        $this->paginate = [
-        'contain' => ['Users', 'Comments']
-        ];
-        
         $loginuser = $this->Auth->user();
         
         if ($id == null) {
             $Posts = $this->Posts->find('all')
                                 ->contain(['Users', 'Comments', 'UnapprovedComments', 'ApprovedComments'])
-                                ->order(['departureDate' => 'ASC', 'departureTime' => 'ASC'])
                                 ->where(['completed' => 0]);
          } else if ($id == 'comment') {
             $Posts = $this->Posts->find('all')
-                                ->contain(['Users', 'Comments', 'UnapprovedComments', 'ApprovedComments'])
-                                ->order(['completed' => 'ASC','departureDate' => 'ASC', 'departureTime' => 'ASC']);
+                                ->contain(['Users', 'Comments', 'UnapprovedComments', 'ApprovedComments']);
             $Posts->matching('Comments', function ($q) {
                 return $q->where(['Comments.user_id' => $this->request->session()->read('Auth.User.id')]);
             });
             
         } else if (($id == 0) && ($loginuser['role'] == 'admin')) {
             $Posts = $this->Posts->find('all')
-                                ->contain(['Users', 'Comments', 'UnapprovedComments', 'ApprovedComments'])
-                                ->order(['completed' => 'ASC','departureDate' => 'ASC', 'departureTime' => 'ASC']);
+                                ->contain(['Users', 'Comments', 'UnapprovedComments', 'ApprovedComments']);
         } else {
             $Posts = $this->Posts->find('all')
                                 ->contain(['Users', 'Comments', 'UnapprovedComments', 'ApprovedComments'])
-                                ->order(['departureDate' => 'ASC', 'departureTime' => 'ASC'])
                                 ->where(['user_id' => $loginuser['id']]);
         }
         
@@ -79,6 +72,47 @@ class PostsController extends AppController{
         $this->set('mode', $id);
     }
     
+    public function recent($id = null)
+    {
+        $loginuser = $this->Auth->user();
+        
+        //Todo!!!! This should be based on UTC or System time to avoid confusion
+        date_default_timezone_set('America/Toronto');
+        
+        $curDateTime = Time::now()->i18nFormat('yy-MM-dd HH:mm');
+        
+        $pastUploadedCompletedPosts = $this->Posts->find('all')
+                ->contain(['Users'])
+                ->where(['user_id' => $loginuser['id']])
+                ->andWhere(['departureDateTime <' => $curDateTime]);
+        
+        $futureUploadedCompletedPosts = $this->Posts->find('all')
+                ->contain(['Users'])
+                ->where(['user_id' => $loginuser['id']])
+                ->andWhere(['departureDateTime >=' => $curDateTime]);
+  
+        $pastCommentedCompletedPosts = $this->Posts->find('all',['group' => 'Posts.id'])
+                ->contain(['Users'])
+                ->andWhere(['departureDateTime <' => $curDateTime])
+                ->matching('Comments', function ($q) {
+                    return $q->where(['Comments.user_id' => $this->request->session()->read('Auth.User.id')]);
+                    });
+        
+        $futureCommentedCompletedPosts = $this->Posts->find('all',['group' => 'Posts.id'])
+                ->contain(['Users'])
+                ->andWhere(['departureDateTime >=' => $curDateTime])
+                ->matching('Comments', function ($q) {
+                    return $q->where(['Comments.user_id' => $this->request->session()->read('Auth.User.id')]);
+                    });
+        
+        $this->set('pastUploadedCompletedPosts', $this->paginate($pastUploadedCompletedPosts));
+        $this->set('futureUploadedCompletedPosts', $this->paginate($futureUploadedCompletedPosts));
+        $this->set('pastCommentedCompletedPosts', $this->paginate($pastCommentedCompletedPosts));
+        $this->set('futureCommentedCompletedPosts', $this->paginate($futureCommentedCompletedPosts));
+		$this->set('loginuser', $loginuser);
+        $this->set('mode', $id);
+    }
+        
     public function view($id = null)
     {
         $post = $this->Posts->get($id, [
@@ -129,7 +163,11 @@ class PostsController extends AppController{
             if ($this->Auth->user('id') != null) {
                 $post->user_id = $this->Auth->user('id');
             }
-
+            //For query with date, datetime is needed instead of string of date & time. 
+            //For transition datetime structure and minimize risk of change, 
+            //date,time is maintained and date,time will be remvoed later
+            $post->departureDateTime = strtotime($post->departureDate.' '.$post->departureTime);
+            
             if ($this->Posts->save($post)) {
                 $this->Flash->success(__('Your post has been saved.'));
                 return $this->redirect(['action' => 'index']);
@@ -205,7 +243,7 @@ class PostsController extends AppController{
 	public function isAuthorized($user)
 	{
 		// All registered users can add Posts
-		if ($this->request->action === 'add') {
+		if (in_array($this->request->action, ['add','recent'])) {
 			return true;
 		}
 
