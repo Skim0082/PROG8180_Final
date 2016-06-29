@@ -1,4 +1,4 @@
-#COCORS (Conestoga College Ride Sharing System)
+#COCORS (Conestoga College Ride Sharing)
 ##Web Technologies Course Final Project
 ###Date: Dec. 2015,   Role: Web UI/ Front/ Back-End (Group Work)
 -	CakePHP v 3.1.2 (MVC Framework)
